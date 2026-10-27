@@ -1,0 +1,147 @@
+{
+	"name": "Hollowmere Village",
+	"layout": [
+		"TTTTTTTTpppTTTTTTTTT",
+		"T.......ppp........T",
+		"T.f.....ppp.....f..T",
+		"T..rrrr.ppp..RRRRR.T",
+		"T..rrrr.ppp..RRRRR.T",
+		"T..#D##.ppp..##D##.T",
+		"T...p..pppp....p...T",
+		"T...pppppppppppp...T",
+		"T.........p........T",
+		"T..S......p....ff..T",
+		"T.........p........T",
+		"T..ffff...p...wwww.T",
+		"T.........p...wwww.T",
+		"TTTTTTTTTTTTTTTTTTTT"
+	],
+	"warps": [
+		{
+			"at": [
+				4,
+				5
+			],
+			"to": "player_house",
+			"cell": [
+				4,
+				6
+			],
+			"facing": "up"
+		},
+		{
+			"at": [
+				15,
+				5
+			],
+			"to": "lab",
+			"cell": [
+				5,
+				8
+			],
+			"facing": "up"
+		},
+		{
+			"at": [
+				8,
+				0
+			],
+			"to": "route_1",
+			"cell": [
+				8,
+				28
+			],
+			"facing": "up"
+		},
+		{
+			"at": [
+				9,
+				0
+			],
+			"to": "route_1",
+			"cell": [
+				9,
+				28
+			],
+			"facing": "up"
+		},
+		{
+			"at": [
+				10,
+				0
+			],
+			"to": "route_1",
+			"cell": [
+				10,
+				28
+			],
+			"facing": "up"
+		}
+	],
+	"triggers": [
+		{
+			"cells": [
+				[
+					8,
+					1
+				],
+				[
+					9,
+					1
+				],
+				[
+					10,
+					1
+				]
+			],
+			"unless_flag": "got_starter",
+			"script": [
+				{
+					"say": "???: Wait! Don't go out there without a partner!"
+				},
+				{
+					"say": "Professor Wren: Wild monsters live in the tall grass. Come and see me at the lab first!"
+				},
+				{
+					"step_player": "down"
+				}
+			]
+		}
+	],
+	"signs": [
+		{
+			"cell": [
+				3,
+				9
+			],
+			"text": "Hollowmere Village. Where every journey takes root."
+		}
+	],
+	"npcs": [
+		{
+			"id": "villager",
+			"cell": [
+				12,
+				8
+			],
+			"facing": "down",
+			"color": "#60a060",
+			"script": [
+				{
+					"if_flag": "got_starter",
+					"then": [
+						{
+							"say": "Your monster looks happy! Monsters get stronger the more they battle together."
+						}
+					],
+					"else": [
+						{
+							"say": "The professor studies how monsters and people live side by side. Fascinating stuff!"
+						}
+					]
+				}
+			]
+		}
+	],
+	"id": "hollowmere"
+}

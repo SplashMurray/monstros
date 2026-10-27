@@ -16,9 +16,13 @@ var frozen := false
 var _moving := false
 var _turn_wait := 0.0
 var _was_walking := false
+var _tween: Tween
 
 
 func place(p_cell: Vector2i, p_facing: Vector2i) -> void:
+	if _tween:
+		_tween.kill()   # cancel any step in progress so it can't overwrite the new position
+	_moving = false
 	cell = p_cell
 	facing = p_facing
 	position = Vector2(cell * TILE)
@@ -49,13 +53,29 @@ func _process(delta: float) -> void:
 		_was_walking = false
 
 
+func is_moving() -> bool:
+	return _moving
+
+
+func face(direction: Vector2i) -> void:
+	facing = direction
+	queue_redraw()
+
+
+## Scripted single step (used by events). Turns even if the way is blocked.
+func walk(direction: Vector2i) -> void:
+	face(direction)
+	if map.is_walkable(cell + direction):
+		await _step_to(cell + direction)
+
+
 func _step_to(target: Vector2i) -> void:
 	_moving = true
 	_was_walking = true
-	var tween := create_tween()
+	_tween = create_tween()
 	var step_time := RUN_STEP_TIME if Input.is_action_pressed("run") else STEP_TIME
-	tween.tween_property(self, "position", Vector2(target * TILE), step_time)
-	await tween.finished
+	_tween.tween_property(self, "position", Vector2(target * TILE), step_time)
+	await _tween.finished
 	cell = target
 	_moving = false
 	stepped.emit(cell)

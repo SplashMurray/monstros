@@ -1,0 +1,124 @@
+{
+	"name": "Fenwick Town",
+	"layout": [
+		"TTTTTTTTTTTTTTTTTTTTTT",
+		"T....................T",
+		"T..GGGGGG....rrrrr...T",
+		"T..GGGGGG....rrrrr...T",
+		"T..GGGGGG....rrrrr...T",
+		"T..###D##....##D##...T",
+		"T.....p........p.....T",
+		"T..S..pppppppppp..S..T",
+		"T.........p..........T",
+		"T..ff.....p.....ff...T",
+		"T.........p..........T",
+		"T....TT...p...TT.....T",
+		"T.........p..........T",
+		"TTTTTTTTTpppTTTTTTTTTT"
+	],
+	"warps": [
+		{
+			"at": [
+				6,
+				5
+			],
+			"to": "fenwick_gym",
+			"cell": [
+				5,
+				12
+			],
+			"facing": "up"
+		},
+		{
+			"at": [
+				15,
+				5
+			],
+			"to": "fenwick_center",
+			"cell": [
+				5,
+				6
+			],
+			"facing": "up"
+		},
+		{
+			"at": [
+				9,
+				13
+			],
+			"to": "route_1",
+			"cell": [
+				8,
+				1
+			],
+			"facing": "down"
+		},
+		{
+			"at": [
+				10,
+				13
+			],
+			"to": "route_1",
+			"cell": [
+				9,
+				1
+			],
+			"facing": "down"
+		},
+		{
+			"at": [
+				11,
+				13
+			],
+			"to": "route_1",
+			"cell": [
+				10,
+				1
+			],
+			"facing": "down"
+		}
+	],
+	"signs": [
+		{
+			"cell": [
+				3,
+				7
+			],
+			"text": "Fenwick Town Gym. Leader: Brenna, the Bedrock Brawler."
+		},
+		{
+			"cell": [
+				18,
+				7
+			],
+			"text": "Rest Stop. Free healing for every traveller and their monsters."
+		}
+	],
+	"npcs": [
+		{
+			"id": "townsfolk",
+			"cell": [
+				13,
+				10
+			],
+			"facing": "left",
+			"color": "#b080c0",
+			"script": [
+				{
+					"if_flag": "badge_stone",
+					"then": [
+						{
+							"say": "You beat Brenna? Then the Bedrock Badge is yours. The whole town is talking about it!"
+						}
+					],
+					"else": [
+						{
+							"say": "Brenna's Stone types shrug off Flame moves. Water or Flora would crack them!"
+						}
+					]
+				}
+			]
+		}
+	],
+	"id": "fenwick"
+}

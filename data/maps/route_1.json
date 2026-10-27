@@ -1,0 +1,158 @@
+{
+	"name": "Route 1",
+	"layout": [
+		"TTTTTTTTpppTTTTTTTTT",
+		"T.......ppp........T",
+		"T..gggg.ppp.gggggg.T",
+		"T..gggg.ppp.gggggg.T",
+		"T..gggg.ppp.gggggg.T",
+		"T.......ppp........T",
+		"TTTTT...ppp...TTTTTT",
+		"T.......ppp........T",
+		"T.gggggg.pp..ff....T",
+		"T.gggggg.pp........T",
+		"T.gggggg.pp...S....T",
+		"T.......ppp........T",
+		"T.....pppp.........T",
+		"T.....pp....gggggg.T",
+		"T.....pp....gggggg.T",
+		"TTT...pp....gggggg.T",
+		"T.....pp...........T",
+		"T.....ppppp........T",
+		"T.........pp.......T",
+		"T..ff.....pp...ww..T",
+		"T.........pp...ww..T",
+		"Tggggg....pp.......T",
+		"Tggggg....pp.......T",
+		"T.........ppp......T",
+		"T.......ppp........T",
+		"TTTTTT..ppp..TTTTTTT",
+		"T.......ppp........T",
+		"T..gg...ppp...gg...T",
+		"T.......ppp........T",
+		"TTTTTTTTpppTTTTTTTTT"
+	],
+	"encounters": "route_1",
+	"warps": [
+		{
+			"at": [
+				8,
+				29
+			],
+			"to": "hollowmere",
+			"cell": [
+				8,
+				1
+			],
+			"facing": "down"
+		},
+		{
+			"at": [
+				9,
+				29
+			],
+			"to": "hollowmere",
+			"cell": [
+				9,
+				1
+			],
+			"facing": "down"
+		},
+		{
+			"at": [
+				10,
+				29
+			],
+			"to": "hollowmere",
+			"cell": [
+				10,
+				1
+			],
+			"facing": "down"
+		},
+		{
+			"at": [
+				8,
+				0
+			],
+			"to": "fenwick",
+			"cell": [
+				9,
+				12
+			],
+			"facing": "up"
+		},
+		{
+			"at": [
+				9,
+				0
+			],
+			"to": "fenwick",
+			"cell": [
+				10,
+				12
+			],
+			"facing": "up"
+		},
+		{
+			"at": [
+				10,
+				0
+			],
+			"to": "fenwick",
+			"cell": [
+				11,
+				12
+			],
+			"facing": "up"
+		}
+	],
+	"signs": [
+		{
+			"cell": [
+				14,
+				10
+			],
+			"text": "Route 1. North: Fenwick Town. South: Hollowmere Village."
+		}
+	],
+	"npcs": [
+		{
+			"id": "ada",
+			"cell": [
+				12,
+				7
+			],
+			"facing": "left",
+			"color": "#e0a040",
+			"trainer": "route1_ada",
+			"sight": 4
+		},
+		{
+			"id": "ned",
+			"cell": [
+				13,
+				18
+			],
+			"facing": "left",
+			"color": "#80a020",
+			"trainer": "route1_ned",
+			"sight": 3
+		},
+		{
+			"id": "hiker",
+			"cell": [
+				4,
+				16
+			],
+			"facing": "right",
+			"color": "#a07050",
+			"script": [
+				{
+					"say": "Hold B to run! Running is great for covering ground, but you'll stumble into more wild monsters in the grass."
+				}
+			]
+		}
+	],
+	"id": "route_1"
+}

@@ -1,83 +1,501 @@
 {
 	"fernling": {
-		"name": "Fernling", "types": ["flora"],
-		"base_stats": { "hp": 48, "atk": 46, "def": 52, "spa": 62, "spd": 60, "spe": 44 },
-		"catch_rate": 45, "base_exp": 62, "growth": "medium_slow",
-		"ev_yield": { "spa": 1 },
-		"learnset": [[1, "shove"], [1, "bristle"], [5, "sap_draw"], [9, "leaf_cut"], [13, "spore_puff"]],
-		"evolutions": [{ "method": "level", "level": 16, "into": "bramblehorn" }],
+		"name": "Fernling",
+		"types": [
+			"flora"
+		],
+		"base_stats": {
+			"hp": 48,
+			"atk": 46,
+			"def": 52,
+			"spa": 62,
+			"spd": 60,
+			"spe": 44
+		},
+		"catch_rate": 45,
+		"base_exp": 62,
+		"growth": "medium_slow",
+		"ev_yield": {
+			"spa": 1
+		},
+		"learnset": [
+			[
+				1,
+				"shove"
+			],
+			[
+				1,
+				"bristle"
+			],
+			[
+				5,
+				"sap_draw"
+			],
+			[
+				9,
+				"leaf_cut"
+			],
+			[
+				13,
+				"spore_puff"
+			]
+		],
+		"evolutions": [
+			{
+				"method": "level",
+				"level": 16,
+				"into": "bramblehorn"
+			}
+		],
 		"description": "A shy sprout that curls its fronds when startled."
 	},
 	"bramblehorn": {
-		"name": "Bramblehorn", "types": ["flora"],
-		"base_stats": { "hp": 62, "atk": 60, "def": 66, "spa": 80, "spd": 78, "spe": 58 },
-		"catch_rate": 45, "base_exp": 142, "growth": "medium_slow",
-		"ev_yield": { "spa": 1, "spd": 1 },
-		"learnset": [[1, "shove"], [1, "bristle"], [5, "sap_draw"], [9, "leaf_cut"], [13, "spore_puff"]],
+		"name": "Bramblehorn",
+		"types": [
+			"flora"
+		],
+		"base_stats": {
+			"hp": 62,
+			"atk": 60,
+			"def": 66,
+			"spa": 80,
+			"spd": 78,
+			"spe": 58
+		},
+		"catch_rate": 45,
+		"base_exp": 142,
+		"growth": "medium_slow",
+		"ev_yield": {
+			"spa": 1,
+			"spd": 1
+		},
+		"learnset": [
+			[
+				1,
+				"shove"
+			],
+			[
+				1,
+				"bristle"
+			],
+			[
+				5,
+				"sap_draw"
+			],
+			[
+				9,
+				"leaf_cut"
+			],
+			[
+				13,
+				"spore_puff"
+			]
+		],
 		"evolutions": [],
 		"description": "Its thorny crown hardens a little more every spring."
 	},
 	"emberkit": {
-		"name": "Emberkit", "types": ["flame"],
-		"base_stats": { "hp": 40, "atk": 55, "def": 42, "spa": 60, "spd": 48, "spe": 67 },
-		"catch_rate": 45, "base_exp": 62, "growth": "medium_slow",
-		"ev_yield": { "spe": 1 },
-		"learnset": [[1, "shove"], [1, "bristle"], [5, "cinder_spit"], [10, "quick_dart"], [14, "flare_lash"]],
-		"evolutions": [{ "method": "level", "level": 16, "into": "blazepaw" }],
+		"name": "Emberkit",
+		"types": [
+			"flame"
+		],
+		"base_stats": {
+			"hp": 40,
+			"atk": 55,
+			"def": 42,
+			"spa": 60,
+			"spd": 48,
+			"spe": 67
+		},
+		"catch_rate": 45,
+		"base_exp": 62,
+		"growth": "medium_slow",
+		"ev_yield": {
+			"spe": 1
+		},
+		"learnset": [
+			[
+				1,
+				"shove"
+			],
+			[
+				1,
+				"bristle"
+			],
+			[
+				5,
+				"cinder_spit"
+			],
+			[
+				10,
+				"quick_dart"
+			],
+			[
+				14,
+				"flare_lash"
+			]
+		],
+		"evolutions": [
+			{
+				"method": "level",
+				"level": 16,
+				"into": "blazepaw"
+			}
+		],
 		"description": "A playful kit whose fur smoulders when it is excited."
 	},
 	"blazepaw": {
-		"name": "Blazepaw", "types": ["flame"],
-		"base_stats": { "hp": 56, "atk": 72, "def": 56, "spa": 78, "spd": 62, "spe": 86 },
-		"catch_rate": 45, "base_exp": 142, "growth": "medium_slow",
-		"ev_yield": { "spa": 1, "spe": 1 },
-		"learnset": [[1, "shove"], [1, "bristle"], [5, "cinder_spit"], [10, "quick_dart"], [14, "flare_lash"]],
+		"name": "Blazepaw",
+		"types": [
+			"flame"
+		],
+		"base_stats": {
+			"hp": 56,
+			"atk": 72,
+			"def": 56,
+			"spa": 78,
+			"spd": 62,
+			"spe": 86
+		},
+		"catch_rate": 45,
+		"base_exp": 142,
+		"growth": "medium_slow",
+		"ev_yield": {
+			"spa": 1,
+			"spe": 1
+		},
+		"learnset": [
+			[
+				1,
+				"shove"
+			],
+			[
+				1,
+				"bristle"
+			],
+			[
+				5,
+				"cinder_spit"
+			],
+			[
+				10,
+				"quick_dart"
+			],
+			[
+				14,
+				"flare_lash"
+			]
+		],
 		"evolutions": [],
 		"description": "Leaves scorched paw prints wherever it runs."
 	},
 	"ripplet": {
-		"name": "Ripplet", "types": ["water"],
-		"base_stats": { "hp": 46, "atk": 50, "def": 60, "spa": 48, "spd": 58, "spe": 46 },
-		"catch_rate": 45, "base_exp": 62, "growth": "medium_slow",
-		"ev_yield": { "def": 1 },
-		"learnset": [[1, "shove"], [1, "hunker"], [5, "splash_jet"], [10, "mud_fling"], [13, "riptide_strike"]],
-		"evolutions": [{ "method": "level", "level": 16, "into": "tidalisk" }],
+		"name": "Ripplet",
+		"types": [
+			"water"
+		],
+		"base_stats": {
+			"hp": 46,
+			"atk": 50,
+			"def": 60,
+			"spa": 48,
+			"spd": 58,
+			"spe": 46
+		},
+		"catch_rate": 45,
+		"base_exp": 62,
+		"growth": "medium_slow",
+		"ev_yield": {
+			"def": 1
+		},
+		"learnset": [
+			[
+				1,
+				"shove"
+			],
+			[
+				1,
+				"hunker"
+			],
+			[
+				5,
+				"splash_jet"
+			],
+			[
+				10,
+				"mud_fling"
+			],
+			[
+				13,
+				"riptide_strike"
+			]
+		],
+		"evolutions": [
+			{
+				"method": "level",
+				"level": 16,
+				"into": "tidalisk"
+			}
+		],
 		"description": "A round little swimmer that bobs like a cork."
 	},
 	"tidalisk": {
-		"name": "Tidalisk", "types": ["water"],
-		"base_stats": { "hp": 62, "atk": 66, "def": 78, "spa": 64, "spd": 74, "spe": 60 },
-		"catch_rate": 45, "base_exp": 142, "growth": "medium_slow",
-		"ev_yield": { "def": 1, "spd": 1 },
-		"learnset": [[1, "shove"], [1, "hunker"], [5, "splash_jet"], [10, "mud_fling"], [13, "riptide_strike"]],
+		"name": "Tidalisk",
+		"types": [
+			"water"
+		],
+		"base_stats": {
+			"hp": 62,
+			"atk": 66,
+			"def": 78,
+			"spa": 64,
+			"spd": 74,
+			"spe": 60
+		},
+		"catch_rate": 45,
+		"base_exp": 142,
+		"growth": "medium_slow",
+		"ev_yield": {
+			"def": 1,
+			"spd": 1
+		},
+		"learnset": [
+			[
+				1,
+				"shove"
+			],
+			[
+				1,
+				"hunker"
+			],
+			[
+				5,
+				"splash_jet"
+			],
+			[
+				10,
+				"mud_fling"
+			],
+			[
+				13,
+				"riptide_strike"
+			]
+		],
 		"evolutions": [],
 		"description": "Its shell is patterned like waves on wet sand."
 	},
 	"pipwing": {
-		"name": "Pipwing", "types": ["common", "wind"],
-		"base_stats": { "hp": 38, "atk": 44, "def": 38, "spa": 34, "spd": 36, "spe": 58 },
-		"catch_rate": 255, "base_exp": 50, "growth": "medium_slow",
-		"ev_yield": { "spe": 1 },
-		"learnset": [[1, "shove"], [3, "bristle"], [7, "wing_buffet"], [12, "quick_dart"]],
+		"name": "Pipwing",
+		"types": [
+			"common",
+			"wind"
+		],
+		"base_stats": {
+			"hp": 38,
+			"atk": 44,
+			"def": 38,
+			"spa": 34,
+			"spd": 36,
+			"spe": 58
+		},
+		"catch_rate": 255,
+		"base_exp": 50,
+		"growth": "medium_slow",
+		"ev_yield": {
+			"spe": 1
+		},
+		"learnset": [
+			[
+				1,
+				"shove"
+			],
+			[
+				3,
+				"bristle"
+			],
+			[
+				7,
+				"wing_buffet"
+			],
+			[
+				12,
+				"quick_dart"
+			]
+		],
 		"evolutions": [],
 		"description": "A chatty little bird that never stops whistling."
 	},
 	"nibbet": {
-		"name": "Nibbet", "types": ["common"],
-		"base_stats": { "hp": 32, "atk": 54, "def": 34, "spa": 24, "spd": 36, "spe": 70 },
-		"catch_rate": 255, "base_exp": 51, "growth": "medium_fast",
-		"ev_yield": { "spe": 1 },
-		"learnset": [[1, "shove"], [1, "hunker"], [6, "quick_dart"], [10, "gnaw"], [15, "headlong"]],
+		"name": "Nibbet",
+		"types": [
+			"common"
+		],
+		"base_stats": {
+			"hp": 32,
+			"atk": 54,
+			"def": 34,
+			"spa": 24,
+			"spd": 36,
+			"spe": 70
+		},
+		"catch_rate": 255,
+		"base_exp": 51,
+		"growth": "medium_fast",
+		"ev_yield": {
+			"spe": 1
+		},
+		"learnset": [
+			[
+				1,
+				"shove"
+			],
+			[
+				1,
+				"hunker"
+			],
+			[
+				6,
+				"quick_dart"
+			],
+			[
+				10,
+				"gnaw"
+			],
+			[
+				15,
+				"headlong"
+			]
+		],
 		"evolutions": [],
 		"description": "Chews through fences, crates and anything else it finds."
 	},
 	"grubble": {
-		"name": "Grubble", "types": ["insect"],
-		"base_stats": { "hp": 42, "atk": 30, "def": 38, "spa": 22, "spd": 26, "spe": 40 },
-		"catch_rate": 255, "base_exp": 39, "growth": "medium_fast",
-		"ev_yield": { "hp": 1 },
-		"learnset": [[1, "shove"], [1, "silk_bind"], [6, "pincer_nip"], [9, "venom_prick"]],
+		"name": "Grubble",
+		"types": [
+			"insect"
+		],
+		"base_stats": {
+			"hp": 42,
+			"atk": 30,
+			"def": 38,
+			"spa": 22,
+			"spd": 26,
+			"spe": 40
+		},
+		"catch_rate": 255,
+		"base_exp": 39,
+		"growth": "medium_fast",
+		"ev_yield": {
+			"hp": 1
+		},
+		"learnset": [
+			[
+				1,
+				"shove"
+			],
+			[
+				1,
+				"silk_bind"
+			],
+			[
+				6,
+				"pincer_nip"
+			],
+			[
+				9,
+				"venom_prick"
+			]
+		],
 		"evolutions": [],
 		"description": "A plump grub that spins silk rafts on puddles."
+	},
+	"pebbit": {
+		"name": "Pebbit",
+		"types": [
+			"stone",
+			"earth"
+		],
+		"base_stats": {
+			"hp": 40,
+			"atk": 62,
+			"def": 78,
+			"spa": 28,
+			"spd": 32,
+			"spe": 22
+		},
+		"catch_rate": 190,
+		"base_exp": 60,
+		"growth": "medium_slow",
+		"ev_yield": {
+			"def": 1
+		},
+		"learnset": [
+			[
+				1,
+				"shove"
+			],
+			[
+				1,
+				"hunker"
+			],
+			[
+				6,
+				"pebble_toss"
+			],
+			[
+				9,
+				"mud_fling"
+			],
+			[
+				13,
+				"stone_slam"
+			]
+		],
+		"evolutions": [],
+		"description": "Rolls downhill on purpose, then complains about the climb back up."
+	},
+	"shalehorn": {
+		"name": "Shalehorn",
+		"types": [
+			"stone"
+		],
+		"base_stats": {
+			"hp": 52,
+			"atk": 72,
+			"def": 94,
+			"spa": 30,
+			"spd": 42,
+			"spe": 30
+		},
+		"catch_rate": 90,
+		"base_exp": 78,
+		"growth": "medium_slow",
+		"ev_yield": {
+			"def": 1
+		},
+		"learnset": [
+			[
+				1,
+				"shove"
+			],
+			[
+				1,
+				"hunker"
+			],
+			[
+				5,
+				"pebble_toss"
+			],
+			[
+				10,
+				"stone_slam"
+			],
+			[
+				14,
+				"tremor_stomp"
+			]
+		],
+		"evolutions": [],
+		"description": "Its layered horn flakes away in thin sheets when it charges."
 	}
 }

@@ -25,6 +25,7 @@ var parties: Array = [[], []]
 var active: Array[int] = [0, 0]
 var stages: Array = [{}, {}]
 var is_wild := true
+var trainer_name := ""   # e.g. "Schoolkid Ada"; empty for wild battles
 var rng: RandomNumberGenerator
 var run_attempts := 0
 var over := false
@@ -60,7 +61,8 @@ func start() -> Array:
 	if is_wild:
 		_msg("A wild %s leapt out!" % mon(ENEMY).display_name())
 	else:
-		_msg("Your opponent sent out %s!" % mon(ENEMY).display_name())
+		_msg("%s wants to battle!" % _opponent())
+		_msg("%s sent out %s!" % [_opponent(), mon(ENEMY).display_name()])
 	_snapshot(PLAYER)
 	_msg("Go, %s!" % mon(PLAYER).display_name())
 	return _events
@@ -157,7 +159,6 @@ func _resolve_move_id(side: int, slot: int) -> String:
 
 
 func _ai_choose_move() -> int:
-	# Wild monsters pick at random, like the originals. Trainer AI can come later.
 	var usable := []
 	var m := mon(ENEMY)
 	for i in m.moves.size():
@@ -165,7 +166,30 @@ func _ai_choose_move() -> int:
 			usable.append(i)
 	if usable.is_empty():
 		return -1
-	return usable[rng.randi_range(0, usable.size() - 1)]
+	if is_wild:
+		return usable[rng.randi_range(0, usable.size() - 1)]   # wild monsters act on instinct
+	# Trainers favour the move with the best expected damage, with a little randomness.
+	var best := usable[0] as int
+	var best_score := -1.0
+	for i in usable:
+		var score := move_score(m, mon(PLAYER), Dex.move(m.moves[i]["id"])) * rng.randf_range(0.85, 1.15)
+		if score > best_score:
+			best_score = score
+			best = i
+	return best
+
+
+## Rough value of using a move against a target, for the trainer AI.
+static func move_score(user: Monster, target: Monster, move: Dictionary) -> float:
+	if move["category"] == "status":
+		return 20.0
+	var score := float(move.get("power", 0)) * Dex.effectiveness(move.get("type", ""), target.types())
+	if user.types().has(move.get("type", "")):
+		score *= DamageCalc.STAB
+	var attack_key := "atk" if move["category"] == "physical" else "spa"
+	score *= user.stats[attack_key] / 50.0
+	var accuracy := float(move.get("accuracy", 0))
+	return score * (accuracy / 100.0 if accuracy > 0.0 else 1.0)
 
 
 func _use_move(side: int, slot: int) -> void:
@@ -327,7 +351,7 @@ func _check_faints() -> void:
 		active[ENEMY] = next
 		stages[ENEMY] = _fresh_stages()
 		_snapshot(ENEMY)
-		_msg("Your opponent sent out %s!" % mon(ENEMY).display_name())
+		_msg("%s sent out %s!" % [_opponent(), mon(ENEMY).display_name()])
 	if mon(PLAYER).is_fainted() and not awaiting_switch:
 		_fainted_this_turn = true
 		_msg("%s fainted!" % label(PLAYER))
@@ -408,6 +432,10 @@ func _first_usable(side: int) -> int:
 		if not parties[side][i].is_fainted():
 			return i
 	return -1
+
+
+func _opponent() -> String:
+	return trainer_name if trainer_name != "" else "Your opponent"
 
 
 func _finish(outcome: String) -> void:

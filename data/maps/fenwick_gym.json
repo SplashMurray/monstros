@@ -1,0 +1,114 @@
+{
+	"name": "Fenwick Gym",
+	"indoor": true,
+	"layout": [
+		"XXXXXXXXXXXX",
+		"X____bb____X",
+		"X__________X",
+		"X__________X",
+		"Xbbb____bbbX",
+		"X__________X",
+		"X____bb____X",
+		"X__________X",
+		"X__________X",
+		"X__________X",
+		"Xbb______bbX",
+		"X__________X",
+		"X__________X",
+		"XXXXXmXXXXXX"
+	],
+	"warps": [
+		{
+			"at": [
+				5,
+				13
+			],
+			"to": "fenwick",
+			"cell": [
+				6,
+				6
+			],
+			"facing": "down"
+		}
+	],
+	"npcs": [
+		{
+			"id": "guide",
+			"cell": [
+				8,
+				11
+			],
+			"facing": "left",
+			"color": "#f0d060",
+			"script": [
+				{
+					"if_flag": "badge_stone",
+					"then": [
+						{
+							"say": "You did it! That badge proves you're a real trainer."
+						}
+					],
+					"else": [
+						{
+							"say": "Brenna trains Stone types. Water and Flora moves will crack them!"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": "jory",
+			"cell": [
+				8,
+				7
+			],
+			"facing": "left",
+			"color": "#a08060",
+			"trainer": "gym_jory",
+			"sight": 4
+		},
+		{
+			"id": "brenna",
+			"cell": [
+				5,
+				2
+			],
+			"facing": "down",
+			"color": "#a06030",
+			"trainer": "leader_brenna",
+			"script": [
+				{
+					"if_flag": "badge_stone",
+					"then": [
+						{
+							"say": "Brenna: Keep heading north. The road only gets tougher from here."
+						}
+					],
+					"else": [
+						{
+							"say": "Brenna: So you've come to test yourself against the bedrock of Fenwick?"
+						},
+						{
+							"say": "Brenna: My Stone types don't crack easily. Show me what you've got!"
+						},
+						{
+							"battle": "leader_brenna",
+							"win": [
+								{
+									"set_flag": "badge_stone"
+								},
+								{
+									"say": "{player} received the Bedrock Badge!"
+								},
+								{
+									"say": "Brenna: That badge shows you've got grit. Wear it with pride."
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	],
+	"id": "fenwick_gym"
+}

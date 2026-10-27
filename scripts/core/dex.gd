@@ -12,6 +12,8 @@ static var moves: Dictionary = {}
 static var species: Dictionary = {}
 static var temperaments: Dictionary = {}
 static var encounters: Dictionary = {}
+static var trainers: Dictionary = {}
+static var maps: Dictionary = {}        # map id -> map data (from data/maps/*.json)
 static var _loaded := false
 
 
@@ -25,6 +27,11 @@ static func ensure_loaded() -> void:
 	species = _load_json("species.json")
 	temperaments = _load_json("temperaments.json")
 	encounters = _load_json("encounters.json")
+	trainers = _load_json("trainers.json")
+	maps = {}
+	for file in DirAccess.get_files_at(DATA_DIR + "maps"):
+		if file.ends_with(".json"):
+			maps[file.get_basename()] = _load_json("maps/" + file)
 	_loaded = true
 
 
@@ -38,6 +45,18 @@ static func species_data(id: String) -> Dictionary:
 	ensure_loaded()
 	assert(species.has(id), "Unknown species: %s" % id)
 	return species[id]
+
+
+static func map_data(id: String) -> Dictionary:
+	ensure_loaded()
+	assert(maps.has(id), "Unknown map: %s" % id)
+	return maps[id]
+
+
+static func trainer(id: String) -> Dictionary:
+	ensure_loaded()
+	assert(trainers.has(id), "Unknown trainer: %s" % id)
+	return trainers[id]
 
 
 static func type_name(id: String) -> String:

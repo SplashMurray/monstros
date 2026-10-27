@@ -25,7 +25,9 @@ const DIRECTION_ACTIONS := {
 const BUTTON_ACTIONS := {
 	"A": ["accept", "ui_accept"],
 	"B": ["cancel", "ui_cancel", "run"],
+	"MENU": ["menu"],
 }
+const MENU_SIZE := Vector2(40, 18)
 
 ## Extra space to keep clear of camera notches/rounded corners, in viewport pixels.
 var inset_left := 0.0
@@ -83,6 +85,8 @@ func dpad_center() -> Vector2:
 
 
 func button_center(button_name: String) -> Vector2:
+	if button_name == "MENU":
+		return Vector2(screen_size().x - MARGIN - inset_right - MENU_SIZE.x / 2.0, MARGIN + MENU_SIZE.y / 2.0)
 	var a := Vector2(screen_size().x - MARGIN - inset_right - BUTTON_RADIUS, screen_size().y - MARGIN - BUTTON_RADIUS * 2.6)
 	if button_name == "A":
 		return a
@@ -187,6 +191,12 @@ func _draw_controls() -> void:
 	for button_name in BUTTON_ACTIONS:
 		var pos := button_center(button_name)
 		var pressed := _button_fingers.values().has(button_name)
+		if button_name == "MENU":
+			var rect := Rect2(pos - MENU_SIZE / 2.0, MENU_SIZE)
+			_canvas.draw_rect(rect.grow(2.0), OUTLINE_COLOR)
+			_canvas.draw_rect(rect, PRESSED_COLOR if pressed else IDLE_COLOR)
+			_canvas.draw_string(font, rect.position + Vector2(0, 13), "MENU", HORIZONTAL_ALIGNMENT_CENTER, MENU_SIZE.x, 10, Color(0, 0, 0, 0.6))
+			continue
 		_canvas.draw_circle(pos, BUTTON_RADIUS + 2.0, OUTLINE_COLOR)
 		_canvas.draw_circle(pos, BUTTON_RADIUS, PRESSED_COLOR if pressed else IDLE_COLOR)
 		_canvas.draw_string(font, pos + Vector2(-5, 6), button_name, HORIZONTAL_ALIGNMENT_CENTER, -1, 16, Color(0, 0, 0, 0.6))

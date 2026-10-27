@@ -15,6 +15,8 @@ func _initialize() -> void:
 		test_physical_special_split, test_damage_modifiers, test_capture_maths,
 		test_level_up_and_moves, test_status_immunity, test_running, test_battle_simulation,
 		test_control_scheme, test_touch_dpad_directions,
+		test_trainers, test_maps_are_well_formed, test_map_scripts, test_maps_are_connected,
+		test_monster_save_round_trip, test_trainer_ai,
 	]
 	for test in tests:
 		test.call()
@@ -262,3 +264,168 @@ func test_touch_dpad_directions() -> void:
 	check(TouchOverlay.direction_from_offset(Vector2(-30, 5)) == Vector2i.LEFT, "mostly-left is left")
 	check(TouchOverlay.direction_from_offset(Vector2(10, -30)) == Vector2i.UP, "mostly-up is up")
 	check(TouchOverlay.direction_from_offset(Vector2(-5, 40)) == Vector2i.DOWN, "mostly-down is down")
+
+
+# --- World ---------------------------------------------------------------------
+
+const TRAINER_TEXT := ["intro", "defeat", "victory", "after"]
+
+
+func test_trainers() -> void:
+	for id in Dex.trainers:
+		var t: Dictionary = Dex.trainers[id]
+		check(not t["party"].is_empty(), "trainer %s has a party" % id)
+		for entry in t["party"]:
+			check(Dex.species.has(entry[0]), "trainer %s uses existing species %s" % [id, entry[0]])
+			check(int(entry[1]) >= 1 and int(entry[1]) <= 100, "trainer %s levels are valid" % id)
+		for key in TRAINER_TEXT:
+			check(t.has(key), "trainer %s has %s text" % [id, key])
+
+
+func _blocking(tile: String) -> bool:
+	return MapRules.BLOCKING.contains(tile)
+
+
+func _tile(m: Dictionary, cell: Vector2i) -> String:
+	var layout: Array = m["layout"]
+	if cell.y < 0 or cell.y >= layout.size() or cell.x < 0 or cell.x >= layout[0].length():
+		return "X"
+	return layout[cell.y][cell.x]
+
+
+func test_maps_are_well_formed() -> void:
+	check(Dex.maps.has("player_house"), "start map exists")
+	for id in Dex.maps:
+		var m: Dictionary = Dex.maps[id]
+		check(m.get("id") == id, "map %s id matches its file name" % id)
+		var width: int = m["layout"][0].length()
+		for row in m["layout"]:
+			check(row.length() == width, "map %s rows are all %d wide" % [id, width])
+			for tile in row:
+				check(MapRules.COLORS.has(tile), "map %s tile '%s' is in the legend" % [id, tile])
+		if m.has("encounters"):
+			check(Dex.encounters.has(m["encounters"]), "map %s encounter table exists" % id)
+		for warp in m.get("warps", []):
+			check(not _blocking(_tile(m, Dirs.cell(warp["at"]))), "map %s warp at %s is walkable" % [id, warp["at"]])
+			check(Dex.maps.has(warp["to"]), "map %s warps to existing map %s" % [id, warp["to"]])
+			if Dex.maps.has(warp["to"]):
+				var target: Dictionary = Dex.maps[warp["to"]]
+				var arrival := Dirs.cell(warp["cell"])
+				check(not _blocking(_tile(target, arrival)), "warp %s -> %s arrives on a walkable tile" % [id, warp["to"]])
+				for other in target.get("warps", []):
+					check(Dirs.cell(other["at"]) != arrival, "warp %s -> %s doesn't arrive on another warp" % [id, warp["to"]])
+		var ids := {}
+		for npc in m.get("npcs", []):
+			check(not ids.has(npc["id"]), "map %s npc id %s is unique" % [id, npc["id"]])
+			ids[npc["id"]] = true
+			check(not _blocking(_tile(m, Dirs.cell(npc["cell"]))) or _tile(m, Dirs.cell(npc["cell"])) == "t",
+				"map %s npc %s stands on a free tile" % [id, npc["id"]])
+			if npc.has("trainer"):
+				check(Dex.trainers.has(npc["trainer"]), "map %s npc %s uses existing trainer" % [id, npc["id"]])
+			else:
+				check(npc.has("script"), "map %s npc %s has a script" % [id, npc["id"]])
+		for sign_data in m.get("signs", []):
+			check(_tile(m, Dirs.cell(sign_data["cell"])) == "S", "map %s sign at %s is on a sign tile" % [id, sign_data["cell"]])
+
+
+## Validates every command in a script, recursing into branches.
+func _check_script(script: Array, m: Dictionary, where: String) -> void:
+	for command in script:
+		var keys := []
+		for key in command:
+			if key in MapRules.EVENT_COMMANDS:
+				keys.append(key)
+		check(keys.size() == 1, "%s: command %s has exactly one action" % [where, command])
+		if keys.size() != 1:
+			continue
+		match keys[0]:
+			"run":
+				check(m.get("scripts", {}).has(command["run"]), "%s: script %s exists" % [where, command["run"]])
+			"battle":
+				check(Dex.trainers.has(command["battle"]), "%s: trainer %s exists" % [where, command["battle"]])
+				_check_script(command.get("win", []), m, where)
+				_check_script(command.get("lose", []), m, where)
+			"give_monster":
+				check(Dex.species.has(command["give_monster"]), "%s: species %s exists" % [where, command["give_monster"]])
+			"if_flag":
+				_check_script(command.get("then", []), m, where)
+				_check_script(command.get("else", []), m, where)
+			"choice":
+				check(command.get("options", []).size() >= 2, "%s: choice has options" % where)
+				for option in command.get("options", []):
+					_check_script(option.get("then", []), m, where)
+			"hide_npc", "show_npc", "exclaim", "npc_approach":
+				var found := false
+				for npc in m.get("npcs", []):
+					found = found or npc["id"] == command[keys[0]]
+				check(found, "%s: npc %s exists" % [where, command[keys[0]]])
+			"step_player":
+				check(Dirs.BY_NAME.has(command["step_player"]), "%s: direction is valid" % where)
+			"warp":
+				check(Dex.maps.has(command["warp"]), "%s: warp map exists" % where)
+
+
+func test_map_scripts() -> void:
+	for id in Dex.maps:
+		var m: Dictionary = Dex.maps[id]
+		for npc in m.get("npcs", []):
+			_check_script(npc.get("script", []), m, "%s/%s" % [id, npc["id"]])
+		for trigger in m.get("triggers", []):
+			_check_script(trigger["script"], m, "%s/trigger" % id)
+		for script_name in m.get("scripts", {}):
+			_check_script(m["scripts"][script_name], m, "%s/%s" % [id, script_name])
+
+
+## Every warp and NPC must be reachable on foot from where the player enters each map.
+func test_maps_are_connected() -> void:
+	var entries := { "player_house": [Vector2i(2, 2), Vector2i(4, 5)] }
+	for id in Dex.maps:
+		for warp in Dex.maps[id].get("warps", []):
+			if not entries.has(warp["to"]):
+				entries[warp["to"]] = []
+			entries[warp["to"]].append(Dirs.cell(warp["cell"]))
+	for id in Dex.maps:
+		var m: Dictionary = Dex.maps[id]
+		check(entries.has(id), "map %s can be entered" % id)
+		var reachable := {}
+		var frontier: Array = entries.get(id, []).duplicate()
+		while not frontier.is_empty():
+			var cell: Vector2i = frontier.pop_back()
+			if reachable.has(cell) or _blocking(_tile(m, cell)):
+				continue
+			reachable[cell] = true
+			for d in Dirs.BY_NAME.values():
+				frontier.append(cell + d)
+		for warp in m.get("warps", []):
+			check(reachable.has(Dirs.cell(warp["at"])), "map %s warp at %s is reachable" % [id, warp["at"]])
+		for npc in m.get("npcs", []):
+			var talkable := false
+			var cell := Dirs.cell(npc["cell"])
+			for d in Dirs.BY_NAME.values():
+				talkable = talkable or reachable.has(cell + d) or (_tile(m, cell + d) == "k" and reachable.has(cell + d * 2))
+			check(talkable, "map %s npc %s can be talked to" % [id, npc["id"]])
+
+
+func test_monster_save_round_trip() -> void:
+	var m := Monster.create("emberkit", 12, seeded(20))
+	m.hp = 7
+	m.status = "burn"
+	m.moves[0]["pp"] = 3
+	m.add_evs({ "spe": 10 })
+	var copy := Monster.from_dict(JSON.parse_string(JSON.stringify(m.to_dict())))
+	check(copy.species_id == m.species_id and copy.level == m.level and copy.experience == m.experience, "identity survives saving")
+	check(copy.stats == m.stats, "stats survive saving")
+	check(copy.hp == 7 and copy.status == "burn", "condition survives saving")
+	check(copy.moves == m.moves, "moves and PP survive saving")
+	check(copy.ivs == m.ivs and copy.evs == m.evs and copy.temperament == m.temperament, "hidden values survive saving")
+
+
+func test_trainer_ai() -> void:
+	var picks := 0
+	for seed_value in 20:
+		var foe := Monster.create("emberkit", 10, seeded(seed_value))
+		foe.moves = [{ "id": "shove", "pp": 10 }, { "id": "cinder_spit", "pp": 10 }]
+		var battle := Battle.new([Monster.create("fernling", 10, seeded(99))], [foe], false, seeded(seed_value))
+		if battle._ai_choose_move() == 1:
+			picks += 1
+	check(picks == 20, "trainers pick the super-effective STAB move (%d/20)" % picks)

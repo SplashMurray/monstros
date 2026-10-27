@@ -14,6 +14,7 @@ var _snap: Array = [{}, {}]
 var _log: Label
 var _menu: GridContainer
 var _back_action := Callable()   # what B / the Android back button does in the current menu
+var _trainer_id := ""
 
 
 func _ready() -> void:
@@ -25,6 +26,9 @@ func _ready() -> void:
 	_build_ui()
 	var setup: Dictionary = Game.pending_battle
 	battle = Battle.new(Game.party, setup.get("enemy", []), setup.get("wild", true), Game.rng)
+	_trainer_id = setup.get("trainer_id", "")
+	if _trainer_id != "":
+		battle.trainer_name = Game.trainer_display_name(_trainer_id)
 	await _play(battle.start())
 	_show_main_menu()
 
@@ -136,9 +140,8 @@ func _update_info(side: int) -> void:
 
 # --- Menus -------------------------------------------------------------------
 
-func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed("ui_cancel") and _back_action.is_valid():
-		get_viewport().set_input_as_handled()
+func _process(_delta: float) -> void:
+	if Input.is_action_just_pressed("cancel") and _back_action.is_valid():
 		_back_action.call()
 
 
@@ -229,11 +232,22 @@ func _submit(action: Dictionary) -> void:
 
 func _finish() -> void:
 	var lines := []
+	var can_lose: bool = Game.pending_battle.get("can_lose", false)
 	if battle.result == "caught":
 		lines.append(Game.receive_monster(battle.caught))
-	if battle.result == "lose":
-		lines.append("You hurried back to the healing pad...")
-	else:
+	if _trainer_id != "":
+		var trainer := Dex.trainer(_trainer_id)
+		var speaker := Game.trainer_speaker(_trainer_id)
+		if battle.result == "win":
+			lines.append("%s: %s" % [speaker, Game.format_text(trainer["defeat"])])
+			var prize: int = int(trainer.get("prize", 10)) * battle.parties[Battle.ENEMY].back().level
+			Game.money += prize
+			lines.append("You got %d money for winning!" % prize)
+		elif battle.result == "lose":
+			lines.append("%s: %s" % [speaker, Game.format_text(trainer["victory"])])
+	if battle.result == "lose" and not can_lose:
+		lines.append(Game.format_text("{player} dropped %d money and hurried back to safety..." % Game.blackout_penalty()))
+	elif battle.result != "lose":
 		lines.append_array(Game.process_evolutions())
 	for line in lines:
 		_log.text = line

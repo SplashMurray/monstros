@@ -162,6 +162,33 @@ func evolve(into: String) -> void:
 	recalculate_stats()
 
 
+func to_dict() -> Dictionary:
+	return {
+		"species": species_id, "nickname": nickname, "level": level, "experience": experience,
+		"temperament": temperament, "ivs": ivs, "evs": evs, "hp": hp, "status": status,
+		"sleep_turns": sleep_turns, "moves": moves,
+	}
+
+
+static func from_dict(d: Dictionary) -> Monster:
+	var m := Monster.new()
+	m.species_id = d["species"]
+	m.nickname = d.get("nickname", "")
+	m.level = int(d["level"])
+	m.experience = int(d["experience"])
+	m.temperament = d["temperament"]
+	for key in Stats.KEYS:
+		m.ivs[key] = int(d["ivs"].get(key, 0))
+		m.evs[key] = int(d["evs"].get(key, 0))
+	for slot in d["moves"]:
+		m.moves.append({ "id": slot["id"], "pp": int(slot["pp"]) })
+	m.recalculate_stats()
+	m.hp = clampi(int(d["hp"]), 0, m.max_hp())
+	m.status = d.get("status", "")
+	m.sleep_turns = int(d.get("sleep_turns", 0))
+	return m
+
+
 func _learn_default_moves() -> void:
 	# Like wild monsters in the originals: the most recent moves up to this level.
 	var learnable := []

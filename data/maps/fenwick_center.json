@@ -1,0 +1,72 @@
+{
+	"name": "Fenwick Rest Stop",
+	"indoor": true,
+	"layout": [
+		"XXXXXXXXXXXX",
+		"Xbb______bbX",
+		"X____kkk___X",
+		"X__________X",
+		"X__________X",
+		"X__________X",
+		"X__________X",
+		"XXXXXmXXXXXX"
+	],
+	"warps": [
+		{
+			"at": [
+				5,
+				7
+			],
+			"to": "fenwick",
+			"cell": [
+				15,
+				6
+			],
+			"facing": "down"
+		}
+	],
+	"npcs": [
+		{
+			"id": "nurse",
+			"cell": [
+				6,
+				1
+			],
+			"facing": "down",
+			"color": "#f0a0b0",
+			"script": [
+				{
+					"say": "Welcome to the Fenwick Rest Stop!"
+				},
+				{
+					"choice": "Shall I restore your monsters?",
+					"options": [
+						{
+							"label": "Yes",
+							"then": [
+								{
+									"heal": true
+								},
+								{
+									"set_respawn": true
+								},
+								{
+									"say": "All done! Your monsters are fully restored. Safe travels!"
+								}
+							]
+						},
+						{
+							"label": "No",
+							"then": [
+								{
+									"say": "Come back any time!"
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	],
+	"id": "fenwick_center"
+}

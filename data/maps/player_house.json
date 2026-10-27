@@ -1,0 +1,67 @@
+{
+	"name": "Home",
+	"indoor": true,
+	"layout": [
+		"XXXXXXXXXX",
+		"Xbb____bbX",
+		"X________X",
+		"X__tt____X",
+		"X__tt____X",
+		"X________X",
+		"X________X",
+		"XXXXmXXXXX"
+	],
+	"warps": [
+		{
+			"at": [
+				4,
+				7
+			],
+			"to": "hollowmere",
+			"cell": [
+				4,
+				6
+			],
+			"facing": "down"
+		}
+	],
+	"npcs": [
+		{
+			"id": "mum",
+			"cell": [
+				6,
+				3
+			],
+			"facing": "left",
+			"color": "#d07090",
+			"script": [
+				{
+					"if_flag": "got_starter",
+					"then": [
+						{
+							"say": "Mum: Back already? Let your partner rest for a moment."
+						},
+						{
+							"heal": true
+						},
+						{
+							"set_respawn": true
+						},
+						{
+							"say": "Mum: There. All better! Off you go, and be careful."
+						}
+					],
+					"else": [
+						{
+							"say": "Mum: Morning, {player}! Professor Wren stopped by looking for you."
+						},
+						{
+							"say": "Mum: The lab is the building with the blue roof, across the village."
+						}
+					]
+				}
+			]
+		}
+	],
+	"id": "player_house"
+}

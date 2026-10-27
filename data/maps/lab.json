@@ -1,0 +1,353 @@
+{
+	"name": "Wren Research Lab",
+	"indoor": true,
+	"layout": [
+		"XXXXXXXXXXXX",
+		"Xbbbb__bbbbX",
+		"X__________X",
+		"X______ttt_X",
+		"X__________X",
+		"X__________X",
+		"Xbb______bbX",
+		"X__________X",
+		"X__________X",
+		"XXXXXmXXXXXX"
+	],
+	"warps": [
+		{
+			"at": [
+				5,
+				9
+			],
+			"to": "hollowmere",
+			"cell": [
+				15,
+				6
+			],
+			"facing": "down"
+		}
+	],
+	"npcs": [
+		{
+			"id": "professor",
+			"cell": [
+				6,
+				2
+			],
+			"facing": "down",
+			"color": "#e0e0e0",
+			"script": [
+				{
+					"if_flag": "got_starter",
+					"then": [
+						{
+							"say": "Professor Wren: Fenwick Town is north along Route 1. Your partner will grow strong if you battle together."
+						}
+					],
+					"else": [
+						{
+							"say": "Professor Wren: Ah, {player}, there you are! And {rival} is here too."
+						},
+						{
+							"say": "Professor Wren: On the table are three capture orbs, each holding a young monster."
+						},
+						{
+							"say": "Professor Wren: Choose one to be your partner. Go on, take a look!"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": "rival",
+			"cell": [
+				3,
+				4
+			],
+			"facing": "right",
+			"color": "#4070d0",
+			"script": [
+				{
+					"say": "{rival}: The professor said you get first pick. Hurry up and choose already!"
+				}
+			]
+		},
+		{
+			"id": "aide",
+			"cell": [
+				2,
+				7
+			],
+			"facing": "right",
+			"color": "#90a0b0",
+			"script": [
+				{
+					"say": "Aide: These shelves hold every field note the professor has ever written. Every single one."
+				}
+			]
+		},
+		{
+			"id": "orb_fernling",
+			"cell": [
+				7,
+				3
+			],
+			"facing": "down",
+			"sprite": "orb",
+			"color": "#6bbf4e",
+			"script": [
+				{
+					"run": "orb_fernling"
+				}
+			]
+		},
+		{
+			"id": "orb_emberkit",
+			"cell": [
+				8,
+				3
+			],
+			"facing": "down",
+			"sprite": "orb",
+			"color": "#e8743b",
+			"script": [
+				{
+					"run": "orb_emberkit"
+				}
+			]
+		},
+		{
+			"id": "orb_ripplet",
+			"cell": [
+				9,
+				3
+			],
+			"facing": "down",
+			"sprite": "orb",
+			"color": "#4f8fe0",
+			"script": [
+				{
+					"run": "orb_ripplet"
+				}
+			]
+		}
+	],
+	"scripts": {
+		"orb_fernling": [
+			{
+				"if_flag": "got_starter",
+				"then": [
+					{
+						"say": "One of the professor's capture orbs. You already have a partner."
+					}
+				],
+				"else": [
+					{
+						"say": "This capture orb holds Fernling, a shy Flora-type monster."
+					},
+					{
+						"choice": "Choose Fernling as your partner?",
+						"options": [
+							{
+								"label": "Yes",
+								"then": [
+									{
+										"run": "chose_fernling"
+									}
+								]
+							},
+							{
+								"label": "No",
+								"then": []
+							}
+						]
+					}
+				]
+			}
+		],
+		"chose_fernling": [
+			{
+				"give_monster": "fernling",
+				"level": 5
+			},
+			{
+				"hide_npc": "orb_fernling"
+			},
+			{
+				"set_flag": "got_starter"
+			},
+			{
+				"say": "Professor Wren: A fine choice. Look after each other."
+			},
+			{
+				"say": "{rival}: Then I'll take this one!"
+			},
+			{
+				"hide_npc": "orb_emberkit"
+			},
+			{
+				"say": "{rival} received Emberkit!"
+			},
+			{
+				"say": "{rival}: Come on, {player}. Let's see whose partner is stronger!"
+			},
+			{
+				"battle": "rival_lab_emberkit",
+				"can_lose": true
+			},
+			{
+				"run": "rival_leaves"
+			}
+		],
+		"orb_emberkit": [
+			{
+				"if_flag": "got_starter",
+				"then": [
+					{
+						"say": "One of the professor's capture orbs. You already have a partner."
+					}
+				],
+				"else": [
+					{
+						"say": "This capture orb holds Emberkit, a playful Flame-type monster."
+					},
+					{
+						"choice": "Choose Emberkit as your partner?",
+						"options": [
+							{
+								"label": "Yes",
+								"then": [
+									{
+										"run": "chose_emberkit"
+									}
+								]
+							},
+							{
+								"label": "No",
+								"then": []
+							}
+						]
+					}
+				]
+			}
+		],
+		"chose_emberkit": [
+			{
+				"give_monster": "emberkit",
+				"level": 5
+			},
+			{
+				"hide_npc": "orb_emberkit"
+			},
+			{
+				"set_flag": "got_starter"
+			},
+			{
+				"say": "Professor Wren: A fine choice. Look after each other."
+			},
+			{
+				"say": "{rival}: Then I'll take this one!"
+			},
+			{
+				"hide_npc": "orb_ripplet"
+			},
+			{
+				"say": "{rival} received Ripplet!"
+			},
+			{
+				"say": "{rival}: Come on, {player}. Let's see whose partner is stronger!"
+			},
+			{
+				"battle": "rival_lab_ripplet",
+				"can_lose": true
+			},
+			{
+				"run": "rival_leaves"
+			}
+		],
+		"orb_ripplet": [
+			{
+				"if_flag": "got_starter",
+				"then": [
+					{
+						"say": "One of the professor's capture orbs. You already have a partner."
+					}
+				],
+				"else": [
+					{
+						"say": "This capture orb holds Ripplet, a bubbly Water-type monster."
+					},
+					{
+						"choice": "Choose Ripplet as your partner?",
+						"options": [
+							{
+								"label": "Yes",
+								"then": [
+									{
+										"run": "chose_ripplet"
+									}
+								]
+							},
+							{
+								"label": "No",
+								"then": []
+							}
+						]
+					}
+				]
+			}
+		],
+		"chose_ripplet": [
+			{
+				"give_monster": "ripplet",
+				"level": 5
+			},
+			{
+				"hide_npc": "orb_ripplet"
+			},
+			{
+				"set_flag": "got_starter"
+			},
+			{
+				"say": "Professor Wren: A fine choice. Look after each other."
+			},
+			{
+				"say": "{rival}: Then I'll take this one!"
+			},
+			{
+				"hide_npc": "orb_fernling"
+			},
+			{
+				"say": "{rival} received Fernling!"
+			},
+			{
+				"say": "{rival}: Come on, {player}. Let's see whose partner is stronger!"
+			},
+			{
+				"battle": "rival_lab_fernling",
+				"can_lose": true
+			},
+			{
+				"run": "rival_leaves"
+			}
+		],
+		"rival_leaves": [
+			{
+				"say": "{rival}: I'm going to train until my partner is the strongest in the region. See you around!"
+			},
+			{
+				"hide_npc": "rival"
+			},
+			{
+				"set_flag": "rival_left_lab"
+			},
+			{
+				"say": "Professor Wren: Head north along Route 1 to reach Fenwick Town."
+			},
+			{
+				"say": "Professor Wren: Its Gym Leader, Brenna, is a fine test for a new trainer. Good luck, {player}!"
+			}
+		]
+	},
+	"id": "lab"
+}

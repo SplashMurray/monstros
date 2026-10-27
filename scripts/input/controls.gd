@@ -63,7 +63,7 @@ func _input(event: InputEvent) -> void:
 func _notification(what: int) -> void:
 	# Android back button/gesture acts as B in menus instead of quitting the app.
 	if what == NOTIFICATION_WM_GO_BACK_REQUEST:
-		_tap("ui_cancel")
+		_tap("cancel")
 
 
 func _on_joy_connection_changed(_device_id: int, connected: bool) -> void:
@@ -79,9 +79,9 @@ func _refresh() -> void:
 	overlay.set_shown(_overlay_wanted and device == TOUCH)
 
 
+## Briefly presses an action, so code polling is_action_just_pressed() sees it.
 func _tap(action: String) -> void:
-	for pressed in [true, false]:
-		var event := InputEventAction.new()
-		event.action = action
-		event.pressed = pressed
-		Input.parse_input_event(event)
+	Input.action_press(action)
+	await get_tree().process_frame
+	await get_tree().process_frame
+	Input.action_release(action)

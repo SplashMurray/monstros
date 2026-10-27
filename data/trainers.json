@@ -1,0 +1,119 @@
+{
+	"rival_lab_fernling": {
+		"class": "Rival",
+		"name": "{rival}",
+		"party": [
+			[
+				"fernling",
+				5
+			]
+		],
+		"prize": 10,
+		"intro": "Let's see whose partner is stronger!",
+		"defeat": "What? I picked the wrong one, didn't I...",
+		"victory": "Ha! Told you I'd win!",
+		"after": "Next time it'll be different."
+	},
+	"rival_lab_emberkit": {
+		"class": "Rival",
+		"name": "{rival}",
+		"party": [
+			[
+				"emberkit",
+				5
+			]
+		],
+		"prize": 10,
+		"intro": "Let's see whose partner is stronger!",
+		"defeat": "What? I picked the wrong one, didn't I...",
+		"victory": "Ha! Told you I'd win!",
+		"after": "Next time it'll be different."
+	},
+	"rival_lab_ripplet": {
+		"class": "Rival",
+		"name": "{rival}",
+		"party": [
+			[
+				"ripplet",
+				5
+			]
+		],
+		"prize": 10,
+		"intro": "Let's see whose partner is stronger!",
+		"defeat": "What? I picked the wrong one, didn't I...",
+		"victory": "Ha! Told you I'd win!",
+		"after": "Next time it'll be different."
+	},
+	"route1_ada": {
+		"class": "Schoolkid",
+		"name": "Ada",
+		"party": [
+			[
+				"nibbet",
+				4
+			],
+			[
+				"pipwing",
+				4
+			]
+		],
+		"prize": 16,
+		"intro": "Our teacher says battling is homework. Let's study!",
+		"defeat": "I'll need to revise...",
+		"victory": "Top marks for me!",
+		"after": "Type matchups are on the test. Flame beats Flora, Water beats Flame!"
+	},
+	"route1_ned": {
+		"class": "Insect Collector",
+		"name": "Ned",
+		"party": [
+			[
+				"grubble",
+				4
+			],
+			[
+				"grubble",
+				5
+			]
+		],
+		"prize": 12,
+		"intro": "Hey! You stepped right through my grub patch!",
+		"defeat": "My grubs... they need a nap.",
+		"victory": "The grubs win again!",
+		"after": "Grubble spin silk rafts after it rains. It's beautiful."
+	},
+	"gym_jory": {
+		"class": "Climber",
+		"name": "Jory",
+		"party": [
+			[
+				"pebbit",
+				10
+			]
+		],
+		"prize": 20,
+		"intro": "You'll need to get past me before you face Brenna!",
+		"defeat": "I slipped...",
+		"victory": "Solid as a rock!",
+		"after": "Brenna's ace is Shalehorn. Its Defence is no joke."
+	},
+	"leader_brenna": {
+		"class": "Leader",
+		"name": "Brenna",
+		"party": [
+			[
+				"pebbit",
+				12
+			],
+			[
+				"shalehorn",
+				14
+			]
+		],
+		"prize": 100,
+		"intro": "",
+		"defeat": "Well struck! You found the cracks in my defence.",
+		"victory": "Bedrock doesn't break that easily.",
+		"after": "Keep heading north. The road only gets tougher."
+	}
+}

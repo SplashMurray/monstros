@@ -9,7 +9,14 @@ touch controls and gamepads such as the Backbone.
 1. Install [Godot 4.3+](https://godotengine.org/download) (the standard build; C# is not needed).
 2. Open `project.godot` in the editor and press **F5**, or run `godot --path .` from the repo root.
 
-Walk into tall grass to find wild monsters. Step on the pink pad to heal.
+The current slice:
+1. Start at home in Hollowmere Village.
+2. Choose a starter in Professor Wren's lab and battle your rival.
+3. Travel Route 1, where there are wild monsters and two trainers.
+4. Heal at the Fenwick Rest Stop.
+5. Win the Bedrock Badge from Leader Brenna.
+
+Save from the menu. The game also autosaves whenever the app goes to the background.
 
 ## Controls
 
@@ -19,7 +26,7 @@ Walk into tall grass to find wild monsters. Step on the pink pad to heal.
 | Confirm (A) | On-screen A, or tap menu buttons | A | Z / Enter / Space |
 | Back (B) | On-screen B, Android back | B | X / Backspace / Esc |
 | Run (hold B) | Hold on-screen B | Hold B | Hold X / Shift |
-| Menu (Start) | (not yet) | Start / Menu | Tab |
+| Menu (Start) | On-screen MENU | Start / Menu | Tab |
 
 The on-screen controls show while you use touch and hide when a gamepad or keyboard is used.
 They come back on the next touch. To try touch on desktop, run `godot --path . -- --touch`
@@ -47,21 +54,25 @@ godot --headless -s tests/run_tests.gd
 ## Layout
 
 ```
-data/            All game content as JSON: types, moves, species, temperaments, encounters
-scripts/core/    Dex (data access), Monster, Stats, Growth, Game (autoload global state)
-scripts/battle/  Battle engine, DamageCalc, Capture, and the placeholder battle screen
-scripts/overworld/  Grid movement and the placeholder test route
+data/            All game content as JSON: types, moves, species, temperaments, encounters, trainers
+data/maps/       One file per map: layout, warps, NPCs, signs, triggers and event scripts
+scripts/core/    Dex (data access), Monster, Stats, Growth, Game (autoload: state + saving)
+scripts/battle/  Battle engine, DamageCalc, Capture, trainer AI, and the battle screen
+scripts/overworld/  Map rendering, player/NPC movement, EventRunner (event scripts), MapRules
+scripts/ui/      Title screen, dialogue box, start menu
 scripts/input/   Input map, device detection (Controls autoload), on-screen touch controls
 scenes/          Godot scenes
 tests/           Headless test runner
 docs/            Design notes and content rules
 ```
 
-New monsters and moves can be added by editing `data/*.json` alone. No code changes are needed.
+New monsters, moves, trainers, maps and story events can be added by editing JSON alone.
+No code changes are needed. See [docs/CONTENT.md](docs/CONTENT.md).
 
 `data/*.json` is listed in the export preset's non-resource filter. Keep it there, or the data files won't ship.
 
 ## Docs
 
 - [Design and mechanics](docs/DESIGN.md)
+- [Adding content: maps, NPCs, events](docs/CONTENT.md)
 - [Content guidelines: staying original](docs/CONTENT_GUIDELINES.md)

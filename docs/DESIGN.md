@@ -76,10 +76,29 @@ Exp. Share giving the whole party experience, re-learning moves, a "forget a mov
   lets any future presentation (real sprites, animations) reuse the same engine.
 - **Global state** lives in the `Game` autoload (party, storage, position).
 
+## World and story systems
+
+- **Maps** are JSON (`data/maps/`), drawn from ASCII layouts. Warps connect doors and map edges,
+  with a fade between maps and an area-name banner outdoors.
+- **NPCs** block movement and turn to face you when you talk. You can talk across counters, as at healing centres.
+- **Event scripts** (`EventRunner`) are command lists in the map data: dialogue, choices, flags, branching,
+  giving monsters, healing, hiding NPCs, scripted steps, warps and battles. A battle changes scene, so the
+  rest of the script is saved and resumed afterwards, with separate `win`/`lose` branches.
+- **Trainers** spot the player in their line of sight, show "!", walk over and battle. Afterwards they are
+  flagged as defeated. Prize money is the trainer's prize x the level of their last monster.
+  Trainer AI picks the move with the best expected damage. Wild monsters pick at random.
+- **Blackout**: you lose half your money, the party is healed, and you return to the last healing spot
+  (set by talking to Mum or a nurse). Any interrupted event resets. Battles marked `can_lose`,
+  like the first rival battle, continue the story either way.
+- **Saving**: manual save from the menu, plus autosave whenever the app is backgrounded or closed while the
+  player is free to move (never mid-event or mid-battle). The file is written to a temp file and renamed,
+  so an interrupted save can't corrupt it.
+
 ## Roadmap
 
-1. **Vertical slice**: starter choice, one town and route, a rival battle, one gym, 10-15 monsters, save/load.
-2. TileMap-based maps (Tiled or the Godot editor), NPCs, a dialogue/event scripting layer, doors and warps.
-3. Bag and items, healing centre, shop, monster storage UI, dex screen.
-4. Trainer battles with AI and rewards, gyms, the villain team storyline.
-5. Content production: the region, 100-150 monsters, music, sound.
+1. ~~**Vertical slice**: starter choice, a town, a route, a rival battle, one gym, save/load.~~ Done (placeholder art).
+2. Bag and items (capture orbs as a consumable, potions), a shop, money sinks, a "forget a move" prompt.
+3. Storage-system UI, a dex screen, trainer-battle switching for the AI, abilities.
+4. Real art pipeline: tilesets and TileMap or Tiled maps instead of ASCII, sprite sheets, walk animations, battle sprites.
+5. Audio: music and sound effects.
+6. Content production: the rest of the region, 100-150 monsters, the villain team storyline, 8 gyms.

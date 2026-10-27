@@ -1,97 +1,295 @@
 {
 	"thrash_about": {
-		"name": "Thrash About", "type": "", "category": "physical", "power": 50, "accuracy": 0, "pp": 1,
+		"name": "Thrash About",
+		"type": "",
+		"category": "physical",
+		"power": 50,
+		"accuracy": 0,
+		"pp": 1,
 		"recoil_max_hp": 0.25,
 		"description": "Used only when no other move has PP left. Hurts the user."
 	},
 	"shove": {
-		"name": "Shove", "type": "common", "category": "physical", "power": 40, "accuracy": 100, "pp": 35,
+		"name": "Shove",
+		"type": "common",
+		"category": "physical",
+		"power": 40,
+		"accuracy": 100,
+		"pp": 35,
 		"description": "A solid shove with the whole body."
 	},
 	"quick_dart": {
-		"name": "Quick Dart", "type": "common", "category": "physical", "power": 40, "accuracy": 100, "pp": 30, "priority": 1,
+		"name": "Quick Dart",
+		"type": "common",
+		"category": "physical",
+		"power": 40,
+		"accuracy": 100,
+		"pp": 30,
+		"priority": 1,
 		"description": "Darts in before the foe can react. Usually goes first."
 	},
 	"headlong": {
-		"name": "Headlong", "type": "common", "category": "physical", "power": 85, "accuracy": 100, "pp": 15,
-		"effects": [{ "kind": "status", "status": "paralysis", "chance": 30 }],
+		"name": "Headlong",
+		"type": "common",
+		"category": "physical",
+		"power": 85,
+		"accuracy": 100,
+		"pp": 15,
+		"effects": [
+			{
+				"kind": "status",
+				"status": "paralysis",
+				"chance": 30
+			}
+		],
 		"description": "A reckless full-body charge. May paralyse."
 	},
 	"bristle": {
-		"name": "Bristle", "type": "common", "category": "status", "power": 0, "accuracy": 100, "pp": 40,
-		"effects": [{ "kind": "stat", "target": "target", "stat": "atk", "stages": -1 }],
+		"name": "Bristle",
+		"type": "common",
+		"category": "status",
+		"power": 0,
+		"accuracy": 100,
+		"pp": 40,
+		"effects": [
+			{
+				"kind": "stat",
+				"target": "target",
+				"stat": "atk",
+				"stages": -1
+			}
+		],
 		"description": "Bristles menacingly, lowering the foe's Attack."
 	},
 	"hunker": {
-		"name": "Hunker", "type": "common", "category": "status", "power": 0, "accuracy": 0, "pp": 30,
-		"effects": [{ "kind": "stat", "target": "self", "stat": "def", "stages": 1 }],
+		"name": "Hunker",
+		"type": "common",
+		"category": "status",
+		"power": 0,
+		"accuracy": 0,
+		"pp": 30,
+		"effects": [
+			{
+				"kind": "stat",
+				"target": "self",
+				"stat": "def",
+				"stages": 1
+			}
+		],
 		"description": "Hunkers down, raising Defence."
 	},
 	"cinder_spit": {
-		"name": "Cinder Spit", "type": "flame", "category": "special", "power": 40, "accuracy": 100, "pp": 25,
-		"effects": [{ "kind": "status", "status": "burn", "chance": 10 }],
+		"name": "Cinder Spit",
+		"type": "flame",
+		"category": "special",
+		"power": 40,
+		"accuracy": 100,
+		"pp": 25,
+		"effects": [
+			{
+				"kind": "status",
+				"status": "burn",
+				"chance": 10
+			}
+		],
 		"description": "Spits glowing cinders. May burn."
 	},
 	"flare_lash": {
-		"name": "Flare Lash", "type": "flame", "category": "physical", "power": 65, "accuracy": 100, "pp": 20,
-		"effects": [{ "kind": "status", "status": "burn", "chance": 10 }],
+		"name": "Flare Lash",
+		"type": "flame",
+		"category": "physical",
+		"power": 65,
+		"accuracy": 100,
+		"pp": 20,
+		"effects": [
+			{
+				"kind": "status",
+				"status": "burn",
+				"chance": 10
+			}
+		],
 		"description": "Whips the foe with a burning tail. May burn."
 	},
 	"splash_jet": {
-		"name": "Splash Jet", "type": "water", "category": "special", "power": 40, "accuracy": 100, "pp": 25,
+		"name": "Splash Jet",
+		"type": "water",
+		"category": "special",
+		"power": 40,
+		"accuracy": 100,
+		"pp": 25,
 		"description": "Fires a narrow jet of water."
 	},
 	"riptide_strike": {
-		"name": "Riptide Strike", "type": "water", "category": "physical", "power": 60, "accuracy": 100, "pp": 20,
+		"name": "Riptide Strike",
+		"type": "water",
+		"category": "physical",
+		"power": 60,
+		"accuracy": 100,
+		"pp": 20,
 		"description": "Strikes with the force of a pulling current."
 	},
 	"leaf_cut": {
-		"name": "Leaf Cut", "type": "flora", "category": "physical", "power": 40, "accuracy": 100, "pp": 25, "crit_stage": 1,
+		"name": "Leaf Cut",
+		"type": "flora",
+		"category": "physical",
+		"power": 40,
+		"accuracy": 100,
+		"pp": 25,
+		"crit_stage": 1,
 		"description": "Slices with a sharp leaf. Lands critical hits more easily."
 	},
 	"sap_draw": {
-		"name": "Sap Draw", "type": "flora", "category": "special", "power": 40, "accuracy": 100, "pp": 20, "drain": 0.5,
+		"name": "Sap Draw",
+		"type": "flora",
+		"category": "special",
+		"power": 40,
+		"accuracy": 100,
+		"pp": 20,
+		"drain": 0.5,
 		"description": "Draws out the foe's energy, restoring half the damage dealt."
 	},
 	"wing_buffet": {
-		"name": "Wing Buffet", "type": "wind", "category": "physical", "power": 40, "accuracy": 100, "pp": 35,
+		"name": "Wing Buffet",
+		"type": "wind",
+		"category": "physical",
+		"power": 40,
+		"accuracy": 100,
+		"pp": 35,
 		"description": "Batters the foe with beating wings."
 	},
 	"silk_bind": {
-		"name": "Silk Bind", "type": "insect", "category": "status", "power": 0, "accuracy": 95, "pp": 40,
-		"effects": [{ "kind": "stat", "target": "target", "stat": "spe", "stages": -2 }],
+		"name": "Silk Bind",
+		"type": "insect",
+		"category": "status",
+		"power": 0,
+		"accuracy": 95,
+		"pp": 40,
+		"effects": [
+			{
+				"kind": "stat",
+				"target": "target",
+				"stat": "spe",
+				"stages": -2
+			}
+		],
 		"description": "Wraps the foe in sticky silk, sharply lowering Speed."
 	},
 	"pincer_nip": {
-		"name": "Pincer Nip", "type": "insect", "category": "physical", "power": 45, "accuracy": 100, "pp": 30,
+		"name": "Pincer Nip",
+		"type": "insect",
+		"category": "physical",
+		"power": 45,
+		"accuracy": 100,
+		"pp": 30,
 		"description": "Nips with tiny pincers."
 	},
 	"venom_prick": {
-		"name": "Venom Prick", "type": "toxic", "category": "physical", "power": 25, "accuracy": 100, "pp": 35,
-		"effects": [{ "kind": "status", "status": "poison", "chance": 30 }],
+		"name": "Venom Prick",
+		"type": "toxic",
+		"category": "physical",
+		"power": 25,
+		"accuracy": 100,
+		"pp": 35,
+		"effects": [
+			{
+				"kind": "status",
+				"status": "poison",
+				"chance": 30
+			}
+		],
 		"description": "Pricks with a venomous barb. May poison."
 	},
 	"gnaw": {
-		"name": "Gnaw", "type": "shadow", "category": "physical", "power": 60, "accuracy": 100, "pp": 25,
+		"name": "Gnaw",
+		"type": "shadow",
+		"category": "physical",
+		"power": 60,
+		"accuracy": 100,
+		"pp": 25,
 		"description": "Gnaws with sharp front teeth."
 	},
 	"static_snap": {
-		"name": "Static Snap", "type": "volt", "category": "special", "power": 40, "accuracy": 100, "pp": 30,
-		"effects": [{ "kind": "status", "status": "paralysis", "chance": 10 }],
+		"name": "Static Snap",
+		"type": "volt",
+		"category": "special",
+		"power": 40,
+		"accuracy": 100,
+		"pp": 30,
+		"effects": [
+			{
+				"kind": "status",
+				"status": "paralysis",
+				"chance": 10
+			}
+		],
 		"description": "A sharp snap of static. May paralyse."
 	},
 	"mud_fling": {
-		"name": "Mud Fling", "type": "earth", "category": "special", "power": 20, "accuracy": 100, "pp": 10,
-		"effects": [{ "kind": "stat", "target": "target", "stat": "acc", "stages": -1 }],
+		"name": "Mud Fling",
+		"type": "earth",
+		"category": "special",
+		"power": 20,
+		"accuracy": 100,
+		"pp": 10,
+		"effects": [
+			{
+				"kind": "stat",
+				"target": "target",
+				"stat": "acc",
+				"stages": -1
+			}
+		],
 		"description": "Flings mud in the foe's eyes, lowering accuracy."
 	},
 	"pebble_toss": {
-		"name": "Pebble Toss", "type": "stone", "category": "physical", "power": 50, "accuracy": 90, "pp": 15,
+		"name": "Pebble Toss",
+		"type": "stone",
+		"category": "physical",
+		"power": 50,
+		"accuracy": 90,
+		"pp": 15,
 		"description": "Hurls a handful of hard pebbles."
 	},
 	"spore_puff": {
-		"name": "Spore Puff", "type": "flora", "category": "status", "power": 0, "accuracy": 75, "pp": 15,
-		"effects": [{ "kind": "status", "status": "sleep" }],
+		"name": "Spore Puff",
+		"type": "flora",
+		"category": "status",
+		"power": 0,
+		"accuracy": 75,
+		"pp": 15,
+		"effects": [
+			{
+				"kind": "status",
+				"status": "sleep"
+			}
+		],
 		"description": "Releases a puff of drowsy spores that put the foe to sleep."
+	},
+	"stone_slam": {
+		"name": "Stone Slam",
+		"type": "stone",
+		"category": "physical",
+		"power": 60,
+		"accuracy": 95,
+		"pp": 15,
+		"description": "Slams into the foe with a body as hard as bedrock."
+	},
+	"tremor_stomp": {
+		"name": "Tremor Stomp",
+		"type": "earth",
+		"category": "physical",
+		"power": 60,
+		"accuracy": 100,
+		"pp": 20,
+		"effects": [
+			{
+				"kind": "stat",
+				"target": "target",
+				"stat": "spe",
+				"stages": -1,
+				"chance": 30
+			}
+		],
+		"description": "A stomp that shakes the ground. May lower the foe's Speed."
 	}
 }
