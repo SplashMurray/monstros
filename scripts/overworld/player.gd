@@ -1,11 +1,12 @@
 extends Node2D
 ## Grid-based player movement, tuned to feel like the GBA games:
-## tapping a direction turns on the spot, holding it walks.
+## tapping a direction turns on the spot, holding it walks, holding B runs.
 
 signal stepped(cell: Vector2i)
 
 const TILE := 16
 const STEP_TIME := 0.25   # seconds per tile when walking
+const RUN_STEP_TIME := 0.125
 const TURN_DELAY := 0.09  # hold time before a turn becomes a step
 
 var map: Node   # needs is_walkable(cell: Vector2i) -> bool
@@ -52,7 +53,8 @@ func _step_to(target: Vector2i) -> void:
 	_moving = true
 	_was_walking = true
 	var tween := create_tween()
-	tween.tween_property(self, "position", Vector2(target * TILE), STEP_TIME)
+	var step_time := RUN_STEP_TIME if Input.is_action_pressed("run") else STEP_TIME
+	tween.tween_property(self, "position", Vector2(target * TILE), step_time)
 	await tween.finished
 	cell = target
 	_moving = false
@@ -60,13 +62,13 @@ func _step_to(target: Vector2i) -> void:
 
 
 func _read_direction() -> Vector2i:
-	if Input.is_action_pressed("ui_up"):
+	if Input.is_action_pressed("move_up"):
 		return Vector2i.UP
-	if Input.is_action_pressed("ui_down"):
+	if Input.is_action_pressed("move_down"):
 		return Vector2i.DOWN
-	if Input.is_action_pressed("ui_left"):
+	if Input.is_action_pressed("move_left"):
 		return Vector2i.LEFT
-	if Input.is_action_pressed("ui_right"):
+	if Input.is_action_pressed("move_right"):
 		return Vector2i.RIGHT
 	return Vector2i.ZERO
 

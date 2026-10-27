@@ -13,9 +13,13 @@ var _sprites: Array[ColorRect] = [null, null]
 var _snap: Array = [{}, {}]
 var _log: Label
 var _menu: GridContainer
+var _back_action := Callable()   # what B / the Android back button does in the current menu
 
 
 func _ready() -> void:
+	# Battle menus are tapped directly, so the on-screen D-pad is not needed here.
+	Controls.set_overlay_wanted(false)
+	Controls.device_changed.connect(_on_device_changed)
 	theme = Theme.new()
 	theme.default_font_size = 12
 	_build_ui()
@@ -132,7 +136,20 @@ func _update_info(side: int) -> void:
 
 # --- Menus -------------------------------------------------------------------
 
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("ui_cancel") and _back_action.is_valid():
+		get_viewport().set_input_as_handled()
+		_back_action.call()
+
+
+func _on_device_changed(_device: String) -> void:
+	# Picking up a controller mid-menu: make sure something is focused.
+	if get_viewport().gui_get_focus_owner() == null:
+		_focus_first()
+
+
 func _clear_menu() -> void:
+	_back_action = Callable()
 	for child in _menu.get_children():
 		_menu.remove_child(child)
 		child.queue_free()
@@ -143,13 +160,15 @@ func _add_button(text: String, callback: Callable, disabled: bool = false) -> Bu
 	button.text = text
 	button.disabled = disabled
 	button.size_flags_horizontal = SIZE_EXPAND_FILL
-	button.custom_minimum_size = Vector2(0, 24)
+	button.custom_minimum_size = Vector2(0, 26)   # comfortable touch target on phones
 	button.pressed.connect(callback)
 	_menu.add_child(button)
 	return button
 
 
 func _focus_first() -> void:
+	if Controls.is_touch():
+		return   # no focus highlight while tapping
 	for child in _menu.get_children():
 		if child is Button and not child.disabled:
 			child.grab_focus()
@@ -178,6 +197,7 @@ func _show_move_menu() -> void:
 		var text := "%s  %s  %d/%d" % [data["name"], Dex.type_name(data["type"]), slot["pp"], data["pp"]]
 		_add_button(text, _submit.bind({ "type": "move", "index": i }), slot["pp"] <= 0)
 	_add_button("Back", _show_main_menu)
+	_back_action = _show_main_menu
 	_focus_first()
 
 
@@ -192,6 +212,7 @@ func _show_party_menu(forced: bool) -> void:
 		_add_button(text, _submit.bind({ "type": "switch", "index": i }), m.is_fainted() or i == battle.active[Battle.PLAYER])
 	if not forced:
 		_add_button("Back", _show_main_menu)
+		_back_action = _show_main_menu
 	_focus_first()
 
 

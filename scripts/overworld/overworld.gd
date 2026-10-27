@@ -33,6 +33,7 @@ var _toast: Label
 
 
 func _ready() -> void:
+	Controls.set_overlay_wanted(true)
 	player = preload("res://scripts/overworld/player.gd").new()
 	player.map = self
 	add_child(player)
@@ -40,7 +41,7 @@ func _ready() -> void:
 	player.stepped.connect(_on_player_stepped)
 
 	var camera := Camera2D.new()
-	camera.zoom = Vector2(2, 2)   # 480x320 viewport shows 15x10 tiles, like the GBA
+	camera.zoom = Vector2(2, 2)   # 15x10 tiles like the GBA; wider phones see a little more
 	camera.position = Vector2(TILE / 2.0, TILE / 2.0)
 	camera.limit_left = 0
 	camera.limit_top = 0
@@ -51,12 +52,12 @@ func _ready() -> void:
 	var ui := CanvasLayer.new()
 	add_child(ui)
 	_toast = Label.new()
-	_toast.position = Vector2(12, 280)
+	_toast.position = Vector2(12, 8)
 	_toast.add_theme_color_override("font_color", Color.WHITE)
 	_toast.add_theme_color_override("font_outline_color", Color.BLACK)
 	_toast.add_theme_constant_override("outline_size", 4)
 	ui.add_child(_toast)
-	_show_toast("Arrow keys to move. Tall grass hides wild monsters.")
+	_show_toast("D-pad to move, hold B to run. Wild monsters hide in tall grass.")
 
 
 func tile_at(cell: Vector2i) -> String:

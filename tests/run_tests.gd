@@ -14,6 +14,7 @@ func _initialize() -> void:
 		test_stat_formulas, test_temperaments, test_growth_curves,
 		test_physical_special_split, test_damage_modifiers, test_capture_maths,
 		test_level_up_and_moves, test_status_immunity, test_running, test_battle_simulation,
+		test_control_scheme, test_touch_dpad_directions,
 	]
 	for test in tests:
 		test.call()
@@ -229,3 +230,35 @@ func test_battle_simulation() -> void:
 		check(battle.result in ["win", "lose"], "battle %d ends in a win or loss" % seed_value)
 		for m in party + enemies:
 			check(m.hp >= 0 and m.hp <= m.max_hp(), "HP stays in range in battle %d" % seed_value)
+
+
+# --- Input ---------------------------------------------------------------------
+
+func test_control_scheme() -> void:
+	ControlScheme.apply()
+	ControlScheme.apply()   # idempotent
+	for action in ["move_up", "move_down", "move_left", "move_right", "accept", "cancel", "run", "menu"]:
+		check(InputMap.has_action(action), "action %s exists" % action)
+	var has_joy_a := false
+	for event in InputMap.action_get_events("accept"):
+		if event is InputEventJoypadButton and event.button_index == JOY_BUTTON_A:
+			has_joy_a = true
+	check(has_joy_a, "gamepad A confirms")
+	var stick_and_dpad := 0
+	for event in InputMap.action_get_events("move_left"):
+		if event is InputEventJoypadMotion or event is InputEventJoypadButton:
+			stick_and_dpad += 1
+	check(stick_and_dpad == 2, "moving works with both the d-pad and the left stick")
+	var keyboard_events := 0
+	for event in InputMap.action_get_events("ui_cancel"):
+		if event is InputEventKey and event.physical_keycode == KEY_X:
+			keyboard_events += 1
+	check(keyboard_events == 1, "bindings are not duplicated")
+
+
+func test_touch_dpad_directions() -> void:
+	check(TouchOverlay.direction_from_offset(Vector2(3, 2)) == Vector2i.ZERO, "small offsets are ignored")
+	check(TouchOverlay.direction_from_offset(Vector2(30, -10)) == Vector2i.RIGHT, "mostly-right is right")
+	check(TouchOverlay.direction_from_offset(Vector2(-30, 5)) == Vector2i.LEFT, "mostly-left is left")
+	check(TouchOverlay.direction_from_offset(Vector2(10, -30)) == Vector2i.UP, "mostly-up is up")
+	check(TouchOverlay.direction_from_offset(Vector2(-5, 40)) == Vector2i.DOWN, "mostly-down is down")

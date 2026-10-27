@@ -1,15 +1,39 @@
 # Monstros
 
-A monster-collecting RPG built in Godot 4. It plays like the GBA-era classics,
-with a few modern battle mechanics, and all of its content is original.
+A monster-collecting RPG for Android, built in Godot 4. It plays like the GBA-era classics,
+with a few modern battle mechanics, and all of its content is original. It supports on-screen
+touch controls and gamepads such as the Backbone.
 
 ## Running
 
 1. Install [Godot 4.3+](https://godotengine.org/download) (the standard build; C# is not needed).
 2. Open `project.godot` in the editor and press **F5**, or run `godot --path .` from the repo root.
 
-Controls: arrow keys to move, Enter/Space to confirm. Walk into tall grass to find wild monsters.
-Step on the pink pad to heal.
+Walk into tall grass to find wild monsters. Step on the pink pad to heal.
+
+## Controls
+
+| | Touch | Gamepad (Backbone, Xbox-style) | Keyboard |
+|---|---|---|---|
+| Move | On-screen D-pad | D-pad / left stick | Arrows / WASD |
+| Confirm (A) | On-screen A, or tap menu buttons | A | Z / Enter / Space |
+| Back (B) | On-screen B, Android back | B | X / Backspace / Esc |
+| Run (hold B) | Hold on-screen B | Hold B | Hold X / Shift |
+| Menu (Start) | (not yet) | Start / Menu | Tab |
+
+The on-screen controls show while you use touch and hide when a gamepad or keyboard is used.
+They come back on the next touch. To try touch on desktop, run `godot --path . -- --touch`
+and click with the mouse.
+
+## Building for Android
+
+1. In Godot: **Editor → Manage Export Templates → Download** (4.3).
+2. Install OpenJDK 17 and the Android SDK (command-line tools, platform-tools, build-tools 34),
+   then set their paths in **Editor Settings → Export → Android**. Godot creates a debug keystore automatically.
+3. **Project → Export → Android** (preset included in `export_presets.cfg`). Then either **Export Project** to
+   `export/monstros.apk`, or use the one-click deploy button with a phone connected over USB debugging.
+
+For Play Store releases, set a release keystore in the preset and enable the Gradle build to export an `.aab`.
 
 ## Tests
 
@@ -27,6 +51,7 @@ data/            All game content as JSON: types, moves, species, temperaments, 
 scripts/core/    Dex (data access), Monster, Stats, Growth, Game (autoload global state)
 scripts/battle/  Battle engine, DamageCalc, Capture, and the placeholder battle screen
 scripts/overworld/  Grid movement and the placeholder test route
+scripts/input/   Input map, device detection (Controls autoload), on-screen touch controls
 scenes/          Godot scenes
 tests/           Headless test runner
 docs/            Design notes and content rules
@@ -34,7 +59,7 @@ docs/            Design notes and content rules
 
 New monsters and moves can be added by editing `data/*.json` alone. No code changes are needed.
 
-Exporting: add `data/*.json` to the export preset's "Filters to export non-resource files".
+`data/*.json` is listed in the export preset's non-resource filter. Keep it there, or the data files won't ship.
 
 ## Docs
 

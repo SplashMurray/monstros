@@ -6,6 +6,24 @@ Recreate the *feel* and *structure* of a GBA-era monster-collecting RPG (Kanto-s
 progression, grid movement, turn-based 1v1 battles). Battle rules are modernised where
 it clearly improves the game. All content (names, monsters, maps, art, music, text) is original.
 
+## Platform
+
+- **Target: Android phones and tablets**, landscape (sensor landscape), immersive full-screen.
+  Desktop also runs for development.
+- **Resolution**: 480x320 base (2x the GBA) scaled to fit. The width expands on wider phones,
+  so a 20:9 phone sees a few extra tiles to each side, with no letterboxing.
+- **Rendering**: Compatibility (OpenGL ES 3) renderer, for the widest device support. ETC2/ASTC texture compression.
+- **Input**: everything reads named actions (`move_*`, `accept`, `cancel`, `run`, `menu`) defined in
+  `scripts/input/control_scheme.gd`, so touch, gamepad and keyboard are interchangeable.
+  - On-screen controls: a GBA-style D-pad plus A/B, multi-touch (hold B to run while steering), haptic tick on press,
+    and kept clear of notches using the display safe area. Shown only while the player is using touch.
+  - Gamepads (Backbone One and other Android HID controllers) use the Xbox layout: A bottom = confirm, B right = back/run.
+    Connecting a controller hides the touch controls. Battle menus can be navigated with the D-pad or stick.
+  - Battle menus are also directly tappable, so the D-pad is hidden in battles.
+  - The Android back button acts as B instead of closing the app.
+- To do for mobile: autosave on `NOTIFICATION_APPLICATION_PAUSED` (once saving exists), an adjustable
+  touch-control size and opacity, and an app icon.
+
 ## Types
 
 There are 18 types. They follow the familiar matchups, including the Gen 6 chart with the fairy-equivalent **Fae**.

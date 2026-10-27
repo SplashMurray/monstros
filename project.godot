@@ -9,9 +9,11 @@ config/name="Monstros"
 config/description="A monster-collecting RPG."
 run/main_scene="res://scenes/overworld/overworld.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
+config/quit_on_go_back=false
 
 [autoload]
 
+Controls="*res://scripts/input/controls.gd"
 Game="*res://scripts/core/game.gd"
 
 [display]
@@ -21,9 +23,16 @@ window/size/viewport_height=320
 window/size/window_width_override=960
 window/size/window_height_override=640
 window/stretch/mode="viewport"
+window/stretch/aspect="expand"
+window/handheld/orientation=4
+
+[input_devices]
+
+pointing/emulate_mouse_from_touch=true
 
 [rendering]
 
+textures/vram_compression/import_etc2_astc=true
 textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
