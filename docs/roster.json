@@ -1,0 +1,2508 @@
+{
+	"lines": [
+		{
+			"habitat": "Starter",
+			"concept": "Flora starter: a shy sprout that grows into a rooted forest guardian.",
+			"members": [
+				{
+					"number": 1,
+					"id": "fernling",
+					"name": "Fernling",
+					"types": [
+						"flora"
+					],
+					"size": "S",
+					"palette": "leaf green, cream, bark brown",
+					"design": "Small round-bodied sprout on stubby legs, with two curled fern fronds on its head like ears. When nervous the fronds curl tight. Big dark eyes, cream belly.",
+					"evolves": "Lv 16",
+					"status": "in game"
+				},
+				{
+					"number": 2,
+					"id": "bramblehorn",
+					"name": "Bramblehorn",
+					"types": [
+						"flora"
+					],
+					"size": "M",
+					"palette": "leaf green, thorn brown, cream",
+					"design": "Leggy, fawn-like quadruped. The fronds have hardened into a small crown of thorny bramble branches. Cream spots along the flanks, alert stance.",
+					"evolves": "Lv 36",
+					"status": "in game"
+				},
+				{
+					"number": 3,
+					"id": "briarhart",
+					"name": "Briarhart",
+					"types": [
+						"flora",
+						"earth"
+					],
+					"size": "L",
+					"palette": "deep green, earth brown, moss, berry red",
+					"design": "Massive stag whose antlers are living briar, trailing roots and red berries. Hooves sink into the ground as roots. Shoulders are mossy, earthen plates. Calm, regal pose.",
+					"evolves": "",
+					"status": "in game"
+				}
+			]
+		},
+		{
+			"habitat": "Starter",
+			"concept": "Flame starter: a playful kit that becomes a lion with a forge-hot mane.",
+			"members": [
+				{
+					"number": 4,
+					"id": "emberkit",
+					"name": "Emberkit",
+					"types": [
+						"flame"
+					],
+					"size": "S",
+					"palette": "ember orange, charcoal, cream",
+					"design": "Small kitten-like creature with an oversized, smouldering tuft of fur on its head and tail tip. Charcoal paws as if it walked through ash. Playful crouch.",
+					"evolves": "Lv 16",
+					"status": "in game"
+				},
+				{
+					"number": 5,
+					"id": "blazepaw",
+					"name": "Blazepaw",
+					"types": [
+						"flame"
+					],
+					"size": "M",
+					"palette": "flame orange, charcoal, yellow",
+					"design": "Lean, fast young big cat. Flames lick from its shoulders and tail, and its paws glow at the pads, leaving scorch marks. Mid-stride, eager.",
+					"evolves": "Lv 36",
+					"status": "in game"
+				},
+				{
+					"number": 6,
+					"id": "forgemane",
+					"name": "Forgemane",
+					"types": [
+						"flame",
+						"metal"
+					],
+					"size": "L",
+					"palette": "molten orange, iron grey, white-hot yellow",
+					"design": "Powerful lion. Its mane is a ring of molten flame held in place by iron-grey armour plates on the brow, chest and forelegs, like hammered metal. Claws are steel. Proud, upright pose.",
+					"evolves": "",
+					"status": "in game"
+				}
+			]
+		},
+		{
+			"habitat": "Starter",
+			"concept": "Water starter: a bobbing swimmer whose shell grows into a living reef.",
+			"members": [
+				{
+					"number": 7,
+					"id": "ripplet",
+					"name": "Ripplet",
+					"types": [
+						"water"
+					],
+					"size": "S",
+					"palette": "sky blue, sand, white",
+					"design": "Round, buoyant creature like a little float, with a small sand-coloured shell on its back and flipper feet. Bobs upright. Wide smile.",
+					"evolves": "Lv 16",
+					"status": "in game"
+				},
+				{
+					"number": 8,
+					"id": "tidalisk",
+					"name": "Tidalisk",
+					"types": [
+						"water"
+					],
+					"size": "M",
+					"palette": "ocean blue, sand, white",
+					"design": "Lizard-like swimmer with a long tail fin. Its shell has spread into a back plate patterned with wave ripples, as on wet sand. Low, ready-to-pounce stance.",
+					"evolves": "Lv 36",
+					"status": "in game"
+				},
+				{
+					"number": 9,
+					"id": "coralith",
+					"name": "Coralith",
+					"types": [
+						"water",
+						"stone"
+					],
+					"size": "L",
+					"palette": "deep blue, coral pink, stone grey",
+					"design": "Heavy, armoured reptilian whose back plate has grown into a craggy living reef of pink and orange coral. Tiny fish shelter in the gaps. Thick stone-grey forearms. Sturdy, grounded pose.",
+					"evolves": "",
+					"status": "in game"
+				}
+			]
+		},
+		{
+			"habitat": "Early routes",
+			"concept": "The common early bird line.",
+			"members": [
+				{
+					"number": 10,
+					"id": "pipwing",
+					"name": "Pipwing",
+					"types": [
+						"common",
+						"wind"
+					],
+					"size": "S",
+					"palette": "brown, cream, orange beak",
+					"design": "Plump, round little songbird, almost a ball with a beak. Oversized orange feet, a short jaunty tail cocked upward, and a cream belly. Its beak is always slightly open mid-whistle, with a tiny musical-note-shaped tuft on its head.",
+					"evolves": "Lv 18",
+					"status": "in game"
+				},
+				{
+					"number": 11,
+					"id": "gustlark",
+					"name": "Gustlark",
+					"types": [
+						"common",
+						"wind"
+					],
+					"size": "M",
+					"palette": "brown, cream, slate",
+					"design": "Sleeker, longer lark. The head tuft has become a swept-back crest, and the wing tips are long and pointed. Brown back, slate wing bars, cream underside. Shown banking in flight with one wing raised.",
+					"evolves": "Lv 34",
+					"status": "planned"
+				},
+				{
+					"number": 12,
+					"id": "galecrest",
+					"name": "Galecrest",
+					"types": [
+						"common",
+						"wind"
+					],
+					"size": "L",
+					"palette": "bronze, cream, slate blue",
+					"design": "Large soaring bird with a dramatic double crest that streams back like wind-torn banners. Broad bronze wings spread wide, the tail fanned into points. Sharp, confident eye. It should read as fast and proud, not a bird of prey.",
+					"evolves": "",
+					"status": "planned"
+				}
+			]
+		},
+		{
+			"habitat": "Early routes",
+			"concept": "The common early rodent. (Planned evolution for the existing Nibbet.)",
+			"members": [
+				{
+					"number": 13,
+					"id": "nibbet",
+					"name": "Nibbet",
+					"types": [
+						"common"
+					],
+					"size": "S",
+					"palette": "grey-brown, pink, cream",
+					"design": "Small, chubby rodent with huge ivory front teeth, round ears and a stubby tail. Cheeks puffed out with something it's chewing. Sits up on its haunches holding a crumb. Mischievous rather than dirty.",
+					"evolves": "Lv 20",
+					"status": "in game"
+				},
+				{
+					"number": 14,
+					"id": "chiselfang",
+					"name": "Chiselfang",
+					"types": [
+						"common"
+					],
+					"size": "M",
+					"palette": "grey-brown, cream, ivory",
+					"design": "Stocky, beaver-like gnawer standing on its hind legs. Two long chisel-shaped teeth, a broad flat tail with cross-hatched texture, and a gnawed stick held like a club. A cocky, buck-toothed grin.",
+					"evolves": "",
+					"status": "planned"
+				}
+			]
+		},
+		{
+			"habitat": "Early routes / woodland",
+			"concept": "Silk grub to glowing moth. (Planned evolutions for the existing Grubble.)",
+			"members": [
+				{
+					"number": 15,
+					"id": "grubble",
+					"name": "Grubble",
+					"types": [
+						"insect"
+					],
+					"size": "S",
+					"palette": "lime green, yellow, white",
+					"design": "Plump, segmented lime-green grub with five pairs of stubby legs and a yellow stripe down each side. A spinneret mouth with a strand of silk trailing behind it. Big friendly eyes.",
+					"evolves": "Lv 7",
+					"status": "in game"
+				},
+				{
+					"number": 16,
+					"id": "spindlepod",
+					"name": "Spindlepod",
+					"types": [
+						"insect"
+					],
+					"size": "S",
+					"palette": "pale green, silk white",
+					"design": "Spindle-shaped cocoon tightly wrapped in silk spirals, hanging from one thread at the top. Two eyes peek out through a gap in the silk. Barely moves, so the sprite should feel still and patient.",
+					"evolves": "Lv 10",
+					"status": "planned"
+				},
+				{
+					"number": 17,
+					"id": "lumimoth",
+					"name": "Lumimoth",
+					"types": [
+						"insect",
+						"fae"
+					],
+					"size": "M",
+					"palette": "moon white, pale teal, soft gold",
+					"design": "Delicate moth with broad, rounded forewings covered in softly glowing teal eyespots. Fluffy white thorax ruff, feathery gold antennae. Tiny sparkles drift down from the wings. Hovering, wings open.",
+					"evolves": "",
+					"status": "planned"
+				}
+			]
+		},
+		{
+			"habitat": "Woodland",
+			"concept": "A stinging line: larva to wasp regent.",
+			"members": [
+				{
+					"number": 18,
+					"id": "needlit",
+					"name": "Needlit",
+					"types": [
+						"insect",
+						"toxic"
+					],
+					"size": "S",
+					"palette": "yellow, black, purple",
+					"design": "Small larva with alternating yellow and black bands and a single purple needle on its tail. A defensive pose, tail curled up over its back like a question mark.",
+					"evolves": "Lv 7",
+					"status": "planned"
+				},
+				{
+					"number": 19,
+					"id": "hivecase",
+					"name": "Hivecase",
+					"types": [
+						"insect",
+						"toxic"
+					],
+					"size": "S",
+					"palette": "honey yellow, wax tan",
+					"design": "A pupa sealed inside a hexagonal wax cell, like one cell of a honeycomb. Its eyes show through the translucent wax lid, and its stinger pokes out of the bottom. Rigid and upright.",
+					"evolves": "Lv 10",
+					"status": "planned"
+				},
+				{
+					"number": 20,
+					"id": "stingarch",
+					"name": "Stingarch",
+					"types": [
+						"insect",
+						"toxic"
+					],
+					"size": "M",
+					"palette": "gold, black, violet",
+					"design": "Regal wasp with a crown-like crest of three spikes, four sharp translucent wings and a long, violet-tipped stinger. Its abdomen has gold and black chevrons like a royal sash. Hovering with the stinger angled forward.",
+					"evolves": "",
+					"status": "planned"
+				}
+			]
+		},
+		{
+			"habitat": "Caves / mountains",
+			"concept": "Rolling stone line. (Planned evolutions for the existing Pebbit.)",
+			"members": [
+				{
+					"number": 21,
+					"id": "pebbit",
+					"name": "Pebbit",
+					"types": [
+						"stone",
+						"earth"
+					],
+					"size": "S",
+					"palette": "sandstone, brown, dark grey",
+					"design": "Pebble-shaped creature, mostly body, with stubby rock arms, flat feet and a permanently grumpy face. Dusty from rolling, with a few small pebbles stuck to it. Looks like it just tumbled down a hill and is annoyed about it.",
+					"evolves": "Lv 25",
+					"status": "in game"
+				},
+				{
+					"number": 22,
+					"id": "bouldrum",
+					"name": "Bouldrum",
+					"types": [
+						"stone",
+						"earth"
+					],
+					"size": "M",
+					"palette": "sandstone, clay, grey",
+					"design": "Barrel-shaped boulder on short legs that drums on its own hollow belly with rocky fists. Cracks across its shell show packed earth inside. Its mouth is open mid-drum-roll.",
+					"evolves": "Trade",
+					"status": "planned"
+				},
+				{
+					"number": 23,
+					"id": "cragmount",
+					"name": "Cragmount",
+					"types": [
+						"stone",
+						"earth"
+					],
+					"size": "L",
+					"palette": "grey, moss, sandstone",
+					"design": "A hulking living cliffside on four stumpy pillar legs. Its back is a jagged mountain ridge with patches of moss and a few pebbles tumbling off. A small, stern face under a rocky brow.",
+					"evolves": "",
+					"status": "planned"
+				}
+			]
+		},
+		{
+			"habitat": "Caves",
+			"concept": "Flaky shale line. (Shalehorn already exists; Flintling is its planned pre-evolution.)",
+			"members": [
+				{
+					"number": 24,
+					"id": "flintling",
+					"name": "Flintling",
+					"types": [
+						"stone"
+					],
+					"size": "S",
+					"palette": "flint grey, white, orange spark",
+					"design": "Small quadruped chipped from dark flint, with sharp faceted edges and a single conical horn. White chips mark the fresh breaks. Orange sparks flicker at its hooves and horn tip. Head lowered to charge.",
+					"evolves": "Lv 22",
+					"status": "planned"
+				},
+				{
+					"number": 25,
+					"id": "shalehorn",
+					"name": "Shalehorn",
+					"types": [
+						"stone"
+					],
+					"size": "M",
+					"palette": "slate grey, layered browns",
+					"design": "Rhino-like creature whose large horn is made of thin layered shale that flakes off in sheets when it charges. Body has visible strata lines.",
+					"evolves": "",
+					"status": "in game"
+				}
+			]
+		},
+		{
+			"habitat": "Caves (night)",
+			"concept": "The cave bat line.",
+			"members": [
+				{
+					"number": 26,
+					"id": "duskit",
+					"name": "Duskit",
+					"types": [
+						"shadow",
+						"wind"
+					],
+					"size": "S",
+					"palette": "dusk purple, black, pale pink",
+					"design": "Tiny round bat that is mostly ears: two huge, sensitive pink-lined ears and small wings. Eyes squeezed shut, because it navigates by sound. Hanging upside down, wrapped in its wings.",
+					"evolves": "Lv 22",
+					"status": "planned"
+				},
+				{
+					"number": 27,
+					"id": "echowing",
+					"name": "Echowing",
+					"types": [
+						"shadow",
+						"wind"
+					],
+					"size": "M",
+					"palette": "indigo, black, pink",
+					"design": "Sleeker bat with wide indigo wings and concentric ripple markings on the wing membranes that show its echo calls. Mouth wide mid-shriek, with small fangs. Flying straight at the viewer.",
+					"evolves": "Friendship",
+					"status": "planned"
+				},
+				{
+					"number": 28,
+					"id": "umbravane",
+					"name": "Umbravane",
+					"types": [
+						"shadow",
+						"wind"
+					],
+					"size": "L",
+					"palette": "midnight blue, black, silver",
+					"design": "Large, elegant bat whose wings look like tattered night sky flecked with silver stars. A long tail ending in an arrow like a weathervane. Graceful glide pose, silhouetted against a moonless sky.",
+					"evolves": "",
+					"status": "planned"
+				}
+			]
+		},
+		{
+			"habitat": "Power plant / city",
+			"concept": "A magnetic coil line.",
+			"members": [
+				{
+					"number": 29,
+					"id": "coilbit",
+					"name": "Coilbit",
+					"types": [
+						"volt",
+						"metal"
+					],
+					"size": "S",
+					"palette": "copper, steel grey, electric yellow",
+					"design": "Small floating copper coil, a short spring of wire, with a single round eye in the middle and two magnet-pole nubs (red and blue tips) on the ends. Static sparks crackle around it.",
+					"evolves": "Lv 30",
+					"status": "planned"
+				},
+				{
+					"number": 30,
+					"id": "dynacoil",
+					"name": "Dynacoil",
+					"types": [
+						"volt",
+						"metal"
+					],
+					"size": "M",
+					"palette": "copper, steel, yellow",
+					"design": "Three copper coils fused around a glowing yellow core, arranged like a dynamo. Arcs of electricity jump between the coils, and the core has the eye. It should look like it's spinning.",
+					"evolves": "",
+					"status": "planned"
+				}
+			]
+		},
+		{
+			"habitat": "Rivers / marsh",
+			"concept": "An electric tadpole to newt.",
+			"members": [
+				{
+					"number": 31,
+					"id": "zaptole",
+					"name": "Zaptole",
+					"types": [
+						"volt",
+						"water"
+					],
+					"size": "S",
+					"palette": "teal, yellow, white",
+					"design": "Fat teal tadpole with a lightning-bolt-shaped tail and two rows of glowing yellow spots. Wiggling swim pose with its tail mid-zigzag. Tiny back legs just starting to show.",
+					"evolves": "Lv 26",
+					"status": "planned"
+				},
+				{
+					"number": 32,
+					"id": "galvanewt",
+					"name": "Galvanewt",
+					"types": [
+						"volt",
+						"water"
+					],
+					"size": "M",
+					"palette": "teal, yellow, dark green",
+					"design": "Slender teal newt with a frilled crest and gills that crackle with electricity. Yellow battery-like stripes run down its back. A low, alert crouch with the tail curled.",
+					"evolves": "",
+					"status": "planned"
+				}
+			]
+		},
+		{
+			"habitat": "Woodland",
+			"concept": "A gliding squirrel that rides storm winds.",
+			"members": [
+				{
+					"number": 33,
+					"id": "sparrel",
+					"name": "Sparrel",
+					"types": [
+						"volt"
+					],
+					"size": "S",
+					"palette": "golden yellow, cream, brown",
+					"design": "Squirrel with a huge, fluffy golden tail that collects static, so its fur stands on end in spikes. It clutches an acorn that sparks. Sitting up, cheeky expression.",
+					"evolves": "Lv 24",
+					"status": "planned"
+				},
+				{
+					"number": 34,
+					"id": "stormglider",
+					"name": "Stormglider",
+					"types": [
+						"volt",
+						"wind"
+					],
+					"size": "M",
+					"palette": "storm grey, yellow, white",
+					"design": "Flying squirrel shown spread-eagled, with wide grey gliding membranes edged in crackling lightning. White belly, yellow cheek pouches that store charge. The tail streams behind like a rudder.",
+					"evolves": "",
+					"status": "planned"
+				}
+			]
+		},
+		{
+			"habitat": "Routes / meadows",
+			"concept": "A battery hedgehog.",
+			"members": [
+				{
+					"number": 35,
+					"id": "joltlet",
+					"name": "Joltlet",
+					"types": [
+						"volt"
+					],
+					"size": "S",
+					"palette": "yellow, brown, white",
+					"design": "Round little hedgehog whose quills are short yellow lightning spikes. Brown face, white tummy, tiny feet. It's half-curled into a crackling ball, peeking out.",
+					"evolves": "Lv 28",
+					"status": "planned"
+				},
+				{
+					"number": 36,
+					"id": "joltquill",
+					"name": "Joltquill",
+					"types": [
+						"volt"
+					],
+					"size": "M",
+					"palette": "yellow, dark brown, white",
+					"design": "Larger hedgehog standing upright on its hind legs. Its long jagged quills crackle like a storm cloud and are flared outward in threat. Arms in a ready stance.",
+					"evolves": "",
+					"status": "planned"
+				}
+			]
+		},
+		{
+			"habitat": "Woodland (night)",
+			"concept": "A firefly that flashes a charged light.",
+			"members": [
+				{
+					"number": 37,
+					"id": "flickerfly",
+					"name": "Flickerfly",
+					"types": [
+						"volt",
+						"insect"
+					],
+					"size": "S",
+					"palette": "black, lime glow, yellow",
+					"design": "Small black firefly with a big, glowing lime-green abdomen, stubby wings and long antennae. Cheerful hovering pose. The glow should be the brightest part of the sprite.",
+					"evolves": "",
+					"status": "planned"
+				}
+			]
+		},
+		{
+			"habitat": "Rivers / sea (fishing)",
+			"concept": "A small fish that becomes a shark.",
+			"members": [
+				{
+					"number": 38,
+					"id": "finnick",
+					"name": "Finnick",
+					"types": [
+						"water"
+					],
+					"size": "S",
+					"palette": "silver blue, white, red fin",
+					"design": "Small silvery fish, very ordinary except for one oversized red dorsal fin that it is very proud of. Shown sideways, flapping out of the water with its mouth agape.",
+					"evolves": "Lv 25",
+					"status": "planned"
+				},
+				{
+					"number": 39,
+					"id": "riptooth",
+					"name": "Riptooth",
+					"types": [
+						"water",
+						"shadow"
+					],
+					"size": "L",
+					"palette": "navy, white, red",
+					"design": "Sleek navy shark with a white underbelly, a scarred snout, an enormous toothy grin and a ragged red dorsal fin left over from Finnick. A lunging bite pose, coming at the viewer.",
+					"evolves": "",
+					"status": "planned"
+				}
+			]
+		},
+		{
+			"habitat": "Coast",
+			"concept": "A clam that dreams up pearls of foresight.",
+			"members": [
+				{
+					"number": 40,
+					"id": "shellop",
+					"name": "Shellop",
+					"types": [
+						"water"
+					],
+					"size": "S",
+					"palette": "lilac, pearl white",
+					"design": "Small lilac scallop shell with frilly edges, two eyes peeking out from between the halves and a tongue poking out. Sits on the sand, slightly open.",
+					"evolves": "Item: Moon Pearl",
+					"status": "planned"
+				},
+				{
+					"number": 41,
+					"id": "pearlseer",
+					"name": "Pearlseer",
+					"types": [
+						"water",
+						"mind"
+					],
+					"size": "M",
+					"palette": "lilac, pearl, violet glow",
+					"design": "An open clam with a large, luminous pearl floating above it like a crystal ball, glowing violet. Wise, half-lidded eyes along the shell rim. Mystical sparkles around the pearl.",
+					"evolves": "",
+					"status": "planned"
+				}
+			]
+		},
+		{
+			"habitat": "Coast",
+			"concept": "A crab with anvil-heavy claws.",
+			"members": [
+				{
+					"number": 42,
+					"id": "pinchet",
+					"name": "Pinchet",
+					"types": [
+						"water"
+					],
+					"size": "S",
+					"palette": "coral red, cream",
+					"design": "Small coral-red crab with mismatched claws, one tiny and one comically big. Stalk eyes and a sideways scuttle pose, big claw raised.",
+					"evolves": "Lv 28",
+					"status": "planned"
+				},
+				{
+					"number": 43,
+					"id": "anvilcrab",
+					"name": "Anvilcrab",
+					"types": [
+						"water",
+						"metal"
+					],
+					"size": "M",
+					"palette": "iron grey, coral red",
+					"design": "Heavy crab whose big claw has become an anvil-shaped iron hammer. Its shell is coral red with iron-grey plating and rivet-like bumps. Braced on short legs, claw raised to strike.",
+					"evolves": "",
+					"status": "planned"
+				}
+			]
+		},
+		{
+			"habitat": "Sea (surfing)",
+			"concept": "A drifting jellyfish line.",
+			"members": [
+				{
+					"number": 44,
+					"id": "driftjel",
+					"name": "Driftjel",
+					"types": [
+						"water",
+						"toxic"
+					],
+					"size": "S",
+					"palette": "translucent pink, purple",
+					"design": "Small translucent pink jellyfish with a dome bell, two curly tentacles and a faint purple inner glow. Drifting gently, tentacles swaying.",
+					"evolves": "Lv 30",
+					"status": "planned"
+				},
+				{
+					"number": 45,
+					"id": "stingsail",
+					"name": "Stingsail",
+					"types": [
+						"water",
+						"toxic"
+					],
+					"size": "L",
+					"palette": "pink, violet, blue",
+					"design": "Man-o'-war-like creature with a tall translucent blue sail crest on top of a pink float and long violet trailing tentacles. A drifting pose leaning with the wind. Should feel large and ominous.",
+					"evolves": "",
+					"status": "planned"
+				}
+			]
+		},
+		{
+			"habitat": "Snowy coast",
+			"concept": "A seal pup that grows into a rune-tusked walrus.",
+			"members": [
+				{
+					"number": 46,
+					"id": "selkin",
+					"name": "Selkin",
+					"types": [
+						"water",
+						"frost"
+					],
+					"size": "S",
+					"palette": "white, pale blue, grey",
+					"design": "Fluffy white seal pup with huge dark eyes, frost-tipped whiskers and a pale-blue nose. Lying on its belly, flippers tucked. Almost too cute.",
+					"evolves": "Lv 32",
+					"status": "planned"
+				},
+				{
+					"number": 47,
+					"id": "walrune",
+					"name": "Walrune",
+					"types": [
+						"water",
+						"frost"
+					],
+					"size": "L",
+					"palette": "blue-grey, ice white, cyan glow",
+					"design": "Massive blue-grey walrus sitting upright, with long ice tusks carved with glowing cyan rune marks. Thick folds of blubber, a bristly moustache and a wise, heavy-lidded gaze.",
+					"evolves": "",
+					"status": "planned"
+				}
+			]
+		},
+		{
+			"habitat": "Rivers",
+			"concept": "A playful otter that becomes a river brawler.",
+			"members": [
+				{
+					"number": 48,
+					"id": "otterpop",
+					"name": "Otterpop",
+					"types": [
+						"water"
+					],
+					"size": "S",
+					"palette": "brown, cream, blue",
+					"design": "Small brown otter floating on its back, holding a smooth pebble on its chest. Sleek wet fur, cream face, tiny paws. Content expression.",
+					"evolves": "Lv 30",
+					"status": "planned"
+				},
+				{
+					"number": 49,
+					"id": "rapidrift",
+					"name": "Rapidrift",
+					"types": [
+						"water",
+						"brawl"
+					],
+					"size": "M",
+					"palette": "dark brown, cream, white water",
+					"design": "Muscular otter standing in a boxing stance, with water swirling around its fists like hand wraps. Darker fur, a cream chest and a bandana-like fur pattern. Tail braced for balance.",
+					"evolves": "",
+					"status": "planned"
+				}
+			]
+		},
+		{
+			"habitat": "Marsh / woodland",
+			"concept": "A spore bud that blooms into a pungent giant flower.",
+			"members": [
+				{
+					"number": 50,
+					"id": "sporebud",
+					"name": "Sporebud",
+					"types": [
+						"flora",
+						"toxic"
+					],
+					"size": "S",
+					"palette": "green, purple, yellow",
+					"design": "Bulb-shaped bud on little root feet. Its closed purple petals leak puffs of yellow spores. Two leaf arms and a drowsy face on the bulb.",
+					"evolves": "Lv 21",
+					"status": "planned"
+				},
+				{
+					"number": 51,
+					"id": "toxbloom",
+					"name": "Toxbloom",
+					"types": [
+						"flora",
+						"toxic"
+					],
+					"size": "M",
+					"palette": "green, violet, yellow",
+					"design": "Half-open flower with drooping violet petals and dripping nectar. A face in the flower's centre, a green stem body and leaf arms. Swaying unsteadily, as if dizzy from its own scent.",
+					"evolves": "Item: Leaf Stone",
+					"status": "planned"
+				},
+				{
+					"number": 52,
+					"id": "rotblossom",
+					"name": "Rotblossom",
+					"types": [
+						"flora",
+						"toxic"
+					],
+					"size": "L",
+					"palette": "maroon, spotted white, green",
+					"design": "Enormous squat flower like a giant rafflesia, with five thick maroon petals spotted white and a gaping central maw. Small vine arms, visible stink lines. The petals almost fill the frame.",
+					"evolves": "",
+					"status": "planned"
+				}
+			]
+		},
+		{
+			"habitat": "Meadows",
+			"concept": "A shy petal sprite.",
+			"members": [
+				{
+					"number": 53,
+					"id": "petalkin",
+					"name": "Petalkin",
+					"types": [
+						"flora",
+						"fae"
+					],
+					"size": "S",
+					"palette": "pink, white, leaf green",
+					"design": "Tiny humanoid sprite whose skirt is a pink flower bloom and whose hair is two white petals. Small leaf in hand, half-hiding behind it shyly.",
+					"evolves": "Item: Sun Stone",
+					"status": "planned"
+				},
+				{
+					"number": 54,
+					"id": "blossprite",
+					"name": "Blossprite",
+					"types": [
+						"flora",
+						"fae"
+					],
+					"size": "M",
+					"palette": "rose pink, white, gold",
+					"design": "Graceful flower fairy with four translucent petal wings and a crown of rose blossoms. A flowing petal dress, mid-twirl, scattering petals.",
+					"evolves": "",
+					"status": "planned"
+				}
+			]
+		},
+		{
+			"habitat": "Meadows / hills",
+			"concept": "Seeds that drift on the wind.",
+			"members": [
+				{
+					"number": 55,
+					"id": "puffseed",
+					"name": "Puffseed",
+					"types": [
+						"flora",
+						"wind"
+					],
+					"size": "S",
+					"palette": "white fluff, green",
+					"design": "Small dandelion clock: a round white seed-head body with a face, tiny leaf arms and a short stem leg. Floating, a few seeds drifting off.",
+					"evolves": "Lv 26",
+					"status": "planned"
+				},
+				{
+					"number": 56,
+					"id": "dandeloft",
+					"name": "Dandeloft",
+					"types": [
+						"flora",
+						"wind"
+					],
+					"size": "M",
+					"palette": "yellow, white fluff, green",
+					"design": "Tall, slender dandelion creature holding a huge fluffy seed head above it like a hot-air balloon, its feet dangling below. A yellow flower collar at its neck.",
+					"evolves": "",
+					"status": "planned"
+				}
+			]
+		},
+		{
+			"habitat": "Desert",
+			"concept": "A cactus that learns to box.",
+			"members": [
+				{
+					"number": 57,
+					"id": "pricklet",
+					"name": "Pricklet",
+					"types": [
+						"flora"
+					],
+					"size": "S",
+					"palette": "cactus green, pink flower",
+					"design": "Small round cactus with a single pink flower on top, stubby arms and lots of tiny spines like a pin cushion. Squinting, sun-loving expression.",
+					"evolves": "Lv 30",
+					"status": "planned"
+				},
+				{
+					"number": 58,
+					"id": "saguardo",
+					"name": "Saguardo",
+					"types": [
+						"flora",
+						"brawl"
+					],
+					"size": "L",
+					"palette": "cactus green, sand, pink",
+					"design": "Tall saguaro cactus with two muscular arm branches raised in a boxer's guard. Spines cluster on its 'knuckles'. A stern face with a pink flower on its head like a headband.",
+					"evolves": "",
+					"status": "planned"
+				}
+			]
+		},
+		{
+			"habitat": "Woodland (dark)",
+			"concept": "A mushroom haunted by forest spirits.",
+			"members": [
+				{
+					"number": 59,
+					"id": "shroomp",
+					"name": "Shroomp",
+					"types": [
+						"flora"
+					],
+					"size": "S",
+					"palette": "red cap, white spots, cream",
+					"design": "Tiny mushroom with a big red cap with white spots and stubby feet. A worried little face under the cap. Waddling.",
+					"evolves": "Lv 28",
+					"status": "planned"
+				},
+				{
+					"number": 60,
+					"id": "grimcap",
+					"name": "Grimcap",
+					"types": [
+						"flora",
+						"spirit"
+					],
+					"size": "M",
+					"palette": "grey-violet cap, pale glow",
+					"design": "Tall, ghostly mushroom with a drooping grey-violet cap and a lantern-like glow underneath. Its stem fades into wispy spirit trails instead of feet. Hollow glowing eyes.",
+					"evolves": "",
+					"status": "planned"
+				}
+			]
+		},
+		{
+			"habitat": "Volcano",
+			"concept": "A digging mole of the volcano.",
+			"members": [
+				{
+					"number": 61,
+					"id": "cindig",
+					"name": "Cindig",
+					"types": [
+						"flame",
+						"earth"
+					],
+					"size": "S",
+					"palette": "dark brown, ember orange",
+					"design": "Small mole with glowing ember claws and dark soot rings around its eyes like goggles. Popping out of a hole, with dirt and sparks around it.",
+					"evolves": "Lv 32",
+					"status": "planned"
+				},
+				{
+					"number": 62,
+					"id": "calderhulk",
+					"name": "Calderhulk",
+					"types": [
+						"flame",
+						"earth"
+					],
+					"size": "L",
+					"palette": "basalt black, lava orange",
+					"design": "Huge burrowing beast with a volcano-crater hump on its back that smokes and glows with lava. Basalt-black hide with orange cracks and massive digging claws. Heavy, low stance.",
+					"evolves": "",
+					"status": "planned"
+				}
+			]
+		},
+		{
+			"habitat": "Ruins / temples",
+			"concept": "An incense burner that reads the future in smoke.",
+			"members": [
+				{
+					"number": 63,
+					"id": "censerling",
+					"name": "Censerling",
+					"types": [
+						"flame"
+					],
+					"size": "S",
+					"palette": "brass, ember orange, smoke grey",
+					"design": "Small round brass incense burner with a face on the lid, swinging from its own chain. Fragrant grey smoke curls from the vents in pretty spirals.",
+					"evolves": "Lv 33",
+					"status": "planned"
+				},
+				{
+					"number": 64,
+					"id": "pyreoracle",
+					"name": "Pyreoracle",
+					"types": [
+						"flame",
+						"mind"
+					],
+					"size": "M",
+					"palette": "brass, violet flame, gold",
+					"design": "Floating, ornate brass brazier with violet flames inside that form a third eye. Smoke streams down from it like robes. Two thin chain arms. Mysterious and solemn.",
+					"evolves": "",
+					"status": "planned"
+				}
+			]
+		},
+		{
+			"habitat": "Volcano",
+			"concept": "A sulfur-spitting gecko.",
+			"members": [
+				{
+					"number": 65,
+					"id": "brimgecko",
+					"name": "Brimgecko",
+					"types": [
+						"flame",
+						"toxic"
+					],
+					"size": "S",
+					"palette": "sulfur yellow, red, black",
+					"design": "Gecko with big sticky toe pads, sulfur-yellow skin and red warning stripes. Licking its own eyeball. Small puffs of yellow smoke from its nostrils.",
+					"evolves": "",
+					"status": "planned"
+				}
+			]
+		},
+		{
+			"habitat": "Towns (potteries)",
+			"concept": "A kiln-fired guard dog.",
+			"members": [
+				{
+					"number": 66,
+					"id": "kilnpup",
+					"name": "Kilnpup",
+					"types": [
+						"flame"
+					],
+					"size": "S",
+					"palette": "terracotta, orange glow",
+					"design": "Puppy made of fired terracotta clay, with a glowing kiln opening for a mouth. Little cracks glow orange when it's excited. Wagging, playful pose.",
+					"evolves": "Lv 30",
+					"status": "planned"
+				},
+				{
+					"number": 67,
+					"id": "kilnhound",
+					"name": "Kilnhound",
+					"types": [
+						"flame",
+						"stone"
+					],
+					"size": "L",
+					"palette": "terracotta, stone grey, orange",
+					"design": "Large guard dog of glazed stoneware with a glowing furnace grille in its chest. Thick, statuesque legs. Sitting on guard like a temple statue.",
+					"evolves": "",
+					"status": "planned"
+				}
+			]
+		},
+		{
+			"habitat": "Snowfields",
+			"concept": "A snow hare that shines with aurora light.",
+			"members": [
+				{
+					"number": 68,
+					"id": "snowhop",
+					"name": "Snowhop",
+					"types": [
+						"frost"
+					],
+					"size": "S",
+					"palette": "white, pale blue",
+					"design": "Round white hare with long ears tipped with frost and a pale blue nose. Shown mid-hop with all four feet off the ground. Small puff of snow beneath.",
+					"evolves": "Item: Dawn Crystal",
+					"status": "planned"
+				},
+				{
+					"number": 69,
+					"id": "aurorabbit",
+					"name": "Aurorabbit",
+					"types": [
+						"frost",
+						"fae"
+					],
+					"size": "M",
+					"palette": "white, aurora green and violet",
+					"design": "Elegant, long-legged hare with very long flowing ears that shimmer with aurora greens and violets. Ribbons of light trail behind it. Standing tall and alert.",
+					"evolves": "",
+					"status": "planned"
+				}
+			]
+		},
+		{
+			"habitat": "Ice caves",
+			"concept": "A crystal shard that grows into a glacier crown.",
+			"members": [
+				{
+					"number": 70,
+					"id": "rimeshard",
+					"name": "Rimeshard",
+					"types": [
+						"frost"
+					],
+					"size": "S",
+					"palette": "ice blue, white",
+					"design": "Floating jagged ice-crystal shard with a face reflected in its facets. Cold mist drifts off it. A few small crystals orbit it.",
+					"evolves": "Lv 34",
+					"status": "planned"
+				},
+				{
+					"number": 71,
+					"id": "hailcrown",
+					"name": "Hailcrown",
+					"types": [
+						"frost",
+						"stone"
+					],
+					"size": "L",
+					"palette": "ice blue, granite grey",
+					"design": "Glacier golem with a crown of ice spikes, a granite body seamed with blue ice and heavy fists. A stomping pose, with frost spreading from its feet.",
+					"evolves": "",
+					"status": "planned"
+				}
+			]
+		},
+		{
+			"habitat": "Mountains",
+			"concept": "The snow beast.",
+			"members": [
+				{
+					"number": 72,
+					"id": "yetling",
+					"name": "Yetling",
+					"types": [
+						"frost"
+					],
+					"size": "S",
+					"palette": "white fur, grey, blue",
+					"design": "Small yeti cub with shaggy white fur, a grey face and huge blue-grey feet. Holding a snowball overhead, about to throw it.",
+					"evolves": "Lv 32",
+					"status": "planned"
+				},
+				{
+					"number": 73,
+					"id": "avalanchor",
+					"name": "Avalanchor",
+					"types": [
+						"frost",
+						"brawl"
+					],
+					"size": "L",
+					"palette": "white, blue-grey, ice",
+					"design": "Huge yeti with ice-encased fists like gauntlets and a back shaped like a snowy mountain ridge. Mid-punch, snow flying. Fierce but noble.",
+					"evolves": "",
+					"status": "planned"
+				}
+			]
+		},
+		{
+			"habitat": "Mountains",
+			"concept": "A mountain goat line.",
+			"members": [
+				{
+					"number": 74,
+					"id": "gruffkid",
+					"name": "Gruffkid",
+					"types": [
+						"brawl"
+					],
+					"size": "S",
+					"palette": "beige, brown, white",
+					"design": "Small beige goat kid with tiny nub horns and a little white beard tuft. Head lowered, ready to butt. Stubborn expression.",
+					"evolves": "Lv 28",
+					"status": "planned"
+				},
+				{
+					"number": 75,
+					"id": "ramstrike",
+					"name": "Ramstrike",
+					"types": [
+						"brawl"
+					],
+					"size": "M",
+					"palette": "brown, white, horn tan",
+					"design": "Muscular brown ram standing on its hind legs in a fighter's stance, with curled horns and wrapped forehooves. White chest fluff.",
+					"evolves": "Lv 42",
+					"status": "planned"
+				},
+				{
+					"number": 76,
+					"id": "summitram",
+					"name": "Summitram",
+					"types": [
+						"brawl",
+						"stone"
+					],
+					"size": "L",
+					"palette": "stone grey, white, horn gold",
+					"design": "Massive ram whose spiral horns are solid grey stone with gold-veined tips. Standing proudly on a rock peak, chest out, beard flowing.",
+					"evolves": "",
+					"status": "planned"
+				}
+			]
+		},
+		{
+			"habitat": "Ruins / mountains",
+			"concept": "A meditative koala.",
+			"members": [
+				{
+					"number": 77,
+					"id": "calmkoa",
+					"name": "Calmkoa",
+					"types": [
+						"brawl"
+					],
+					"size": "S",
+					"palette": "grey, white, leaf green",
+					"design": "Small grey koala seated cross-legged, eyes closed in meditation, with a eucalyptus leaf balanced on its head. White ear tufts.",
+					"evolves": "Lv 34",
+					"status": "planned"
+				},
+				{
+					"number": 78,
+					"id": "zenkoa",
+					"name": "Zenkoa",
+					"types": [
+						"brawl",
+						"mind"
+					],
+					"size": "M",
+					"palette": "grey, white, violet aura",
+					"design": "Koala martial artist floating cross-legged with a soft violet aura. Prayer beads around its neck, one palm raised. Calm but powerful.",
+					"evolves": "",
+					"status": "planned"
+				}
+			]
+		},
+		{
+			"habitat": "Grasslands",
+			"concept": "A mantis duellist.",
+			"members": [
+				{
+					"number": 79,
+					"id": "mantlet",
+					"name": "Mantlet",
+					"types": [
+						"insect",
+						"brawl"
+					],
+					"size": "S",
+					"palette": "leaf green, pink",
+					"design": "Small leaf-green mantis with oversized foreclaws held up like boxing gloves. Big triangle head, pink eyes. Determined little stance.",
+					"evolves": "Lv 30",
+					"status": "planned"
+				},
+				{
+					"number": 80,
+					"id": "prayblade",
+					"name": "Prayblade",
+					"types": [
+						"insect",
+						"brawl"
+					],
+					"size": "M",
+					"palette": "green, steel-like edges",
+					"design": "Tall green mantis whose forearms are long blades with gleaming edges. Folded wings drape like a cape. A fencer's stance, one blade forward.",
+					"evolves": "",
+					"status": "planned"
+				}
+			]
+		},
+		{
+			"habitat": "Marsh",
+			"concept": "A toxic slug.",
+			"members": [
+				{
+					"number": 81,
+					"id": "slimlet",
+					"name": "Slimlet",
+					"types": [
+						"toxic"
+					],
+					"size": "S",
+					"palette": "purple, green slime",
+					"design": "Small purple slug with two eye stalks, a glistening green slime trail and a few drips. Sluggish, sleepy expression.",
+					"evolves": "Lv 28",
+					"status": "planned"
+				},
+				{
+					"number": 82,
+					"id": "slogslug",
+					"name": "Slogslug",
+					"types": [
+						"toxic",
+						"earth"
+					],
+					"size": "L",
+					"palette": "purple, mud brown, green",
+					"design": "Enormous mud-caked purple slug with a shell-like hump of hardened earth on its back. Thick green ooze drips around it. Low and wide.",
+					"evolves": "",
+					"status": "planned"
+				}
+			]
+		},
+		{
+			"habitat": "Industrial",
+			"concept": "A fume cloud that becomes a vulture.",
+			"members": [
+				{
+					"number": 83,
+					"id": "smogling",
+					"name": "Smogling",
+					"types": [
+						"toxic"
+					],
+					"size": "S",
+					"palette": "grey-green smoke",
+					"design": "Small round puff of grey-green smog with a face and two wispy arms. Coughing, with little smoke rings.",
+					"evolves": "Lv 30",
+					"status": "planned"
+				},
+				{
+					"number": 84,
+					"id": "miasmaw",
+					"name": "Miasmaw",
+					"types": [
+						"toxic",
+						"wind"
+					],
+					"size": "M",
+					"palette": "grey-green, black, yellow",
+					"design": "Vulture made of swirling fumes, with a gas-mask-like beak and yellow eyes. Its wings trail smog. Perched, hunched over.",
+					"evolves": "",
+					"status": "planned"
+				}
+			]
+		},
+		{
+			"habitat": "Haunted marsh",
+			"concept": "A bubbling cauldron.",
+			"members": [
+				{
+					"number": 85,
+					"id": "cauldrop",
+					"name": "Cauldrop",
+					"types": [
+						"toxic"
+					],
+					"size": "S",
+					"palette": "iron black, green brew",
+					"design": "Tiny black iron cauldron on three stubby legs, bubbling with green brew. Two eyes peek over the rim, and a ladle handle sticks out like an antenna.",
+					"evolves": "Item: Dusk Stone",
+					"status": "planned"
+				},
+				{
+					"number": 86,
+					"id": "brewitch",
+					"name": "Brewitch",
+					"types": [
+						"toxic",
+						"spirit"
+					],
+					"size": "M",
+					"palette": "black, green, violet",
+					"design": "Witch-like spirit rising out of a cauldron. A pointed hat made of steam, ladle-shaped arms and a trailing violet body. Cackling.",
+					"evolves": "",
+					"status": "planned"
+				}
+			]
+		},
+		{
+			"habitat": "Desert / plains",
+			"concept": "A burrowing owl.",
+			"members": [
+				{
+					"number": 87,
+					"id": "burrowl",
+					"name": "Burrowl",
+					"types": [
+						"earth"
+					],
+					"size": "S",
+					"palette": "sand brown, cream",
+					"design": "Small, long-legged sand-coloured owl standing at the entrance of a burrow. Wide yellow eyes, head tilted sideways.",
+					"evolves": "Lv 28",
+					"status": "planned"
+				},
+				{
+					"number": 88,
+					"id": "dunestrix",
+					"name": "Dunestrix",
+					"types": [
+						"earth",
+						"wind"
+					],
+					"size": "M",
+					"palette": "sand, brown, gold",
+					"design": "Larger owl with sand-coloured wings that whip up small dust devils. Golden eyes, talons dug into the sand. Wings half-spread.",
+					"evolves": "",
+					"status": "planned"
+				}
+			]
+		},
+		{
+			"habitat": "Desert (rare)",
+			"concept": "A sandworm that becomes a dune wyrm.",
+			"members": [
+				{
+					"number": 89,
+					"id": "sandling",
+					"name": "Sandling",
+					"types": [
+						"earth"
+					],
+					"size": "S",
+					"palette": "sand, pink mouth",
+					"design": "Small segmented sandworm poking out of the sand, with a round mouth ringed with tiny teeth and no visible eyes. Swaying.",
+					"evolves": "Lv 40",
+					"status": "planned"
+				},
+				{
+					"number": 90,
+					"id": "dunewyrm",
+					"name": "Dunewyrm",
+					"types": [
+						"earth",
+						"wyrm"
+					],
+					"size": "XL",
+					"palette": "sand gold, brown, bone white",
+					"design": "Enormous serpent wyrm with armoured sand-gold segments, a fringe of bone-white spikes and a crown-like head. Bursting out of the dunes. Should fill the frame and be clearly rare and powerful.",
+					"evolves": "",
+					"status": "planned"
+				}
+			]
+		},
+		{
+			"habitat": "Caves / mines",
+			"concept": "A living drill.",
+			"members": [
+				{
+					"number": 91,
+					"id": "augerbit",
+					"name": "Augerbit",
+					"types": [
+						"earth",
+						"metal"
+					],
+					"size": "S",
+					"palette": "steel grey, brown",
+					"design": "Small mole-like creature with a drill-bit snout, tiny steel claws and dust goggles. Mid-dig.",
+					"evolves": "Lv 31",
+					"status": "planned"
+				},
+				{
+					"number": 92,
+					"id": "bormaw",
+					"name": "Bormaw",
+					"types": [
+						"earth",
+						"metal"
+					],
+					"size": "L",
+					"palette": "steel, rust, brown",
+					"design": "Large drilling beast with a spiral drill jaw, armoured steel plates rusted at the edges and powerful forelimbs. Tunnelling pose, debris flying.",
+					"evolves": "",
+					"status": "planned"
+				}
+			]
+		},
+		{
+			"habitat": "Plains",
+			"concept": "A rolling armadillo.",
+			"members": [
+				{
+					"number": 93,
+					"id": "rollodillo",
+					"name": "Rollodillo",
+					"types": [
+						"earth"
+					],
+					"size": "M",
+					"palette": "tan, brown bands",
+					"design": "Tan armadillo with banded armour, half curled into a ball and peeking out with one eye. Small ears, pointed snout.",
+					"evolves": "",
+					"status": "planned"
+				}
+			]
+		},
+		{
+			"habitat": "Hills / sky",
+			"concept": "A whirlwind spirit.",
+			"members": [
+				{
+					"number": 94,
+					"id": "breezlet",
+					"name": "Breezlet",
+					"types": [
+						"wind"
+					],
+					"size": "S",
+					"palette": "pale cyan, white",
+					"design": "Tiny swirl of pale cyan wind with a face and two leaf-shaped arms. Spinning, with a couple of leaves caught in it.",
+					"evolves": "Lv 35",
+					"status": "planned"
+				},
+				{
+					"number": 95,
+					"id": "cyclonix",
+					"name": "Cyclonix",
+					"types": [
+						"wind"
+					],
+					"size": "L",
+					"palette": "cyan, white, grey",
+					"design": "Towering cyclone creature with a funnel-shaped body, swirling debris and two glowing eyes inside the vortex. Arms made of whipping wind.",
+					"evolves": "",
+					"status": "planned"
+				}
+			]
+		},
+		{
+			"habitat": "Cliffs",
+			"concept": "A kicking falcon.",
+			"members": [
+				{
+					"number": 96,
+					"id": "kestrike",
+					"name": "Kestrike",
+					"types": [
+						"wind",
+						"brawl"
+					],
+					"size": "M",
+					"palette": "rust, white, black",
+					"design": "Rust-and-white falcon with strong taloned legs raised in a high kick. Wing feathers flare like a martial-arts sash, and it has fierce black eye stripes.",
+					"evolves": "",
+					"status": "planned"
+				}
+			]
+		},
+		{
+			"habitat": "Meadows (night)",
+			"concept": "A dreaming sheep.",
+			"members": [
+				{
+					"number": 97,
+					"id": "dozelet",
+					"name": "Dozelet",
+					"types": [
+						"mind"
+					],
+					"size": "S",
+					"palette": "lavender wool, white",
+					"design": "Small sleepy lamb with a cloud-like lavender wool coat and closed eyes. A dream bubble with a little star floats above its head.",
+					"evolves": "Lv 18",
+					"status": "planned"
+				},
+				{
+					"number": 98,
+					"id": "reverell",
+					"name": "Reverell",
+					"types": [
+						"mind"
+					],
+					"size": "M",
+					"palette": "lavender, white, starry blue",
+					"design": "Sheep whose lavender wool forms swirling dream clouds dotted with tiny stars. It walks in its sleep, eyes closed and serene.",
+					"evolves": "Lv 38",
+					"status": "planned"
+				},
+				{
+					"number": 99,
+					"id": "somnarch",
+					"name": "Somnarch",
+					"types": [
+						"mind",
+						"fae"
+					],
+					"size": "L",
+					"palette": "midnight blue, lavender, gold stars",
+					"design": "Majestic ram of dreams with a starry midnight-blue wool cloak and crescent-moon horns. Floating, with dream wisps drifting around it.",
+					"evolves": "",
+					"status": "planned"
+				}
+			]
+		},
+		{
+			"habitat": "City clocktower",
+			"concept": "A clockwork owl.",
+			"members": [
+				{
+					"number": 100,
+					"id": "tickowl",
+					"name": "Tickowl",
+					"types": [
+						"mind",
+						"metal"
+					],
+					"size": "S",
+					"palette": "brass, teal",
+					"design": "Small brass owl with clock-face eyes and gear-shaped wings. Its head is tilted, and a ticking motion is implied.",
+					"evolves": "Lv 34",
+					"status": "planned"
+				},
+				{
+					"number": 101,
+					"id": "chronowl",
+					"name": "Chronowl",
+					"types": [
+						"mind",
+						"metal"
+					],
+					"size": "M",
+					"palette": "brass, teal, white",
+					"design": "Larger owl with a pendulum tail, a clock dial on its chest and wing feathers like clock hands. Its eyes are glowing teal dials.",
+					"evolves": "",
+					"status": "planned"
+				}
+			]
+		},
+		{
+			"habitat": "Towns (night)",
+			"concept": "A black cat of omens.",
+			"members": [
+				{
+					"number": 102,
+					"id": "omencat",
+					"name": "Omencat",
+					"types": [
+						"mind",
+						"shadow"
+					],
+					"size": "S",
+					"palette": "black, violet eyes",
+					"design": "Sleek black cat with glowing violet eyes, a third eye on its forehead and a forked tail. Sitting elegantly, staring.",
+					"evolves": "",
+					"status": "planned"
+				}
+			]
+		},
+		{
+			"habitat": "Desert ruins",
+			"concept": "A riddle-asking sphinx.",
+			"members": [
+				{
+					"number": 103,
+					"id": "riddlecub",
+					"name": "Riddlecub",
+					"types": [
+						"mind"
+					],
+					"size": "S",
+					"palette": "sand gold, blue",
+					"design": "Lion cub with a pharaoh-like striped headdress pattern in its fur and blue eye markings. Head tilted curiously.",
+					"evolves": "Lv 40",
+					"status": "planned"
+				},
+				{
+					"number": 104,
+					"id": "sphyrion",
+					"name": "Sphyrion",
+					"types": [
+						"mind",
+						"earth"
+					],
+					"size": "L",
+					"palette": "gold, lapis blue, sandstone",
+					"design": "Sphinx with golden wings and a lapis-and-sandstone headdress. Lounging regally on a stone plinth, with eyes that see everything.",
+					"evolves": "",
+					"status": "planned"
+				}
+			]
+		},
+		{
+			"habitat": "Haunted house / graveyard",
+			"concept": "A wisp line.",
+			"members": [
+				{
+					"number": 105,
+					"id": "wisplet",
+					"name": "Wisplet",
+					"types": [
+						"spirit"
+					],
+					"size": "S",
+					"palette": "pale blue glow",
+					"design": "Small floating wisp of pale blue light with a sad face and a trailing tail. Faintly translucent.",
+					"evolves": "Lv 25",
+					"status": "planned"
+				},
+				{
+					"number": 106,
+					"id": "mournlight",
+					"name": "Mournlight",
+					"types": [
+						"spirit"
+					],
+					"size": "M",
+					"palette": "blue glow, grey",
+					"design": "Lantern-shaped spirit whose body is a glowing lamp of mournful blue light. A cracked glass face and drifting chain arms.",
+					"evolves": "Trade",
+					"status": "planned"
+				},
+				{
+					"number": 107,
+					"id": "veilwraith",
+					"name": "Veilwraith",
+					"types": [
+						"spirit",
+						"shadow"
+					],
+					"size": "L",
+					"palette": "black veil, violet, pale face",
+					"design": "Tall wraith in a flowing black veil with a pale, mask-like face and long clawed hands reaching forward. Violet eyes.",
+					"evolves": "",
+					"status": "planned"
+				}
+			]
+		},
+		{
+			"habitat": "Rainy towns",
+			"concept": "A haunted umbrella.",
+			"members": [
+				{
+					"number": 108,
+					"id": "parasoul",
+					"name": "Parasoul",
+					"types": [
+						"spirit",
+						"wind"
+					],
+					"size": "M",
+					"palette": "faded red paper, wood",
+					"design": "Old paper umbrella with faded red paper, one large eye and a long tongue, hopping on its wooden handle. Torn edges.",
+					"evolves": "",
+					"status": "planned"
+				}
+			]
+		},
+		{
+			"habitat": "Graveyard / ruins",
+			"concept": "A haunted cairn of stones.",
+			"members": [
+				{
+					"number": 109,
+					"id": "cairnling",
+					"name": "Cairnling",
+					"types": [
+						"spirit",
+						"stone"
+					],
+					"size": "S",
+					"palette": "grey stones, blue glow",
+					"design": "Small stack of grey stones with ghostly blue eyes glowing in the gaps. Moss on the top stone.",
+					"evolves": "Lv 36",
+					"status": "planned"
+				},
+				{
+					"number": 110,
+					"id": "cairnwight",
+					"name": "Cairnwight",
+					"types": [
+						"spirit",
+						"stone"
+					],
+					"size": "L",
+					"palette": "dark stone, blue glow",
+					"design": "Tall cairn of stacked dark stones forming a hulking figure with long arms and a glowing blue core in its chest.",
+					"evolves": "",
+					"status": "planned"
+				}
+			]
+		},
+		{
+			"habitat": "Towns",
+			"concept": "A sneaky raccoon thief.",
+			"members": [
+				{
+					"number": 111,
+					"id": "pilfurr",
+					"name": "Pilfurr",
+					"types": [
+						"shadow"
+					],
+					"size": "S",
+					"palette": "grey, black mask, white",
+					"design": "Raccoon kit with a black bandit mask and a ringed tail. Holding a stolen shiny coin and looking over its shoulder.",
+					"evolves": "Lv 30",
+					"status": "planned"
+				},
+				{
+					"number": 112,
+					"id": "banditail",
+					"name": "Banditail",
+					"types": [
+						"shadow"
+					],
+					"size": "M",
+					"palette": "grey, black, gold",
+					"design": "Raccoon on two legs in a black mask, with a bushy ringed tail stuffed with stolen gold trinkets. Sly grin.",
+					"evolves": "",
+					"status": "planned"
+				}
+			]
+		},
+		{
+			"habitat": "Night routes",
+			"concept": "A cackling hyena.",
+			"members": [
+				{
+					"number": 113,
+					"id": "snickerpup",
+					"name": "Snickerpup",
+					"types": [
+						"shadow"
+					],
+					"size": "S",
+					"palette": "dusty tan, black spots",
+					"design": "Hyena pup with dusty tan spotted fur, big round ears and an oversized giggling grin.",
+					"evolves": "Lv 32",
+					"status": "planned"
+				},
+				{
+					"number": 114,
+					"id": "cacklehyde",
+					"name": "Cacklehyde",
+					"types": [
+						"shadow",
+						"brawl"
+					],
+					"size": "L",
+					"palette": "dark tan, black, red",
+					"design": "Muscular hyena brute with a bristling red-tipped mane and scarred knuckles. Standing upright, laughing.",
+					"evolves": "",
+					"status": "planned"
+				}
+			]
+		},
+		{
+			"habitat": "Haunted woods",
+			"concept": "A mischievous pumpkin imp.",
+			"members": [
+				{
+					"number": 115,
+					"id": "grimpkin",
+					"name": "Grimpkin",
+					"types": [
+						"shadow",
+						"fae"
+					],
+					"size": "S",
+					"palette": "orange, black, purple",
+					"design": "Small imp wearing a carved pumpkin as a helmet, with a forked tail and purple sparkly mischief magic in one hand.",
+					"evolves": "",
+					"status": "planned"
+				}
+			]
+		},
+		{
+			"habitat": "Caves / mines",
+			"concept": "A rolling armoured bug.",
+			"members": [
+				{
+					"number": 116,
+					"id": "rivetbug",
+					"name": "Rivetbug",
+					"types": [
+						"insect",
+						"metal"
+					],
+					"size": "S",
+					"palette": "steel grey, rivets",
+					"design": "Small pill bug made of overlapping steel plates fastened with rivets. Half-curled, peeking out.",
+					"evolves": "Lv 33",
+					"status": "planned"
+				},
+				{
+					"number": 117,
+					"id": "ironshell",
+					"name": "Ironshell",
+					"types": [
+						"insect",
+						"metal"
+					],
+					"size": "M",
+					"palette": "iron, bronze",
+					"design": "Large armoured beetle with plate armour like a knight's and a long horn like a lance. Bronze trim. A charging stance.",
+					"evolves": "",
+					"status": "planned"
+				}
+			]
+		},
+		{
+			"habitat": "Shrines / mountains",
+			"concept": "A wind chime spirit.",
+			"members": [
+				{
+					"number": 118,
+					"id": "chimelet",
+					"name": "Chimelet",
+					"types": [
+						"metal",
+						"fae"
+					],
+					"size": "S",
+					"palette": "silver, pastel pink",
+					"design": "Small wind chime with hanging metal tubes for legs and a cheerful face on the top bar. A pastel ribbon.",
+					"evolves": "Lv 34",
+					"status": "planned"
+				},
+				{
+					"number": 119,
+					"id": "carillon",
+					"name": "Carillon",
+					"types": [
+						"metal",
+						"fae"
+					],
+					"size": "M",
+					"palette": "silver, gold, pastel",
+					"design": "Bell-tower creature with a large silver bell body, small arms and chimes that ring a melody. Visible musical notes.",
+					"evolves": "",
+					"status": "planned"
+				}
+			]
+		},
+		{
+			"habitat": "Towns",
+			"concept": "A clockwork dog.",
+			"members": [
+				{
+					"number": 120,
+					"id": "gearpup",
+					"name": "Gearpup",
+					"types": [
+						"metal"
+					],
+					"size": "S",
+					"palette": "steel, brass",
+					"design": "Small robot puppy with gear-shaped ears, a wind-up key in its back and a wagging spring tail.",
+					"evolves": "Lv 32",
+					"status": "planned"
+				},
+				{
+					"number": 121,
+					"id": "clankhound",
+					"name": "Clankhound",
+					"types": [
+						"metal"
+					],
+					"size": "L",
+					"palette": "steel, brass, red eye",
+					"design": "Large mechanical hound with piston legs, a steam vent on its back and a glowing red eye. A guard-dog stance.",
+					"evolves": "",
+					"status": "planned"
+				}
+			]
+		},
+		{
+			"habitat": "Meadows (dawn)",
+			"concept": "A dewdrop fairy.",
+			"members": [
+				{
+					"number": 122,
+					"id": "dewlette",
+					"name": "Dewlette",
+					"types": [
+						"fae"
+					],
+					"size": "S",
+					"palette": "clear blue, pink",
+					"design": "Tiny fairy whose body is a clear blue dewdrop with a face and a leaf hat. Sitting on a leaf.",
+					"evolves": "Item: Sun Stone",
+					"status": "planned"
+				},
+				{
+					"number": 123,
+					"id": "dewdancer",
+					"name": "Dewdancer",
+					"types": [
+						"fae"
+					],
+					"size": "M",
+					"palette": "clear blue, pink, white",
+					"design": "Graceful fairy dancer whose dress is made of water droplets catching the light. Mid-pirouette.",
+					"evolves": "",
+					"status": "planned"
+				}
+			]
+		},
+		{
+			"habitat": "Woodland",
+			"concept": "A fluffy fawn.",
+			"members": [
+				{
+					"number": 124,
+					"id": "fluffawn",
+					"name": "Fluffawn",
+					"types": [
+						"fae"
+					],
+					"size": "M",
+					"palette": "cream, pink, white",
+					"design": "Cream fawn with cloud-like fluff on its chest and tiny flower antlers. Big, gentle eyes.",
+					"evolves": "",
+					"status": "planned"
+				}
+			]
+		},
+		{
+			"habitat": "Hills (night)",
+			"concept": "A wishing star.",
+			"members": [
+				{
+					"number": 125,
+					"id": "starlette",
+					"name": "Starlette",
+					"types": [
+						"fae",
+						"mind"
+					],
+					"size": "S",
+					"palette": "gold, white, pink",
+					"design": "Small five-pointed golden star creature with a twinkling face and a trailing sparkle tail.",
+					"evolves": "",
+					"status": "planned"
+				}
+			]
+		},
+		{
+			"habitat": "Mountain peak (rare)",
+			"concept": "The pseudo-legendary dragon line.",
+			"members": [
+				{
+					"number": 126,
+					"id": "scalelet",
+					"name": "Scalelet",
+					"types": [
+						"wyrm"
+					],
+					"size": "S",
+					"palette": "jade, cream",
+					"design": "Small jade serpentine dragon with stubby legs, a big head and oversized cream belly scales. Baby-like.",
+					"evolves": "Lv 30",
+					"status": "planned"
+				},
+				{
+					"number": 127,
+					"id": "ridgedrake",
+					"name": "Ridgedrake",
+					"types": [
+						"wyrm"
+					],
+					"size": "M",
+					"palette": "jade, grey, cream",
+					"design": "Lithe jade drake with grey stone ridges along its spine, small wings and a long tail. Alert, about to take off.",
+					"evolves": "Lv 55",
+					"status": "planned"
+				},
+				{
+					"number": 128,
+					"id": "peakwyrm",
+					"name": "Peakwyrm",
+					"types": [
+						"wyrm",
+						"stone"
+					],
+					"size": "XL",
+					"palette": "jade, slate, gold",
+					"design": "Massive dragon whose spine forms a mountain range of slate peaks, with gold-tipped stone horns and great wings. Rearing. Fills the frame.",
+					"evolves": "",
+					"status": "planned"
+				}
+			]
+		},
+		{
+			"habitat": "Sea (late game, rare)",
+			"concept": "A whirlpool sea drake. (Moved here from the Water starter line: too strong for a starter.)",
+			"members": [
+				{
+					"number": 129,
+					"id": "coilfin",
+					"name": "Coilfin",
+					"types": [
+						"water"
+					],
+					"size": "S",
+					"palette": "deep blue, white",
+					"design": "Small, deep-blue eel-like fish with a frilly white fin crest, coiled around itself like a spring.",
+					"evolves": "Lv 45",
+					"status": "planned"
+				},
+				{
+					"number": 130,
+					"id": "maelstrake",
+					"name": "Maelstrake",
+					"types": [
+						"water",
+						"wyrm"
+					],
+					"size": "XL",
+					"palette": "deep blue, teal, white foam",
+					"design": "Huge sea drake coiled in a spiral like a whirlpool, with a frill of white foam and a long, sinuous body. Fills the frame.",
+					"evolves": "",
+					"status": "planned"
+				}
+			]
+		},
+		{
+			"habitat": "Ancient forest (rare)",
+			"concept": "A forest dragon.",
+			"members": [
+				{
+					"number": 131,
+					"id": "verdrake",
+					"name": "Verdrake",
+					"types": [
+						"wyrm",
+						"flora"
+					],
+					"size": "L",
+					"palette": "forest green, bark brown, blossoms",
+					"design": "Dragon covered in moss and blossoms, with branch-like horns and leafy wings. Peaceful but ancient.",
+					"evolves": "",
+					"status": "planned"
+				}
+			]
+		},
+		{
+			"habitat": "Routes",
+			"concept": "A sleepy bear.",
+			"members": [
+				{
+					"number": 132,
+					"id": "lumbear",
+					"name": "Lumbear",
+					"types": [
+						"common"
+					],
+					"size": "XL",
+					"palette": "brown, cream",
+					"design": "Huge sleepy brown bear lying across a path, snoring, with a cream belly. Fills the frame.",
+					"evolves": "",
+					"status": "planned"
+				}
+			]
+		},
+		{
+			"habitat": "Farms / woods",
+			"concept": "A truffle pig.",
+			"members": [
+				{
+					"number": 133,
+					"id": "snoutle",
+					"name": "Snoutle",
+					"types": [
+						"common"
+					],
+					"size": "S",
+					"palette": "pink, brown",
+					"design": "Small pink piglet with an oversized snout always sniffing the ground. Curly tail.",
+					"evolves": "Lv 30",
+					"status": "planned"
+				},
+				{
+					"number": 134,
+					"id": "truffhog",
+					"name": "Truffhog",
+					"types": [
+						"common",
+						"earth"
+					],
+					"size": "M",
+					"palette": "brown, pink, earth",
+					"design": "Brown boar with a powerful digging snout, small tusks and truffles growing on its bristly back.",
+					"evolves": "",
+					"status": "planned"
+				}
+			]
+		},
+		{
+			"habitat": "Gardens",
+			"concept": "A hummingbird.",
+			"members": [
+				{
+					"number": 135,
+					"id": "hummling",
+					"name": "Hummling",
+					"types": [
+						"common",
+						"fae"
+					],
+					"size": "S",
+					"palette": "iridescent green, pink",
+					"design": "Tiny iridescent green hummingbird with blurred wings, a long beak and a pink throat.",
+					"evolves": "",
+					"status": "planned"
+				}
+			]
+		},
+		{
+			"habitat": "Towns",
+			"concept": "A copycat cat.",
+			"members": [
+				{
+					"number": 136,
+					"id": "mimicat",
+					"name": "Mimicat",
+					"types": [
+						"common"
+					],
+					"size": "S",
+					"palette": "cream, patchwork colours",
+					"design": "Cream cat with patchwork fur patches that copy the patterns of other creatures. Sly smile.",
+					"evolves": "",
+					"status": "planned"
+				}
+			]
+		},
+		{
+			"habitat": "Farms / hills",
+			"concept": "A woolly sheep.",
+			"members": [
+				{
+					"number": 137,
+					"id": "woolump",
+					"name": "Woolump",
+					"types": [
+						"common"
+					],
+					"size": "S",
+					"palette": "white wool, grey face",
+					"design": "Small, round white sheep that is mostly wool, with a grey face and tiny legs.",
+					"evolves": "Lv 30",
+					"status": "planned"
+				},
+				{
+					"number": 138,
+					"id": "woolossus",
+					"name": "Woolossus",
+					"types": [
+						"common"
+					],
+					"size": "XL",
+					"palette": "white wool, grey",
+					"design": "Gigantic sheep whose white wool is a mountain of fluff, with a small grey face peeking out. Fills the frame.",
+					"evolves": "",
+					"status": "planned"
+				}
+			]
+		},
+		{
+			"habitat": "Volcano",
+			"concept": "An ash crow.",
+			"members": [
+				{
+					"number": 139,
+					"id": "ashcrow",
+					"name": "Ashcrow",
+					"types": [
+						"flame",
+						"shadow"
+					],
+					"size": "M",
+					"palette": "ash grey, ember orange",
+					"design": "Crow whose feathers smoulder at the tips with ember orange, trailing ash. Perched, cawing.",
+					"evolves": "",
+					"status": "planned"
+				}
+			]
+		},
+		{
+			"habitat": "Ice caves",
+			"concept": "A frost wisp lantern.",
+			"members": [
+				{
+					"number": 140,
+					"id": "rimewisp",
+					"name": "Rimewisp",
+					"types": [
+						"frost",
+						"spirit"
+					],
+					"size": "S",
+					"palette": "ice blue, pale glow",
+					"design": "Floating frozen lantern spirit with a cold blue flame inside a frosted glass body.",
+					"evolves": "",
+					"status": "planned"
+				}
+			]
+		},
+		{
+			"habitat": "Sea",
+			"concept": "A haunted buoy bell.",
+			"members": [
+				{
+					"number": 141,
+					"id": "bellbuoy",
+					"name": "Bellbuoy",
+					"types": [
+						"spirit",
+						"water"
+					],
+					"size": "M",
+					"palette": "rusty red, white, sea green",
+					"design": "Old harbour buoy, rusty red with a sea-green base, whose bell tolls by itself. Barnacles and a ghostly face.",
+					"evolves": "",
+					"status": "planned"
+				}
+			]
+		},
+		{
+			"habitat": "Fossil (museum revival)",
+			"concept": "An armoured prehistoric fish.",
+			"members": [
+				{
+					"number": 142,
+					"id": "platefin",
+					"name": "Platefin",
+					"types": [
+						"stone",
+						"water"
+					],
+					"size": "S",
+					"palette": "bone tan, slate",
+					"design": "Small armoured fish with a bony plate head and a tan body. Ancient look.",
+					"evolves": "Lv 40",
+					"status": "planned"
+				},
+				{
+					"number": 143,
+					"id": "dunkleon",
+					"name": "Dunkleon",
+					"types": [
+						"stone",
+						"water"
+					],
+					"size": "L",
+					"palette": "slate, bone, dark",
+					"design": "Massive armoured fish with a huge bony jaw plate that slices like shears. Slate and bone colours. Fills the frame.",
+					"evolves": "",
+					"status": "planned"
+				}
+			]
+		},
+		{
+			"habitat": "Fossil (museum revival)",
+			"concept": "A prehistoric sea scorpion.",
+			"members": [
+				{
+					"number": 144,
+					"id": "scuttlite",
+					"name": "Scuttlite",
+					"types": [
+						"stone",
+						"insect"
+					],
+					"size": "S",
+					"palette": "amber, brown",
+					"design": "Small, trilobite-like amber-coloured creature with segmented armour and many tiny legs.",
+					"evolves": "Lv 40",
+					"status": "planned"
+				},
+				{
+					"number": 145,
+					"id": "scorptera",
+					"name": "Scorptera",
+					"types": [
+						"stone",
+						"insect"
+					],
+					"size": "L",
+					"palette": "amber, dark brown",
+					"design": "Huge sea scorpion with paddle legs, armoured amber plates and a spiked tail. A menacing raised-claws pose.",
+					"evolves": "",
+					"status": "planned"
+				}
+			]
+		},
+		{
+			"habitat": "Legendary",
+			"concept": "The three Peak Wardens, each guarding a mountain.",
+			"members": [
+				{
+					"number": 146,
+					"id": "halvorn",
+					"name": "Halvorn",
+					"types": [
+						"frost",
+						"wind"
+					],
+					"size": "XL",
+					"palette": "ice white, pale blue, silver",
+					"design": "Great owl-stag of the glacier: an owl's head and wings on a stag's body, with ice-crystal antlers and a frost cape. Should read as ancient and serene. Fills the frame.",
+					"evolves": "",
+					"status": "planned"
+				},
+				{
+					"number": 147,
+					"id": "thundrel",
+					"name": "Thundrel",
+					"types": [
+						"volt",
+						"brawl"
+					],
+					"size": "XL",
+					"palette": "storm yellow, black, white",
+					"design": "Storm titan: a bear-like humanoid wrapped in storm clouds, with lightning-bolt horns and fists crackling with thunder. Should look fierce and electric. Fills the frame.",
+					"evolves": "",
+					"status": "planned"
+				},
+				{
+					"number": 148,
+					"id": "solaric",
+					"name": "Solaric",
+					"types": [
+						"flame",
+						"mind"
+					],
+					"size": "XL",
+					"palette": "sun gold, white, crimson",
+					"design": "Sun spirit lion with a radiant golden mane like a solar corona, a third eye of crimson fire and floating rings. Should look serene and powerful. Fills the frame.",
+					"evolves": "",
+					"status": "planned"
+				}
+			]
+		},
+		{
+			"habitat": "Legendary",
+			"concept": "The region's great legend.",
+			"members": [
+				{
+					"number": 149,
+					"id": "vaelith",
+					"name": "Vaelith",
+					"types": [
+						"spirit",
+						"wyrm"
+					],
+					"size": "XL",
+					"palette": "silver, pale violet, black",
+					"design": "Ancient spirit dragon of silver and pale violet, with long translucent wings like veils, a skeletal crown and trailing spectral mist. The region's great legend. Fills the frame.",
+					"evolves": "",
+					"status": "planned"
+				}
+			]
+		},
+		{
+			"habitat": "Mythical",
+			"concept": "The origin of all monsters.",
+			"members": [
+				{
+					"number": 150,
+					"id": "primmi",
+					"name": "Primmi",
+					"types": [
+						"fae",
+						"mind"
+					],
+					"size": "S",
+					"palette": "soft pink, white",
+					"design": "Tiny primordial creature, soft pink and white, with big curious eyes, a long tail and small wing-like ears. Floating playfully. Simple shapes that hint at every other monster.",
+					"evolves": "",
+					"status": "planned"
+				}
+			]
+		}
+	]
+}

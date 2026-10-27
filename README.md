@@ -78,4 +78,5 @@ No code changes are needed. See [docs/CONTENT.md](docs/CONTENT.md).
 - [Design and mechanics](docs/DESIGN.md)
 - [Adding content: maps, NPCs, events](docs/CONTENT.md)
 - [Art specification: sprite formats](docs/ART_SPEC.md) and the [art checklist](docs/ART_CHECKLIST.md)
+- [Roster: all 150 planned monsters with design notes](docs/ROSTER.md)
 - [Content guidelines: staying original](docs/CONTENT_GUIDELINES.md)
