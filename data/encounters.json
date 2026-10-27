@@ -1,0 +1,10 @@
+{
+	"route_1": {
+		"rate": 21,
+		"grass": [
+			{ "species": "pipwing", "min_level": 2, "max_level": 4, "weight": 40 },
+			{ "species": "nibbet",  "min_level": 2, "max_level": 4, "weight": 40 },
+			{ "species": "grubble", "min_level": 2, "max_level": 3, "weight": 20 }
+		]
+	}
+}

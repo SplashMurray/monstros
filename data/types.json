@@ -1,0 +1,42 @@
+{
+	"types": {
+		"common": { "name": "Common", "color": "#A8A27A" },
+		"flame":  { "name": "Flame",  "color": "#E8743B" },
+		"water":  { "name": "Water",  "color": "#4F8FE0" },
+		"flora":  { "name": "Flora",  "color": "#6BBF4E" },
+		"volt":   { "name": "Volt",   "color": "#F2C94C" },
+		"frost":  { "name": "Frost",  "color": "#8FD8D8" },
+		"brawl":  { "name": "Brawl",  "color": "#B84A3A" },
+		"toxic":  { "name": "Toxic",  "color": "#9B4FA8" },
+		"earth":  { "name": "Earth",  "color": "#C9A55A" },
+		"wind":   { "name": "Wind",   "color": "#9DB4F0" },
+		"mind":   { "name": "Mind",   "color": "#F06A9A" },
+		"insect": { "name": "Insect", "color": "#A3B82A" },
+		"stone":  { "name": "Stone",  "color": "#A8923E" },
+		"spirit": { "name": "Spirit", "color": "#6E5A9C" },
+		"wyrm":   { "name": "Wyrm",   "color": "#6A44E8" },
+		"shadow": { "name": "Shadow", "color": "#5A4A40" },
+		"metal":  { "name": "Metal",  "color": "#B0B0C8" },
+		"fae":    { "name": "Fae",    "color": "#E8A0C8" }
+	},
+	"chart": {
+		"common": { "stone": 0.5, "metal": 0.5, "spirit": 0 },
+		"flame":  { "flora": 2, "frost": 2, "insect": 2, "metal": 2, "flame": 0.5, "water": 0.5, "stone": 0.5, "wyrm": 0.5 },
+		"water":  { "flame": 2, "earth": 2, "stone": 2, "water": 0.5, "flora": 0.5, "wyrm": 0.5 },
+		"volt":   { "water": 2, "wind": 2, "volt": 0.5, "flora": 0.5, "wyrm": 0.5, "earth": 0 },
+		"flora":  { "water": 2, "earth": 2, "stone": 2, "flame": 0.5, "flora": 0.5, "toxic": 0.5, "wind": 0.5, "insect": 0.5, "wyrm": 0.5, "metal": 0.5 },
+		"frost":  { "flora": 2, "earth": 2, "wind": 2, "wyrm": 2, "flame": 0.5, "water": 0.5, "frost": 0.5, "metal": 0.5 },
+		"brawl":  { "common": 2, "frost": 2, "stone": 2, "shadow": 2, "metal": 2, "toxic": 0.5, "wind": 0.5, "mind": 0.5, "insect": 0.5, "fae": 0.5, "spirit": 0 },
+		"toxic":  { "flora": 2, "fae": 2, "toxic": 0.5, "earth": 0.5, "stone": 0.5, "spirit": 0.5, "metal": 0 },
+		"earth":  { "flame": 2, "volt": 2, "toxic": 2, "stone": 2, "metal": 2, "flora": 0.5, "insect": 0.5, "wind": 0 },
+		"wind":   { "flora": 2, "brawl": 2, "insect": 2, "volt": 0.5, "stone": 0.5, "metal": 0.5 },
+		"mind":   { "brawl": 2, "toxic": 2, "mind": 0.5, "metal": 0.5, "shadow": 0 },
+		"insect": { "flora": 2, "mind": 2, "shadow": 2, "flame": 0.5, "brawl": 0.5, "toxic": 0.5, "wind": 0.5, "spirit": 0.5, "metal": 0.5, "fae": 0.5 },
+		"stone":  { "flame": 2, "frost": 2, "wind": 2, "insect": 2, "brawl": 0.5, "earth": 0.5, "metal": 0.5 },
+		"spirit": { "mind": 2, "spirit": 2, "shadow": 0.5, "common": 0 },
+		"wyrm":   { "wyrm": 2, "metal": 0.5, "fae": 0 },
+		"shadow": { "mind": 2, "spirit": 2, "brawl": 0.5, "shadow": 0.5, "fae": 0.5 },
+		"metal":  { "frost": 2, "stone": 2, "fae": 2, "flame": 0.5, "water": 0.5, "volt": 0.5, "metal": 0.5 },
+		"fae":    { "brawl": 2, "wyrm": 2, "shadow": 2, "flame": 0.5, "toxic": 0.5, "metal": 0.5 }
+	}
+}

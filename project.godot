@@ -1,0 +1,29 @@
+; Engine configuration file.
+; Edit through the Godot editor where possible.
+
+config_version=5
+
+[application]
+
+config/name="Monstros"
+config/description="A monster-collecting RPG."
+run/main_scene="res://scenes/overworld/overworld.tscn"
+config/features=PackedStringArray("4.3", "GL Compatibility")
+
+[autoload]
+
+Game="*res://scripts/core/game.gd"
+
+[display]
+
+window/size/viewport_width=480
+window/size/viewport_height=320
+window/size/window_width_override=960
+window/size/window_height_override=640
+window/stretch/mode="viewport"
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
