@@ -353,22 +353,22 @@
 		"pp": 15,
 		"description": "Engulfs the foe in a surging current."
 	},
-	"tempest_coil": {
-		"name": "Tempest Coil",
-		"type": "wyrm",
-		"category": "special",
+	"reef_crush": {
+		"name": "Reef Crush",
+		"type": "stone",
+		"category": "physical",
 		"power": 75,
-		"accuracy": 100,
+		"accuracy": 95,
 		"pp": 15,
 		"effects": [
 			{
 				"kind": "stat",
-				"target": "self",
-				"stat": "spa",
-				"stages": 1,
+				"target": "target",
+				"stat": "def",
+				"stages": -1,
 				"chance": 20
 			}
 		],
-		"description": "Whips up a storm within its coils. May raise the user's Sp. Atk."
+		"description": "Rams the foe with a shell of jagged coral. May lower the foe's Defence."
 	}
 }

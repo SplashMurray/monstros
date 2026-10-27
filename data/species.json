@@ -425,24 +425,24 @@
 			{
 				"method": "level",
 				"level": 36,
-				"into": "maelstrake"
+				"into": "coralith"
 			}
 		],
 		"description": "Its shell is patterned like waves on wet sand."
 	},
-	"maelstrake": {
-		"name": "Maelstrake",
+	"coralith": {
+		"name": "Coralith",
 		"types": [
 			"water",
-			"wyrm"
+			"stone"
 		],
 		"base_stats": {
-			"hp": 82,
-			"atk": 86,
-			"def": 96,
-			"spa": 88,
-			"spd": 94,
-			"spe": 78
+			"hp": 84,
+			"atk": 90,
+			"def": 104,
+			"spa": 80,
+			"spd": 90,
+			"spe": 76
 		},
 		"catch_rate": 45,
 		"base_exp": 236,
@@ -478,7 +478,7 @@
 			],
 			[
 				38,
-				"tempest_coil"
+				"reef_crush"
 			],
 			[
 				44,
@@ -486,7 +486,7 @@
 			]
 		],
 		"evolutions": [],
-		"description": "A sea drake that sleeps coiled at the bottom of whirlpools. Sailors steer wide of spinning water."
+		"description": "Its wave-patterned shell has grown into a living reef. Small fish shelter in the coral along its back."
 	},
 	"pipwing": {
 		"name": "Pipwing",

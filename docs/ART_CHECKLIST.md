@@ -33,9 +33,9 @@ for each file is in [ART_SPEC.md](ART_SPEC.md). Paths are relative to `assets/`.
 | ⬜ | `monsters/tidalisk/front.png` | 64x64 | Tidalisk (front) | In game |
 | ⬜ | `monsters/tidalisk/back.png` | 64x64 | Tidalisk (back) | In game |
 | ⬜ | `monsters/tidalisk/icon.png` | 64x32 | Tidalisk (party icon) | Planned |
-| ⬜ | `monsters/maelstrake/front.png` | 64x64 | Maelstrake (front) | In game |
-| ⬜ | `monsters/maelstrake/back.png` | 64x64 | Maelstrake (back) | In game |
-| ⬜ | `monsters/maelstrake/icon.png` | 64x32 | Maelstrake (party icon) | Planned |
+| ⬜ | `monsters/coralith/front.png` | 64x64 | Coralith (front) | In game |
+| ⬜ | `monsters/coralith/back.png` | 64x64 | Coralith (back) | In game |
+| ⬜ | `monsters/coralith/icon.png` | 64x32 | Coralith (party icon) | Planned |
 | ⬜ | `monsters/pipwing/front.png` | 64x64 | Pipwing (front) | In game |
 | ⬜ | `monsters/pipwing/back.png` | 64x64 | Pipwing (back) | In game |
 | ⬜ | `monsters/pipwing/icon.png` | 64x32 | Pipwing (party icon) | Planned |
