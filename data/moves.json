@@ -291,5 +291,84 @@
 			}
 		],
 		"description": "A stomp that shakes the ground. May lower the foe's Speed."
+	},
+	"bramble_lash": {
+		"name": "Bramble Lash",
+		"type": "flora",
+		"category": "physical",
+		"power": 80,
+		"accuracy": 100,
+		"pp": 15,
+		"description": "Lashes the foe with thorny vines."
+	},
+	"rootquake": {
+		"name": "Rootquake",
+		"type": "earth",
+		"category": "physical",
+		"power": 80,
+		"accuracy": 100,
+		"pp": 10,
+		"effects": [
+			{
+				"kind": "stat",
+				"target": "target",
+				"stat": "spe",
+				"stages": -1,
+				"chance": 20
+			}
+		],
+		"description": "Heaves the ground with massive roots. May lower the foe's Speed."
+	},
+	"forge_flare": {
+		"name": "Forge Flare",
+		"type": "flame",
+		"category": "special",
+		"power": 80,
+		"accuracy": 100,
+		"pp": 15,
+		"effects": [
+			{
+				"kind": "status",
+				"status": "burn",
+				"chance": 10
+			}
+		],
+		"description": "A blast of forge-hot flame. May burn."
+	},
+	"iron_pounce": {
+		"name": "Iron Pounce",
+		"type": "metal",
+		"category": "physical",
+		"power": 75,
+		"accuracy": 95,
+		"pp": 15,
+		"description": "Pounces with claws hard as tempered steel."
+	},
+	"riptide_surge": {
+		"name": "Riptide Surge",
+		"type": "water",
+		"category": "special",
+		"power": 80,
+		"accuracy": 100,
+		"pp": 15,
+		"description": "Engulfs the foe in a surging current."
+	},
+	"tempest_coil": {
+		"name": "Tempest Coil",
+		"type": "wyrm",
+		"category": "special",
+		"power": 75,
+		"accuracy": 100,
+		"pp": 15,
+		"effects": [
+			{
+				"kind": "stat",
+				"target": "self",
+				"stat": "spa",
+				"stages": 1,
+				"chance": 20
+			}
+		],
+		"description": "Whips up a storm within its coils. May raise the user's Sp. Atk."
 	}
 }

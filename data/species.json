@@ -89,10 +89,78 @@
 			[
 				13,
 				"spore_puff"
+			],
+			[
+				20,
+				"bramble_lash"
+			]
+		],
+		"evolutions": [
+			{
+				"method": "level",
+				"level": 36,
+				"into": "briarhart"
+			}
+		],
+		"description": "Its thorny crown hardens a little more every spring."
+	},
+	"briarhart": {
+		"name": "Briarhart",
+		"types": [
+			"flora",
+			"earth"
+		],
+		"base_stats": {
+			"hp": 80,
+			"atk": 92,
+			"def": 88,
+			"spa": 96,
+			"spd": 92,
+			"spe": 72
+		},
+		"catch_rate": 45,
+		"base_exp": 236,
+		"growth": "medium_slow",
+		"ev_yield": {
+			"spa": 2,
+			"spd": 1
+		},
+		"learnset": [
+			[
+				1,
+				"shove"
+			],
+			[
+				1,
+				"bristle"
+			],
+			[
+				5,
+				"sap_draw"
+			],
+			[
+				9,
+				"leaf_cut"
+			],
+			[
+				13,
+				"spore_puff"
+			],
+			[
+				20,
+				"bramble_lash"
+			],
+			[
+				38,
+				"rootquake"
+			],
+			[
+				44,
+				"headlong"
 			]
 		],
 		"evolutions": [],
-		"description": "Its thorny crown hardens a little more every spring."
+		"description": "A towering guardian whose antlers have rooted into living briar. Forests grow quiet where it walks."
 	},
 	"emberkit": {
 		"name": "Emberkit",
@@ -184,10 +252,78 @@
 			[
 				14,
 				"flare_lash"
+			],
+			[
+				20,
+				"forge_flare"
+			]
+		],
+		"evolutions": [
+			{
+				"method": "level",
+				"level": 36,
+				"into": "forgemane"
+			}
+		],
+		"description": "Leaves scorched paw prints wherever it runs."
+	},
+	"forgemane": {
+		"name": "Forgemane",
+		"types": [
+			"flame",
+			"metal"
+		],
+		"base_stats": {
+			"hp": 74,
+			"atk": 98,
+			"def": 80,
+			"spa": 100,
+			"spd": 76,
+			"spe": 96
+		},
+		"catch_rate": 45,
+		"base_exp": 236,
+		"growth": "medium_slow",
+		"ev_yield": {
+			"spa": 2,
+			"spe": 1
+		},
+		"learnset": [
+			[
+				1,
+				"shove"
+			],
+			[
+				1,
+				"bristle"
+			],
+			[
+				5,
+				"cinder_spit"
+			],
+			[
+				10,
+				"quick_dart"
+			],
+			[
+				14,
+				"flare_lash"
+			],
+			[
+				20,
+				"forge_flare"
+			],
+			[
+				38,
+				"iron_pounce"
+			],
+			[
+				44,
+				"headlong"
 			]
 		],
 		"evolutions": [],
-		"description": "Leaves scorched paw prints wherever it runs."
+		"description": "Its mane burns hot enough to soften iron, and its claws have been tempered by its own flames."
 	},
 	"ripplet": {
 		"name": "Ripplet",
@@ -279,10 +415,78 @@
 			[
 				13,
 				"riptide_strike"
+			],
+			[
+				20,
+				"riptide_surge"
+			]
+		],
+		"evolutions": [
+			{
+				"method": "level",
+				"level": 36,
+				"into": "maelstrake"
+			}
+		],
+		"description": "Its shell is patterned like waves on wet sand."
+	},
+	"maelstrake": {
+		"name": "Maelstrake",
+		"types": [
+			"water",
+			"wyrm"
+		],
+		"base_stats": {
+			"hp": 82,
+			"atk": 86,
+			"def": 96,
+			"spa": 88,
+			"spd": 94,
+			"spe": 78
+		},
+		"catch_rate": 45,
+		"base_exp": 236,
+		"growth": "medium_slow",
+		"ev_yield": {
+			"def": 2,
+			"spd": 1
+		},
+		"learnset": [
+			[
+				1,
+				"shove"
+			],
+			[
+				1,
+				"hunker"
+			],
+			[
+				5,
+				"splash_jet"
+			],
+			[
+				10,
+				"mud_fling"
+			],
+			[
+				13,
+				"riptide_strike"
+			],
+			[
+				20,
+				"riptide_surge"
+			],
+			[
+				38,
+				"tempest_coil"
+			],
+			[
+				44,
+				"headlong"
 			]
 		],
 		"evolutions": [],
-		"description": "Its shell is patterned like waves on wet sand."
+		"description": "A sea drake that sleeps coiled at the bottom of whirlpools. Sailors steer wide of spinning water."
 	},
 	"pipwing": {
 		"name": "Pipwing",
