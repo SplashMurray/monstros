@@ -170,6 +170,14 @@ The battle field is the top 224 px of the screen (112 px of art at 2×), with th
 
 ## Delivering art
 
+**Monster sprites** can be delivered named by roster number (see [ROSTER.md](ROSTER.md)):
+`001_front.png`, `001_back.png`, `001_icon.png`. Put them in `incoming/sprites/` and run
+`python3 tools/import_sprites.py` (add `--dry-run` to preview). It checks each file's size, moves it to
+`assets/monsters/<id>/`, and leaves any problem files in the inbox with the reason. Roster numbers are
+fixed in `docs/roster.json` and don't change when monsters are added.
+
+**Everything else**, or monster sprites placed by hand:
+
 1. Name the file as in the checklist and put it in the matching `assets/` folder.
 2. Run the tests: `godot --headless -s tests/run_tests.gd`. Wrong sizes and broken tileset legends are reported.
 3. Regenerate the checklist: `godot --headless -s tools/art_checklist.gd`.
