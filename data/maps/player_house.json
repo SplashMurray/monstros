@@ -60,7 +60,8 @@
 						}
 					]
 				}
-			]
+			],
+			"sprite": "mum"
 		}
 	],
 	"id": "player_house"

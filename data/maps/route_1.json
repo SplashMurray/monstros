@@ -126,7 +126,8 @@
 			"facing": "left",
 			"color": "#e0a040",
 			"trainer": "route1_ada",
-			"sight": 4
+			"sight": 4,
+			"sprite": "schoolkid"
 		},
 		{
 			"id": "ned",
@@ -137,7 +138,8 @@
 			"facing": "left",
 			"color": "#80a020",
 			"trainer": "route1_ned",
-			"sight": 3
+			"sight": 3,
+			"sprite": "insect_collector"
 		},
 		{
 			"id": "hiker",
@@ -151,7 +153,8 @@
 				{
 					"say": "Hold B to run! Running is great for covering ground, but you'll stumble into more wild monsters in the grass."
 				}
-			]
+			],
+			"sprite": "hiker"
 		}
 	],
 	"id": "route_1"

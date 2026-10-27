@@ -25,12 +25,21 @@ func _ready() -> void:
 	column.add_theme_constant_override("separation", 10)
 	center.add_child(column)
 
-	var title := Label.new()
-	title.text = "MONSTROS"
-	title.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	title.add_theme_font_size_override("font_size", 44)
-	title.add_theme_color_override("font_color", Color("#f2c94c"))
-	column.add_child(title)
+	var logo := Art.texture("ui/title_logo.png")
+	if logo:
+		var logo_rect := TextureRect.new()
+		logo_rect.texture = logo
+		logo_rect.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+		logo_rect.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+		logo_rect.custom_minimum_size = Vector2(logo.get_size() * 2)   # art is drawn at GBA scale
+		column.add_child(logo_rect)
+	else:
+		var title := Label.new()
+		title.text = "MONSTROS"
+		title.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+		title.add_theme_font_size_override("font_size", 44)
+		title.add_theme_color_override("font_color", Color("#f2c94c"))
+		column.add_child(title)
 
 	_menu = VBoxContainer.new()
 	column.add_child(_menu)

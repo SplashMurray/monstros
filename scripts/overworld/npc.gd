@@ -1,6 +1,7 @@
 extends Node2D
 ## A person or object placed on a map. Blocks movement and can be talked to.
-## Placeholder art: coloured figures, and capture orbs for objects with sprite "orb".
+## People use a character sheet (assets/characters/<sprite>.png); objects use
+## assets/objects/<object>.png. Without art they are drawn as coloured placeholders.
 
 const TILE := 16
 const STEP_TIME := 0.22
@@ -10,6 +11,8 @@ var id := ""
 var cell := Vector2i.ZERO
 var facing := Vector2i.DOWN
 var _exclaiming := false
+var _stepping := false
+var _step_count := 0
 
 
 func setup(p_data: Dictionary) -> void:
@@ -22,7 +25,7 @@ func setup(p_data: Dictionary) -> void:
 
 
 func is_person() -> bool:
-	return data.get("sprite", "person") == "person"
+	return not data.has("object")
 
 
 func face(direction: Vector2i) -> void:
@@ -33,10 +36,15 @@ func face(direction: Vector2i) -> void:
 
 func step(direction: Vector2i) -> void:
 	face(direction)
+	_stepping = true
+	_step_count += 1
+	queue_redraw()
 	var tween := create_tween()
 	tween.tween_property(self, "position", Vector2((cell + direction) * TILE), STEP_TIME)
 	await tween.finished
 	cell += direction
+	_stepping = false
+	queue_redraw()
 
 
 func exclaim() -> void:
@@ -49,7 +57,13 @@ func exclaim() -> void:
 
 func _draw() -> void:
 	var color := Color(data.get("color", "#c08040"))
-	if is_person():
+	var sheet := Art.character(data.get("sprite", "")) if is_person() else null
+	var object_art := Art.object(data["object"]) if not is_person() else null
+	if sheet:
+		Art.draw_character(self, sheet, facing, (1 + _step_count % 2) if _stepping else 0)
+	elif object_art:
+		draw_texture(object_art, Vector2.ZERO)
+	elif is_person():
 		draw_rect(Rect2(3, 2, 10, 13), color)
 		draw_rect(Rect2(4, 1, 8, 5), color.lightened(0.35))
 		var eye := Vector2(8, 8) + Vector2(facing) * 3.0

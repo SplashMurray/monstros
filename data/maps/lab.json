@@ -56,7 +56,8 @@
 						}
 					]
 				}
-			]
+			],
+			"sprite": "professor_wren"
 		},
 		{
 			"id": "rival",
@@ -70,7 +71,8 @@
 				{
 					"say": "{rival}: The professor said you get first pick. Hurry up and choose already!"
 				}
-			]
+			],
+			"sprite": "rival"
 		},
 		{
 			"id": "aide",
@@ -84,7 +86,8 @@
 				{
 					"say": "Aide: These shelves hold every field note the professor has ever written. Every single one."
 				}
-			]
+			],
+			"sprite": "lab_aide"
 		},
 		{
 			"id": "orb_fernling",
@@ -93,13 +96,13 @@
 				3
 			],
 			"facing": "down",
-			"sprite": "orb",
 			"color": "#6bbf4e",
 			"script": [
 				{
 					"run": "orb_fernling"
 				}
-			]
+			],
+			"object": "capture_orb"
 		},
 		{
 			"id": "orb_emberkit",
@@ -108,13 +111,13 @@
 				3
 			],
 			"facing": "down",
-			"sprite": "orb",
 			"color": "#e8743b",
 			"script": [
 				{
 					"run": "orb_emberkit"
 				}
-			]
+			],
+			"object": "capture_orb"
 		},
 		{
 			"id": "orb_ripplet",
@@ -123,13 +126,13 @@
 				3
 			],
 			"facing": "down",
-			"sprite": "orb",
 			"color": "#4f8fe0",
 			"script": [
 				{
 					"run": "orb_ripplet"
 				}
-			]
+			],
+			"object": "capture_orb"
 		}
 	],
 	"scripts": {

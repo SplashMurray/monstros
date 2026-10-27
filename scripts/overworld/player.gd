@@ -17,6 +17,8 @@ var _moving := false
 var _turn_wait := 0.0
 var _was_walking := false
 var _tween: Tween
+var _step_count := 0
+var _running := false
 
 
 func place(p_cell: Vector2i, p_facing: Vector2i) -> void:
@@ -72,12 +74,16 @@ func walk(direction: Vector2i) -> void:
 func _step_to(target: Vector2i) -> void:
 	_moving = true
 	_was_walking = true
+	_step_count += 1
+	_running = Input.is_action_pressed("run")
+	queue_redraw()
 	_tween = create_tween()
-	var step_time := RUN_STEP_TIME if Input.is_action_pressed("run") else STEP_TIME
+	var step_time := RUN_STEP_TIME if _running else STEP_TIME
 	_tween.tween_property(self, "position", Vector2(target * TILE), step_time)
 	await _tween.finished
 	cell = target
 	_moving = false
+	queue_redraw()
 	stepped.emit(cell)
 
 
@@ -94,6 +100,12 @@ func _read_direction() -> Vector2i:
 
 
 func _draw() -> void:
+	var sheet: Texture2D = Art.character("player_run") if _moving and _running else null
+	if sheet == null:
+		sheet = Art.character("player")
+	if sheet:
+		Art.draw_character(self, sheet, facing, (1 + _step_count % 2) if _moving else 0)
+		return
 	# Placeholder sprite: a capped trainer with a dot showing which way they face.
 	draw_rect(Rect2(3, 2, 10, 13), Color("#3050a0"))
 	draw_rect(Rect2(3, 1, 10, 4), Color("#d03030"))

@@ -54,7 +54,8 @@
 						}
 					]
 				}
-			]
+			],
+			"sprite": "gym_guide"
 		},
 		{
 			"id": "jory",
@@ -65,7 +66,8 @@
 			"facing": "left",
 			"color": "#a08060",
 			"trainer": "gym_jory",
-			"sight": 4
+			"sight": 4,
+			"sprite": "climber"
 		},
 		{
 			"id": "brenna",
@@ -107,8 +109,10 @@
 						}
 					]
 				}
-			]
+			],
+			"sprite": "leader_brenna"
 		}
 	],
-	"id": "fenwick_gym"
+	"id": "fenwick_gym",
+	"battle_terrain": "gym_stone"
 }

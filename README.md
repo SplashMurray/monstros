@@ -60,6 +60,8 @@ scripts/core/    Dex (data access), Monster, Stats, Growth, Game (autoload: stat
 scripts/battle/  Battle engine, DamageCalc, Capture, trainer AI, and the battle screen
 scripts/overworld/  Map rendering, player/NPC movement, EventRunner (event scripts), MapRules
 scripts/ui/      Title screen, dialogue box, start menu
+assets/          Artwork (see docs/ART_SPEC.md); anything missing falls back to placeholders
+tools/           Art checklist generator and spec diagram generator
 scripts/input/   Input map, device detection (Controls autoload), on-screen touch controls
 scenes/          Godot scenes
 tests/           Headless test runner
@@ -75,4 +77,5 @@ No code changes are needed. See [docs/CONTENT.md](docs/CONTENT.md).
 
 - [Design and mechanics](docs/DESIGN.md)
 - [Adding content: maps, NPCs, events](docs/CONTENT.md)
+- [Art specification: sprite formats](docs/ART_SPEC.md) and the [art checklist](docs/ART_CHECKLIST.md)
 - [Content guidelines: staying original](docs/CONTENT_GUIDELINES.md)

@@ -65,7 +65,8 @@
 						}
 					]
 				}
-			]
+			],
+			"sprite": "nurse"
 		}
 	],
 	"id": "fenwick_center"

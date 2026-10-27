@@ -36,6 +36,7 @@ func _ready() -> void:
 	_panel.anchor_right = 1.0
 	_panel.anchor_bottom = 1.0
 	_panel.gui_input.connect(_on_panel_input)
+	Art.apply_frame(_panel, "textbox")
 	root.add_child(_panel)
 	var margin := MarginContainer.new()
 	for edge in ["left", "right", "top", "bottom"]:

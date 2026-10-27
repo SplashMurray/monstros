@@ -19,6 +19,10 @@ var _camera: Camera2D
 var _fade: ColorRect
 var _banner: Label
 var _transitioning := true
+var _tileset: Texture2D
+var _legend: Dictionary = {}
+var _animated_tiles := false
+var _anim_time := 0.0
 var _last_area := ""   # last outdoor map, so the name banner only shows on entering a new area
 
 
@@ -70,7 +74,10 @@ func _ready() -> void:
 	_resume_after_battle()
 
 
-func _process(_delta: float) -> void:
+func _process(delta: float) -> void:
+	if _animated_tiles:
+		_anim_time += delta
+		queue_redraw()
 	var blocked := runner.busy or menu.visible or _transitioning
 	player.frozen = blocked
 	Game.autosave_allowed = not blocked
@@ -89,6 +96,11 @@ func _load_map(id: String) -> void:
 	map = Dex.map_data(id)
 	_layout = map["layout"]
 	Game.map_id = id
+	_tileset = Art.tileset(Art.map_tileset(map))
+	_legend = Art.tileset_legend(Art.map_tileset(map)) if _tileset else {}
+	_animated_tiles = false
+	for entry in _legend.values():
+		_animated_tiles = _animated_tiles or entry.get("mode", "") == "animate"
 	for npc in npcs:
 		npc.queue_free()
 	npcs.clear()
@@ -294,9 +306,25 @@ func _show_banner(text: String, seconds: float = 2.0) -> void:
 func _draw() -> void:
 	for y in _layout.size():
 		for x in _layout[y].length():
-			_draw_tile(_layout[y][x], Vector2(x * TILE, y * TILE))
+			var tile: String = _layout[y][x]
+			if _legend.has(tile):
+				_draw_tileset_tile(_legend[tile], Vector2i(x, y))
+			else:
+				_draw_tile(tile, Vector2(x * TILE, y * TILE))
 
 
+func _draw_tileset_tile(entry: Dictionary, cell: Vector2i) -> void:
+	var cells: Array = entry.get("cells", [entry.get("cell", [0, 0])])
+	var index := 0
+	if entry.get("mode", "") == "animate":
+		index = floori(_anim_time * float(entry.get("fps", 4))) % cells.size()
+	elif cells.size() > 1:
+		index = absi(hash(cell)) % cells.size()   # stable random variant per position
+	var source := Rect2(Vector2(Dirs.cell(cells[index]) * TILE), Vector2(TILE, TILE))
+	draw_texture_rect_region(_tileset, Rect2(Vector2(cell * TILE), Vector2(TILE, TILE)), source)
+
+
+## Placeholder tile drawing, used for any tile the map's tileset doesn't cover yet.
 func _draw_tile(tile: String, o: Vector2) -> void:
 	draw_rect(Rect2(o, Vector2(TILE, TILE)), MapRules.COLORS.get(tile, Color.MAGENTA))
 	match tile:

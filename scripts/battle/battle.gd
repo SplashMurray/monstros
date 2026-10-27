@@ -1,7 +1,8 @@
 class_name Battle
 extends RefCounted
 ## Turn-based single battle engine. Pure logic: it never touches nodes.
-## Each call returns a list of event dictionaries for the UI to play back:
+## Each call returns a list of event dictionaries for the UI to play back
+## (a "refresh" also carries the monster's "species" id, for its sprite):
 ##   { type: "message", text }
 ##   { type: "hp", side, hp, max }
 ##   { type: "refresh", side, name, level, hp, max, types, status }
@@ -57,11 +58,12 @@ func label(side: int) -> String:
 
 func start() -> Array:
 	_events = []
-	_snapshot(ENEMY)
 	if is_wild:
+		_snapshot(ENEMY)
 		_msg("A wild %s leapt out!" % mon(ENEMY).display_name())
 	else:
 		_msg("%s wants to battle!" % _opponent())
+		_snapshot(ENEMY)
 		_msg("%s sent out %s!" % [_opponent(), mon(ENEMY).display_name()])
 	_snapshot(PLAYER)
 	_msg("Go, %s!" % mon(PLAYER).display_name())
@@ -451,7 +453,7 @@ func _msg(text: String) -> void:
 func _snapshot(side: int) -> void:
 	var m := mon(side)
 	_events.append({
-		"type": "refresh", "side": side, "name": m.display_name(), "level": m.level,
+		"type": "refresh", "side": side, "species": m.species_id, "name": m.display_name(), "level": m.level,
 		"hp": m.hp, "max": m.max_hp(), "types": m.types(), "status": m.status,
 	})
 

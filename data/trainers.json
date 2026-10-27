@@ -12,7 +12,8 @@
 		"intro": "Let's see whose partner is stronger!",
 		"defeat": "What? I picked the wrong one, didn't I...",
 		"victory": "Ha! Told you I'd win!",
-		"after": "Next time it'll be different."
+		"after": "Next time it'll be different.",
+		"portrait": "rival"
 	},
 	"rival_lab_emberkit": {
 		"class": "Rival",
@@ -27,7 +28,8 @@
 		"intro": "Let's see whose partner is stronger!",
 		"defeat": "What? I picked the wrong one, didn't I...",
 		"victory": "Ha! Told you I'd win!",
-		"after": "Next time it'll be different."
+		"after": "Next time it'll be different.",
+		"portrait": "rival"
 	},
 	"rival_lab_ripplet": {
 		"class": "Rival",
@@ -42,7 +44,8 @@
 		"intro": "Let's see whose partner is stronger!",
 		"defeat": "What? I picked the wrong one, didn't I...",
 		"victory": "Ha! Told you I'd win!",
-		"after": "Next time it'll be different."
+		"after": "Next time it'll be different.",
+		"portrait": "rival"
 	},
 	"route1_ada": {
 		"class": "Schoolkid",
@@ -61,7 +64,8 @@
 		"intro": "Our teacher says battling is homework. Let's study!",
 		"defeat": "I'll need to revise...",
 		"victory": "Top marks for me!",
-		"after": "Type matchups are on the test. Flame beats Flora, Water beats Flame!"
+		"after": "Type matchups are on the test. Flame beats Flora, Water beats Flame!",
+		"portrait": "schoolkid"
 	},
 	"route1_ned": {
 		"class": "Insect Collector",
@@ -80,7 +84,8 @@
 		"intro": "Hey! You stepped right through my grub patch!",
 		"defeat": "My grubs... they need a nap.",
 		"victory": "The grubs win again!",
-		"after": "Grubble spin silk rafts after it rains. It's beautiful."
+		"after": "Grubble spin silk rafts after it rains. It's beautiful.",
+		"portrait": "insect_collector"
 	},
 	"gym_jory": {
 		"class": "Climber",
@@ -95,7 +100,8 @@
 		"intro": "You'll need to get past me before you face Brenna!",
 		"defeat": "I slipped...",
 		"victory": "Solid as a rock!",
-		"after": "Brenna's ace is Shalehorn. Its Defence is no joke."
+		"after": "Brenna's ace is Shalehorn. Its Defence is no joke.",
+		"portrait": "climber"
 	},
 	"leader_brenna": {
 		"class": "Leader",
@@ -114,6 +120,7 @@
 		"intro": "",
 		"defeat": "Well struck! You found the cracks in my defence.",
 		"victory": "Bedrock doesn't break that easily.",
-		"after": "Keep heading north. The road only gets tougher."
+		"after": "Keep heading north. The road only gets tougher.",
+		"portrait": "leader_brenna"
 	}
 }

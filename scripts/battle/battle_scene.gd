@@ -1,20 +1,32 @@
 extends Control
-## Placeholder battle screen. Builds a simple UI in code and plays back
-## the events produced by the Battle engine. Sprites are coloured blocks for now.
+## Battle screen. Builds its UI in code and plays back the events produced by the
+## Battle engine. Layout follows the GBA screen at 2x: a 480x224 battle field
+## (wider on wide phones) above a 96 px text and menu area. Sprites, backgrounds and
+## frames come from assets/ (see docs/ART_SPEC.md) with placeholders for anything missing.
 
 const MESSAGE_DELAY := 0.9
 const HP_TWEEN_TIME := 0.4
 const STATUS_TAGS := { "burn": "BRN", "poison": "PSN", "paralysis": "PAR", "sleep": "SLP", "freeze": "FRZ" }
+const SCALE := 2           # battle art is drawn at GBA scale and shown at 2x
+const FIELD_HEIGHT := 224  # Art.BATTLE_BG_SIZE.y * SCALE
+const BOTTOM_HEIGHT := 96
+## Positions relative to the screen's horizontal centre, matching the GBA layout at 2x.
+const ENEMY_SPRITE := Vector2(48, 16)
+const PLAYER_SPRITE := Vector2(-160, 96)
+const ENEMY_INFO := Rect2(-224, 16, 200, 44)
+const PLAYER_INFO := Rect2(16, 140, 208, 44)
 
 var battle: Battle
 var _info: Array[Label] = [null, null]
 var _bars: Array[ProgressBar] = [null, null]
-var _sprites: Array[ColorRect] = [null, null]
+var _sprites: Array[TextureRect] = [null, null]
+var _placeholders: Array[ColorRect] = [null, null]
 var _snap: Array = [{}, {}]
 var _log: Label
 var _menu: GridContainer
 var _back_action := Callable()   # what B / the Android back button does in the current menu
 var _trainer_id := ""
+var _terrain := "grass"
 
 
 func _ready() -> void:
@@ -23,12 +35,15 @@ func _ready() -> void:
 	Controls.device_changed.connect(_on_device_changed)
 	theme = Theme.new()
 	theme.default_font_size = 12
-	_build_ui()
 	var setup: Dictionary = Game.pending_battle
+	_terrain = setup.get("terrain", "grass")
+	_build_ui()
 	battle = Battle.new(Game.party, setup.get("enemy", []), setup.get("wild", true), Game.rng)
 	_trainer_id = setup.get("trainer_id", "")
 	if _trainer_id != "":
 		battle.trainer_name = Game.trainer_display_name(_trainer_id)
+		_set_sprite(Battle.ENEMY, Art.trainer(Dex.trainer(_trainer_id).get("portrait", "")), Color("#808080"))
+	_set_sprite(Battle.PLAYER, Art.trainer("player_back"), Color("#3050a0"))
 	await _play(battle.start())
 	_show_main_menu()
 
@@ -36,68 +51,110 @@ func _ready() -> void:
 # --- Layout ----------------------------------------------------------------
 
 func _build_ui() -> void:
-	var background := ColorRect.new()
-	background.color = Color("#f8f0d8")
-	background.set_anchors_preset(PRESET_FULL_RECT)
-	add_child(background)
+	var backing := ColorRect.new()
+	backing.color = Color("#283040")
+	backing.set_anchors_preset(PRESET_FULL_RECT)
+	add_child(backing)
+	var field := Control.new()
+	field.anchor_right = 1.0
+	field.offset_bottom = FIELD_HEIGHT
+	field.clip_contents = true
+	add_child(field)
 
-	var margin := MarginContainer.new()
-	margin.set_anchors_preset(PRESET_FULL_RECT)
-	for edge in ["left", "right", "top", "bottom"]:
-		margin.add_theme_constant_override("margin_" + edge, 10)
-	add_child(margin)
+	var fill := ColorRect.new()
+	fill.color = Color("#f8f0d8")
+	fill.set_anchors_preset(PRESET_FULL_RECT)
+	field.add_child(fill)
+	var background := Art.battle_background(_terrain)
+	if background:
+		var bg := TextureRect.new()
+		bg.texture = background
+		bg.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+		bg.stretch_mode = TextureRect.STRETCH_SCALE
+		_place(bg, Rect2(-background.get_width() * SCALE / 2.0, 0, background.get_width() * SCALE, FIELD_HEIGHT))
+		field.add_child(bg)
 
-	var column := VBoxContainer.new()
-	column.add_theme_constant_override("separation", 6)
-	margin.add_child(column)
+	var base := Art.battle_base(_terrain)
+	var sprite_size := Vector2(Art.MONSTER_SIZE * SCALE)
+	for side in [Battle.ENEMY, Battle.PLAYER]:
+		var origin := ENEMY_SPRITE if side == Battle.ENEMY else PLAYER_SPRITE
+		if base:
+			var base_rect := TextureRect.new()
+			base_rect.texture = base
+			base_rect.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+			var base_size := Vector2(Art.BATTLE_BASE_SIZE * SCALE)
+			_place(base_rect, Rect2(origin + Vector2((sprite_size.x - base_size.x) / 2.0, sprite_size.y - base_size.y * 0.6), base_size))
+			field.add_child(base_rect)
+		var placeholder := ColorRect.new()
+		_place(placeholder, Rect2(origin + sprite_size * 0.2, sprite_size * 0.6))
+		field.add_child(placeholder)
+		var sprite := TextureRect.new()
+		sprite.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+		sprite.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+		_place(sprite, Rect2(origin, sprite_size))
+		field.add_child(sprite)
+		_sprites[side] = sprite
+		_placeholders[side] = placeholder
+		field.add_child(_build_info(side))
 
-	column.add_child(_build_side_row(Battle.ENEMY))
-	var spacer := Control.new()
-	spacer.size_flags_vertical = SIZE_EXPAND_FILL
-	column.add_child(spacer)
-	column.add_child(_build_side_row(Battle.PLAYER))
-
+	var bottom := HBoxContainer.new()
+	bottom.anchor_top = 1.0
+	bottom.anchor_right = 1.0
+	bottom.anchor_bottom = 1.0
+	bottom.offset_top = -BOTTOM_HEIGHT
+	add_child(bottom)
 	var log_panel := PanelContainer.new()
-	log_panel.custom_minimum_size = Vector2(0, 44)
+	log_panel.size_flags_horizontal = SIZE_EXPAND_FILL
+	Art.apply_frame(log_panel, "textbox")
 	_log = Label.new()
 	_log.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	log_panel.add_child(_log)
-	column.add_child(log_panel)
-
+	bottom.add_child(log_panel)
 	_menu = GridContainer.new()
 	_menu.columns = 2
-	_menu.custom_minimum_size = Vector2(0, 52)
-	column.add_child(_menu)
+	_menu.custom_minimum_size = Vector2(240, 0)
+	_menu.visible = false
+	bottom.add_child(_menu)
 
 
-func _build_side_row(side: int) -> HBoxContainer:
-	var row := HBoxContainer.new()
-	var info_box := VBoxContainer.new()
+func _build_info(side: int) -> PanelContainer:
+	var panel := PanelContainer.new()
+	Art.apply_frame(panel, "panel")
+	_place(panel, ENEMY_INFO if side == Battle.ENEMY else PLAYER_INFO)
+	panel.visible = false   # shown once a monster is out
+	var box := VBoxContainer.new()
+	panel.add_child(box)
 	var info := Label.new()
 	var bar := ProgressBar.new()
 	bar.show_percentage = false
-	bar.custom_minimum_size = Vector2(140, 8)
-	info_box.add_child(info)
-	info_box.add_child(bar)
-
-	var sprite := ColorRect.new()
-	sprite.custom_minimum_size = Vector2(56, 56)
-	var filler := Control.new()
-	filler.size_flags_horizontal = SIZE_EXPAND_FILL
-
-	# Enemy: info top-left, sprite top-right. Player: sprite left, info right.
-	if side == Battle.ENEMY:
-		row.add_child(info_box)
-		row.add_child(filler)
-		row.add_child(sprite)
-	else:
-		row.add_child(sprite)
-		row.add_child(filler)
-		row.add_child(info_box)
+	bar.custom_minimum_size = Vector2(0, 6)
+	var track := StyleBoxFlat.new()
+	track.bg_color = Color("#404850")
+	bar.add_theme_stylebox_override("background", track)
+	bar.add_theme_stylebox_override("fill", StyleBoxFlat.new())
+	bar.value_changed.connect(func(value: float) -> void:
+		(bar.get_theme_stylebox("fill") as StyleBoxFlat).bg_color = Art.hp_color(value / maxf(bar.max_value, 1.0)))
+	box.add_child(info)
+	box.add_child(bar)
 	_info[side] = info
 	_bars[side] = bar
-	_sprites[side] = sprite
-	return row
+	return panel
+
+
+## Positions a control relative to the top centre of its parent.
+func _place(control: Control, rect: Rect2) -> void:
+	control.anchor_left = 0.5
+	control.anchor_right = 0.5
+	control.offset_left = rect.position.x
+	control.offset_top = rect.position.y
+	control.offset_right = rect.end.x
+	control.offset_bottom = rect.end.y
+
+
+func _set_sprite(side: int, texture: Texture2D, fallback: Color) -> void:
+	_sprites[side].texture = texture
+	_placeholders[side].visible = texture == null
+	_placeholders[side].color = fallback
 
 
 # --- Event playback ----------------------------------------------------------
@@ -115,11 +172,15 @@ func _play(events: Array) -> void:
 				tween.tween_property(_bars[event["side"]], "value", float(event["hp"]), HP_TWEEN_TIME)
 				await tween.finished
 			"refresh":
-				_snap[event["side"]] = event
-				_bars[event["side"]].max_value = event["max"]
-				_bars[event["side"]].value = event["hp"]
-				_sprites[event["side"]].color = Dex.type_color(event["types"][0])
-				_update_info(event["side"])
+				var side: int = event["side"]
+				_snap[side] = event
+				_bars[side].max_value = event["max"]
+				_bars[side].value = event["hp"]
+				_bars[side].value_changed.emit(_bars[side].value)   # recolour even if the value didn't change
+				var art := Art.monster_front(event["species"]) if side == Battle.ENEMY else Art.monster_back(event["species"])
+				_set_sprite(side, art, Dex.type_color(event["types"][0]))
+				_info[side].get_parent().get_parent().visible = true
+				_update_info(side)
 			"shake":
 				for i in event["count"]:
 					_log.text = "..." + ".".repeat(i)
@@ -153,6 +214,7 @@ func _on_device_changed(_device: String) -> void:
 
 func _clear_menu() -> void:
 	_back_action = Callable()
+	_menu.visible = false   # the text box spans the full width while there's no menu
 	for child in _menu.get_children():
 		_menu.remove_child(child)
 		child.queue_free()
@@ -163,9 +225,12 @@ func _add_button(text: String, callback: Callable, disabled: bool = false) -> Bu
 	button.text = text
 	button.disabled = disabled
 	button.size_flags_horizontal = SIZE_EXPAND_FILL
-	button.custom_minimum_size = Vector2(0, 26)   # comfortable touch target on phones
+	button.clip_text = true
+	button.text_overrun_behavior = TextServer.OVERRUN_TRIM_ELLIPSIS
+	button.custom_minimum_size = Vector2(0, 22)   # 4 rows fit the 96 px menu area; ~75 px tall on a phone
 	button.pressed.connect(callback)
 	_menu.add_child(button)
+	_menu.visible = true
 	return button
 
 
@@ -197,8 +262,12 @@ func _show_move_menu() -> void:
 	for i in m.moves.size():
 		var slot: Dictionary = m.moves[i]
 		var data := Dex.move(slot["id"])
-		var text := "%s  %s  %d/%d" % [data["name"], Dex.type_name(data["type"]), slot["pp"], data["pp"]]
-		_add_button(text, _submit.bind({ "type": "move", "index": i }), slot["pp"] <= 0)
+		var text := "%s %d/%d" % [data["name"], slot["pp"], data["pp"]]
+		var button := _add_button(text, _submit.bind({ "type": "move", "index": i }), slot["pp"] <= 0)
+		var details := "%s: %s, %s" % [data["name"], Dex.type_name(data["type"]), data["category"]]
+		if data["category"] != "status":
+			details += ", power %d" % data["power"]
+		button.focus_entered.connect(func() -> void: _log.text = details)
 	_add_button("Back", _show_main_menu)
 	_back_action = _show_main_menu
 	_focus_first()

@@ -140,7 +140,8 @@
 						}
 					]
 				}
-			]
+			],
+			"sprite": "villager"
 		}
 	],
 	"id": "hollowmere"

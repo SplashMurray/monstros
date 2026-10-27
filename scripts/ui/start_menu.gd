@@ -23,6 +23,7 @@ func _ready() -> void:
 	_panel.grow_horizontal = Control.GROW_DIRECTION_BOTH
 	_panel.grow_vertical = Control.GROW_DIRECTION_BOTH
 	_panel.custom_minimum_size = Vector2(240, 0)
+	Art.apply_frame(_panel, "panel")
 	_root.add_child(_panel)
 	var margin := MarginContainer.new()
 	for edge in ["left", "right", "top", "bottom"]:

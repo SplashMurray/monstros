@@ -36,6 +36,9 @@ var rng := RandomNumberGenerator.new()
 func _ready() -> void:
 	Dex.ensure_loaded()
 	rng.randomize()
+	var ui_font := Art.font()
+	if ui_font:
+		ThemeDB.fallback_font = ui_font
 
 
 func _process(delta: float) -> void:
@@ -175,7 +178,7 @@ func start_trainer_battle(trainer_id: String, can_lose: bool = false) -> void:
 
 func start_battle(enemy_party: Array, wild: bool, extra: Dictionary = {}) -> void:
 	autosave_allowed = false
-	pending_battle = { "enemy": enemy_party, "wild": wild }
+	pending_battle = { "enemy": enemy_party, "wild": wild, "terrain": Art.map_terrain(Dex.map_data(map_id)) }
 	pending_battle.merge(extra)
 	get_tree().change_scene_to_file.call_deferred(BATTLE_SCENE)
 

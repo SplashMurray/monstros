@@ -17,6 +17,7 @@ func _initialize() -> void:
 		test_control_scheme, test_touch_dpad_directions,
 		test_trainers, test_maps_are_well_formed, test_map_scripts, test_maps_are_connected,
 		test_monster_save_round_trip, test_trainer_ai,
+		test_art_spec, test_delivered_art,
 	]
 	for test in tests:
 		test.call()
@@ -429,3 +430,59 @@ func test_trainer_ai() -> void:
 		if battle._ai_choose_move() == 1:
 			picks += 1
 	check(picks == 20, "trainers pick the super-effective STAB move (%d/20)" % picks)
+
+
+# --- Art -----------------------------------------------------------------------
+
+func test_art_spec() -> void:
+	check(Art.check_size("monster_front", Vector2i(64, 64)) == "", "64x64 front sprite is valid")
+	check(Art.check_size("monster_front", Vector2i(96, 96)) != "", "96x96 front sprite is rejected")
+	check(Art.check_size("character", Vector2i(48, 128)) == "", "full character sheet is valid")
+	check(Art.check_size("character", Vector2i(48, 96)) == "", "mirrored character sheet is valid")
+	check(Art.check_size("character", Vector2i(64, 128)) != "", "wrong character sheet is rejected")
+	check(Art.check_size("tileset", Vector2i(128, 320)) == "", "128 px wide tileset is valid")
+	check(Art.check_size("tileset", Vector2i(128, 100)) != "", "tileset height must be whole tiles")
+	check(Art.check_size("title_logo", Vector2i(200, 60)) == "", "logo within the limit is valid")
+	var required := Art.required_assets()
+	var paths := {}
+	for entry in required:
+		check(not paths.has(entry["path"]), "asset %s listed once" % entry["path"])
+		paths[entry["path"]] = true
+	for id in Dex.species:
+		check(paths.has("monsters/%s/front.png" % id), "%s needs a front sprite" % id)
+	for map_id in Dex.maps:
+		for npc in Dex.maps[map_id].get("npcs", []):
+			check(npc.has("sprite") != npc.has("object"), "%s/%s has exactly one of sprite or object" % [map_id, npc["id"]])
+			if npc.has("sprite"):
+				check(paths.has("characters/%s.png" % npc["sprite"]), "%s needs a character sheet" % npc["sprite"])
+	for id in Dex.trainers:
+		check(Dex.trainers[id].has("portrait"), "trainer %s has a portrait id" % id)
+
+
+## Whatever art has been delivered must match the spec, and tile legends must point inside their tileset.
+func test_delivered_art() -> void:
+	for entry in Art.required_assets():
+		var path: String = Art.ROOT + entry["path"]
+		if not FileAccess.file_exists(path) or not path.ends_with(".png"):
+			continue
+		var image := Image.load_from_file(path)
+		check(image != null, "%s loads" % entry["path"])
+		if image:
+			var problem := Art.check_size(entry["kind"], image.get_size())
+			check(problem == "", "%s is %dx%d but %s" % [entry["path"], image.get_width(), image.get_height(), problem])
+	for map_id in Dex.maps:
+		var tileset_name := Art.map_tileset(Dex.maps[map_id])
+		var tex_path := Art.ROOT + "tiles/%s.png" % tileset_name
+		if not FileAccess.file_exists(tex_path):
+			continue
+		var image := Image.load_from_file(tex_path)
+		var columns := image.get_width() / Art.TILE
+		var rows := image.get_height() / Art.TILE
+		var legend := Art.tileset_legend(tileset_name)
+		check(not legend.is_empty(), "tileset %s has a legend file" % tileset_name)
+		for tile in legend:
+			check(MapRules.COLORS.has(tile), "tileset %s legend key '%s' is a map tile" % [tileset_name, tile])
+			var entry: Dictionary = legend[tile]
+			for cell in entry.get("cells", [entry.get("cell", [-1, -1])]):
+				check(int(cell[0]) >= 0 and int(cell[0]) < columns and int(cell[1]) >= 0 and int(cell[1]) < rows,
+					"tileset %s tile '%s' cell %s is inside the sheet" % [tileset_name, tile, cell])
